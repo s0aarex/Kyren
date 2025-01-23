@@ -5,8 +5,6 @@ Click on the link below to be redirected to the website with the code, copy the 
 
 [Tab with Code](https://raw.githubusercontent.com/enneze/ByEneze/refs/heads/main/byeneze.json)
 
-# Updates:
+# Patch Notes:
 
-## PT-BR
-### Foi adicionado:
- - **Enigma of Fear v1.2 (Build: 16919276)**
+### Join on [Discord Server](https://discord.gg/KXfJxSK7kc) to view patch notes and more!
