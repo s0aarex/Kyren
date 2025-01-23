@@ -5,6 +5,6 @@ Click on the link below to be redirected to the website with the code, copy the 
 
 [Tab with Code](https://raw.githubusercontent.com/enneze/ByEneze/refs/heads/main/byeneze.json)
 
-# Patch Notes:
+# Discord Server:
 
 ### Join on [Discord Server](https://discord.gg/KXfJxSK7kc) to view patch notes and more!
