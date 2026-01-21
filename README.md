@@ -6,4 +6,4 @@ Click on the link below to be redirected to the website with the code, copy the 
 **[Tab with Code](https://raw.githubusercontent.com/enneze/Kyren/refs/heads/main/kyren.json?token=GHSAT0AAAAAADQNRVPT6J2MJ33FLQZTRFEY2LQQBNA)**
 
 ## Where do I get the links?
-I mostly use links from [FreeMediaHeckYEAH](https://fmhy.net/gaming), one of the best piracy sites.
+I mostly use links from [FreeMediaHeckYEAH](https://fmhy.net/gaming) e [r/Piracy](https://old.reddit.com/r/Piracy/wiki/megathread/games), one of the best piracy sites.
