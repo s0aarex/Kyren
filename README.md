@@ -5,9 +5,5 @@ Click on the link below to be redirected to the website with the code, copy the 
 
 **[Tab with Code](https://raw.githubusercontent.com/enneze/Kyren/refs/heads/main/kyren.json?token=GHSAT0AAAAAADQNRVPT6J2MJ33FLQZTRFEY2LQQBNA)**
 
-## Discord Server:
-
-**Join on [Discord Server](https://discord.gg/KXfJxSK7kc) to view patch notes and more!**
-
-## Onde eu pego os links
-Maioritariamente uso links do [FreeMediaHeckYEAH](https://fmhy.net/gaming)
+## Where do I get the links?
+I mostly use links from [FreeMediaHeckYEAH](https://fmhy.net/gaming)
