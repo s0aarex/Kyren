@@ -8,3 +8,6 @@ Click on the link below to be redirected to the website with the code, copy the 
 ## Discord Server:
 
 **Join on [Discord Server](https://discord.gg/KXfJxSK7kc) to view patch notes and more!**
+
+## Onde eu pego os links
+Maioritariamente uso links do [FreeMediaHeckYEAH](https://fmhy.net/gaming)
