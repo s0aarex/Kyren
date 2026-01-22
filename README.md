@@ -1,3 +1,5 @@
+🌍 Leia em: [English](README.md) | [Português](README.pt-BR.md)
+
 # Kyren Hydra Launcher Source
 
 ## Instructions to add the source on Hydra
