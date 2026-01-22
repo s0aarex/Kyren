@@ -1,21 +1,30 @@
 name: "🐛 Bug / Link quebrado"
-description: "Reporte problema"
+description: "Reporte um problema na source"
 title: "[Bug] "
-labels: ["bug"]
+labels:
+  - bug
 body:
   - type: textarea
     id: what
     attributes:
       label: O que aconteceu?
-      placeholder: O que quebrou? Onde? Como reproduzir?
+      description: "Explique o problema e como reproduzir"
+      placeholder: "Ex: jogo X não aparece / link falha / etc"
     validations:
       required: true
+
   - type: textarea
     id: expected
     attributes:
-      label: O que você esperava que acontecesse?
+      label: O que você esperava?
+      placeholder: "Ex: deveria abrir / baixar / aparecer"
+    validations:
+      required: false
+
   - type: input
     id: version
     attributes:
-      label: Versão/patch do Kyren
-      placeholder: Ex: 1.07
+      label: Versão do Kyren (se souber)
+      placeholder: "Ex: v1.07"
+    validations:
+      required: false
