@@ -1,0 +1,13 @@
+title: Kyren
+description: Site oficial da source Kyren
+theme: just-the-docs
+
+url: "https://SEUUSUARIO.github.io"
+baseurl: "/Kyren"
+
+aux_links:
+  "Repo no GitHub":
+    - "https://github.com/SEUUSUARIO/Kyren"
+
+color_scheme: dark
+search_enabled: true
