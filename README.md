@@ -9,4 +9,3 @@ Click on the link below to be redirected to the website with the code, copy the 
 I mostly use links from [FreeMediaHeckYEAH](https://fmhy.net/gaming) and [r/Piracy](https://old.reddit.com/r/Piracy/wiki/megathread/games), one of the best piracy sites.
 > SteamRip
 > AtopGames
-> SteamGG
