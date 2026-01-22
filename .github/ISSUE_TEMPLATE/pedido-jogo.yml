@@ -1,26 +1,31 @@
 name: "🎮 Pedido de jogo"
 description: "Peça um jogo para adicionar na source"
 title: "[Pedido] "
-labels: ["pedido"]
+labels:
+  - pedido
 body:
   - type: input
     id: game
     attributes:
       label: Nome do jogo
-      placeholder: Ex: Elden Ring
+      placeholder: "Ex: Elden Ring"
     validations:
       required: true
+
   - type: dropdown
     id: platform
     attributes:
       label: Plataforma
       options:
-        - PC (Windows)
-        - Outro
+        - "PC (Windows)"
+        - "Outro"
     validations:
       required: true
+
   - type: textarea
     id: notes
     attributes:
       label: Observações
-      placeholder: Versão, idioma, qualquer detalhe útil
+      placeholder: "Versão, idioma, etc (opcional)"
+    validations:
+      required: false
