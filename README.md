@@ -1,4 +1,4 @@
-🌍 Leia em: [English](README.md) | [Português](README.pt-BR.md)
+🌍 Read in: [English](README.md) | [Português](README.pt-BR.md)
 
 # Kyren Hydra Launcher Source
 
