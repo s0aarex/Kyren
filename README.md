@@ -2,10 +2,10 @@
 
 # Kyren Hydra Launcher Source
 
-## Instructions to add the source on Hydra
-Click on the link below to be redirected to the website with the code, copy the website link, go to the hydra settings tab, go to download sources, click on add source, paste the link. Done, now just download the games. Have fun!
+## How to add the source on Hydra Launcher?
+The font is now available in the Hydra Launcher font library. Just click the link below to access the Hydra Launcher library website, click "Open Hydra Launcher in a window" that appears at the top of your browser, click "Import" in Hydra Launcher, and have fun!
 
-**[Tab with Code](https://kyren.pages.dev/kyren.json)**
+**[Library Hydra](https://kyren.pages.dev/kyren.json)**
 
 ## Where do I get the links?
 I mostly use links from [FreeMediaHeckYEAH](https://fmhy.net/gaming) and [r/Piracy](https://old.reddit.com/r/Piracy/wiki/megathread/games), one of the best piracy sites.
