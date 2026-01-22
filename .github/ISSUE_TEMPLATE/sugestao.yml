@@ -1,1 +1,12 @@
-
+name: "💡 Sugestão"
+description: "Sugira melhorias pro projeto/site/source"
+title: "[Sugestão] "
+labels: ["sugestao"]
+body:
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Qual a sua sugestão?
+      placeholder: Explica a ideia e por que seria útil
+    validations:
+      required: true
