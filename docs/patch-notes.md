@@ -1,15 +1,14 @@
 ---
 title: Patch Notes
+nav_order: 3
 ---
 
 # Patch Notes
 
-As atualizações oficiais ficam em **Releases**.
+## v1.09
+- ✅ Added: novos títulos
+- 🛠️ Fixed: correções de metadados
+- 🧹 Changed: organização interna
 
-➡️ Abra: `Releases` do GitHub (menu do lado direito do repo).
-
-## Modelo de patch note (pra você copiar)
-- ✅ Added: ...
-- 🛠️ Fixed: ...
-- 🧹 Changed: ...
-- ❌ Removed: ...
+## v1.08
+- 🛠️ Fixed: ajustes gerais
