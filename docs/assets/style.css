@@ -351,3 +351,12 @@ body {
 .btn:hover {
   box-shadow: 0 10px 40px rgba(0,0,0,.45);
 }
+
+.bg-scribbles {
+  animation: floatScribble 18s ease-in-out infinite;
+}
+
+@keyframes floatScribble {
+  0%,100% { transform: translateY(0) }
+  50% { transform: translateY(-12px) }
+}
