@@ -373,3 +373,48 @@ body > *:not(#scribbles){
 footer, .footer, section, main{
   background: transparent !important;
 }
+
+/* ====== BACKGROUND SCRIBBLES (full page) ====== */
+#scribbles{
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: .85;
+}
+
+/* camada de brilho + vinheta */
+#scribbles::before{
+  content:"";
+  position:absolute;
+  inset:-20%;
+  background:
+    radial-gradient(1200px 900px at 18% 22%, rgba(255,255,255,.06), transparent 55%),
+    radial-gradient(900px 700px at 82% 35%, rgba(255,255,255,.05), transparent 55%),
+    radial-gradient(1000px 800px at 50% 85%, rgba(255,255,255,.045), transparent 60%);
+  filter: blur(2px);
+  opacity: .9;
+}
+
+/* “rabiscos” (linhas) */
+#scribbles::after{
+  content:"";
+  position:absolute;
+  inset:-10%;
+  background-image:
+    radial-gradient(circle at 15% 65%, transparent 58%, rgba(255,255,255,.08) 59%, transparent 60%),
+    radial-gradient(circle at 30% 25%, transparent 60%, rgba(255,255,255,.06) 61%, transparent 62%),
+    radial-gradient(circle at 55% 45%, transparent 62%, rgba(255,255,255,.06) 63%, transparent 64%),
+    radial-gradient(circle at 78% 30%, transparent 60%, rgba(255,255,255,.07) 61%, transparent 62%),
+    radial-gradient(circle at 88% 70%, transparent 58%, rgba(255,255,255,.06) 59%, transparent 60%),
+    radial-gradient(circle at 40% 85%, transparent 60%, rgba(255,255,255,.06) 61%, transparent 62%);
+  opacity: .55;
+  filter: blur(.4px);
+  transform: rotate(-6deg);
+}
+
+/* garante que conteúdo fica acima do scribbles */
+body > *:not(#scribbles){
+  position: relative;
+  z-index: 1;
+}
