@@ -3,130 +3,220 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Kyren</title>
+<title>Como usar • Kyren</title>
 
 <style>
-:root{
-  --bg:#050505;
-  --text:#f5f5f5;
-  --muted:#a1a1a1;
-  --border:rgba(255,255,255,.18);
-}
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  background:var(--bg);
-  color:var(--text);
-  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial;
-  letter-spacing:.02em;
-}
-a{color:inherit;text-decoration:none}
+  :root{
+    --bg:#050505;
+    --text:#f5f5f5;
+    --muted:#a1a1a1;
+    --border:rgba(255,255,255,.18);
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Arial;
+    letter-spacing:.02em;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
 
-.wrap{
-  max-width:1100px;
-  margin:0 auto;
-  padding:80px 24px 120px;
-}
+  .bg-lines{
+    position:fixed; inset:0; pointer-events:none; opacity:.28;
+    background:
+      radial-gradient(900px 600px at 70% 10%, rgba(255,255,255,.08), transparent 60%),
+      radial-gradient(700px 500px at 20% 70%, rgba(255,255,255,.06), transparent 60%),
+      linear-gradient(to bottom, rgba(255,255,255,.05), transparent 40%);
+    mix-blend-mode:screen;
+    animation:bgFloat 10s ease-in-out infinite;
+  }
+  @keyframes bgFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 
-.back{
-  display:inline-block;
-  margin-bottom:40px;
-  font-size:14px;
-  color:var(--muted);
-  border-bottom:1px solid transparent;
-}
-.back:hover{border-color:var(--muted)}
+  .wrap{max-width:1100px;margin:0 auto;padding:54px 24px 120px;position:relative;z-index:1}
 
-h1{
-  font-size:clamp(42px,7vw,96px);
-  font-weight:300;
-  line-height:1;
-  margin:0 0 32px;
-}
-h1 span{
-  font-style:italic;
-  font-weight:500;
-}
+  .top{
+    display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
+    margin-bottom:64px;padding:14px 16px;border:1px solid var(--border);border-radius:999px;
+    background:rgba(255,255,255,.03);backdrop-filter:blur(10px);
+    transform:translateY(-6px);opacity:0;animation:enter 650ms cubic-bezier(.2,.9,.2,1) forwards;
+  }
+  @keyframes enter{to{opacity:1;transform:translateY(0)}}
 
-.section{
-  max-width:820px;
-  font-size:18px;
-  line-height:1.8;
-  color:#ddd;
-}
+  .brand{display:flex;align-items:center;gap:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:12px;color:rgba(255,255,255,.86)}
+  .dot{width:10px;height:10px;border-radius:999px;background:#fff;box-shadow:0 0 0 6px rgba(255,255,255,.08);animation:pulse 2.6s ease-in-out infinite}
+  @keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.15);opacity:.85}}
 
-.section + .section{
-  margin-top:60px;
-  padding-top:60px;
-  border-top:1px solid var(--border);
-}
+  .actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  .pill{
+    display:inline-flex;gap:10px;align-items:center;padding:10px 14px;border:1px solid var(--border);
+    border-radius:999px;background:rgba(255,255,255,.03);color:rgba(255,255,255,.86);
+    font-size:13px;letter-spacing:.08em;text-transform:uppercase;transition:transform .18s ease,background .18s ease;cursor:pointer;
+  }
+  .pill:hover{transform:translateY(-2px);background:rgba(255,255,255,.07)}
+  .langBadge{
+    display:inline-flex;gap:8px;align-items:center;padding:10px 14px;border:1px solid var(--border);
+    border-radius:999px;background:rgba(255,255,255,.03);color:rgba(255,255,255,.86);
+    font-size:13px;letter-spacing:.10em;text-transform:uppercase;cursor:pointer;user-select:none;
+    transition:transform .18s ease,background .18s ease;
+  }
+  .langBadge:hover{transform:translateY(-2px);background:rgba(255,255,255,.07)}
+  .langBadge small{color:rgba(255,255,255,.6);letter-spacing:.16em}
 
-.label{
-  font-size:13px;
-  letter-spacing:.18em;
-  color:var(--muted);
-  margin-bottom:16px;
-}
+  h1{
+    font-size:clamp(48px,7vw,96px);
+    font-weight:300;line-height:.95;margin:0 0 18px;
+    opacity:0;transform:translateY(10px);
+    animation:fadeUp 800ms cubic-bezier(.2,.9,.2,1) 120ms forwards;
+  }
+  h1 .ital{font-style:italic;font-weight:500}
+  @keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
 
-.list{
-  padding-left:20px;
-}
-.list li{
-  margin:14px 0;
-}
+  .section{
+    max-width:860px;
+    font-size:18px;
+    line-height:1.9;
+    color:rgba(255,255,255,.78);
+    opacity:0;transform:translateY(10px);
+    animation:fadeUp 800ms cubic-bezier(.2,.9,.2,1) 220ms forwards;
+  }
+  .section + .section{margin-top:60px;padding-top:60px;border-top:1px solid var(--border);animation-delay:320ms}
 
-.btn{
-  display:inline-block;
-  margin-top:28px;
-  padding:14px 28px;
-  border:1px solid #fff;
-  border-radius:999px;
-  font-size:14px;
-  letter-spacing:.15em;
-  text-transform:uppercase;
-}
-.btn:hover{
-  background:#fff;
-  color:#000;
-}
+  .label{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.62);margin-bottom:12px}
+  .list{padding-left:20px}
+  .list li{margin:14px 0}
+
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;margin-top:22px;
+    padding:14px 22px;border:1px solid #fff;border-radius:999px;
+    font-size:13px;letter-spacing:.18em;text-transform:uppercase;
+    transition:transform .18s ease,background .18s ease,color .18s ease;
+  }
+  .btn:hover{transform:translateY(-2px);background:#fff;color:#000}
 </style>
 </head>
+
 <body>
+<div class="bg-lines"></div>
 
 <div class="wrap">
-  <a class="back" href="./index.html">← voltar</a>
+  <div class="top">
+    <div class="brand">
+      <span class="dot"></span>
+      <span>KYREN</span>
+      <span style="color:rgba(255,255,255,.55)">—</span>
+      <span id="ui_tag">GUIDE</span>
+    </div>
 
-<h1>Como <span>usar</span></h1>
+    <div class="actions">
+      <a class="pill" href="./index.html">🏠 Home</a>
+      <a class="pill" href="https://github.com/s0aarex/Kyren" target="_blank" rel="noreferrer">🐙 GitHub</a>
+      <div class="langBadge" id="langToggle" title="Switch language">🌐 <span id="langLabel">PT-BR</span> <small>↔</small> EN</div>
+    </div>
+  </div>
 
-<div class="section">
-  <div class="label">GUIA RÁPIDO</div>
+  <h1 id="ui_title">Como <span class="ital">usar</span></h1>
 
-  <ol class="list">
-    <li>Abra o <b>Hydra Launcher</b>.</li>
-    <li>Acesse a seção <b>Importar / Fontes</b>.</li>
-    <li>Cole o link da source Kyren (arquivo JSON do repositório).</li>
-    <li>Confirme a importação e aguarde a sincronização.</li>
-  </ol>
+  <div class="section">
+    <div class="label" id="ui_label_1">GUIA RÁPIDO</div>
 
-  <p>
-    Após a importação, os jogos disponíveis na source Kyren
-    passam a aparecer automaticamente no launcher.
-  </p>
+    <ol class="list" id="ui_steps">
+      <li>Abra o <b>Hydra Launcher</b>.</li>
+      <li>Vá em <b>Importar / Fontes</b>.</li>
+      <li>Cole o link da source Kyren (JSON do repositório).</li>
+      <li>Confirme e aguarde a sincronização ✅</li>
+    </ol>
+
+    <p id="ui_after">
+      Depois da importação, a source aparece no launcher e as atualizações passam a sincronizar quando você atualiza o repositório.
+    </p>
+  </div>
+
+  <div class="section">
+    <div class="label" id="ui_label_2">TROUBLESHOOT</div>
+
+    <ul class="list" id="ui_tips">
+      <li>Se algo não aparecer, aguarde alguns minutos e atualize a lista.</li>
+      <li>Se estiver quebrado, reporte como bug (fica rastreável e mais fácil de arrumar).</li>
+      <li>Evite spam de pedidos repetidos — use o ticket já existente.</li>
+    </ul>
+
+    <a class="btn" href="./feedback.html" id="ui_btn">Reportar / sugerir</a>
+  </div>
 </div>
 
-<div class="section">
-  <div class="label">DICAS IMPORTANTES</div>
+<script>
+  const copy = {
+    "pt-BR": {
+      langLabel:"PT-BR",
+      ui_tag:"GUIDE",
+      ui_title:'Como <span class="ital">usar</span>',
+      ui_label_1:"GUIA RÁPIDO",
+      ui_steps:[
+        "Abra o <b>Hydra Launcher</b>.",
+        "Vá em <b>Importar / Fontes</b>.",
+        "Cole o link da source Kyren (JSON do repositório).",
+        "Confirme e aguarde a sincronização ✅"
+      ],
+      ui_after:"Depois da importação, a source aparece no launcher e as atualizações passam a sincronizar quando você atualiza o repositório.",
+      ui_label_2:"TROUBLESHOOT",
+      ui_tips:[
+        "Se algo não aparecer, aguarde alguns minutos e atualize a lista.",
+        "Se estiver quebrado, reporte como bug (fica rastreável e mais fácil de arrumar).",
+        "Evite spam de pedidos repetidos — use o ticket já existente."
+      ],
+      ui_btn:"Reportar / sugerir"
+    },
+    "en": {
+      langLabel:"EN",
+      ui_tag:"GUIDE",
+      ui_title:'How to <span class="ital">use</span>',
+      ui_label_1:"QUICK START",
+      ui_steps:[
+        "Open <b>Hydra Launcher</b>.",
+        "Go to <b>Import / Sources</b>.",
+        "Paste Kyren source link (repo JSON).",
+        "Confirm and wait for sync ✅"
+      ],
+      ui_after:"After importing, the source shows up in the launcher and updates will sync whenever the repository is updated.",
+      ui_label_2:"TROUBLESHOOT",
+      ui_tips:[
+        "If something doesn’t show up, wait a bit and refresh the list.",
+        "If it’s broken, report it as a bug (trackable + easier to fix).",
+        "Avoid duplicate requests — use the existing ticket."
+      ],
+      ui_btn:"Report / suggest"
+    }
+  };
 
-  <ul class="list">
-    <li>Se algum item não aparecer, aguarde alguns minutos e atualize a lista.</li>
-    <li>Links quebrados ou erros pontuais podem ocorrer — reporte para correção.</li>
-    <li>Mantenha sempre a versão mais recente da source.</li>
-  </ul>
+  function setLang(lang){
+    const d = copy[lang];
+    localStorage.setItem("kyren_lang", lang);
+    document.documentElement.lang = (lang==="en") ? "en" : "pt-BR";
+    document.getElementById("langLabel").textContent = d.langLabel;
 
-  <a class="btn" href="./feedback.html">Reportar problema</a>
-</div>
+    document.getElementById("ui_tag").textContent = d.ui_tag;
+    document.getElementById("ui_title").innerHTML = d.ui_title;
+    document.getElementById("ui_label_1").textContent = d.ui_label_1;
+    document.getElementById("ui_after").textContent = d.ui_after;
+    document.getElementById("ui_label_2").textContent = d.ui_label_2;
+    document.getElementById("ui_btn").textContent = d.ui_btn;
 
-</div>
+    const steps = document.getElementById("ui_steps");
+    steps.innerHTML = d.ui_steps.map(x=>`<li>${x}</li>`).join("");
+
+    const tips = document.getElementById("ui_tips");
+    tips.innerHTML = d.ui_tips.map(x=>`<li>${x}</li>`).join("");
+  }
+
+  const saved = localStorage.getItem("kyren_lang") || "pt-BR";
+  setLang(saved);
+  document.getElementById("langToggle").addEventListener("click", ()=>{
+    const cur = localStorage.getItem("kyren_lang") || "pt-BR";
+    setLang(cur==="pt-BR" ? "en" : "pt-BR");
+  });
+</script>
 </body>
 </html>
