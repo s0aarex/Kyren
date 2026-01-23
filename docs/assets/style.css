@@ -287,3 +287,89 @@ body{
   color: rgba(255,255,255,.40);
   font-size: 12px;
 }
+
+/* ===== Motion defaults ===== */
+@media (prefers-reduced-motion: reduce){
+  *{ animation: none !important; transition: none !important; scroll-behavior:auto !important; }
+}
+
+/* ===== Fancy background drawings ===== */
+.bg-lines{
+  position: fixed;
+  inset: 0;
+  pointer-events:none;
+  opacity: .22;
+  mix-blend-mode: screen;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='600' viewBox='0 0 900 600'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.35)' stroke-width='1'%3E%3Cpath d='M80 120c140-90 250-90 390 0s250 90 390 0'/%3E%3Cpath d='M60 260c160-110 270-110 390 0s230 110 390 0'/%3E%3Cpath d='M90 420c130-80 240-80 380 0s260 80 390 0'/%3E%3Ccircle cx='180' cy='170' r='140'/%3E%3Ccircle cx='670' cy='360' r='170'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 900px 600px;
+  background-repeat: repeat;
+  filter: blur(.3px);
+  transform: translateZ(0);
+  animation: drift 18s linear infinite;
+}
+
+@keyframes drift{
+  from { background-position: 0 0; }
+  to   { background-position: 240px 120px; }
+}
+
+/* ===== Animated blobs ===== */
+.blob{
+  position: fixed;
+  width: 520px;
+  height: 520px;
+  border-radius: 999px;
+  pointer-events:none;
+  opacity: .20;
+  filter: blur(42px);
+  transform: translateZ(0);
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.22), transparent 65%),
+              radial-gradient(circle at 70% 70%, rgba(255,255,255,.12), transparent 60%);
+  mix-blend-mode: screen;
+}
+
+.blob1{ top: -160px; left: -140px; animation: float1 14s ease-in-out infinite; }
+.blob2{ top: 120px; right: -180px; width: 620px; height: 620px; animation: float2 18s ease-in-out infinite; opacity:.18; }
+.blob3{ bottom: -220px; left: 30%; width: 680px; height: 680px; animation: float3 20s ease-in-out infinite; opacity:.14; }
+
+@keyframes float1{
+  0%,100%{ transform: translate(0,0) scale(1); }
+  50%    { transform: translate(40px, 60px) scale(1.06); }
+}
+@keyframes float2{
+  0%,100%{ transform: translate(0,0) scale(1); }
+  50%    { transform: translate(-60px, 40px) scale(1.04); }
+}
+@keyframes float3{
+  0%,100%{ transform: translate(0,0) scale(1); }
+  50%    { transform: translate(80px, -40px) scale(1.03); }
+}
+
+/* ===== Micro interactions ===== */
+.card, .patchCard, .btn, .chip{
+  transition: transform .18s ease, background .18s ease, border-color .18s ease, opacity .18s ease;
+}
+
+.card:hover, .patchCard:hover{
+  transform: translateY(-4px);
+  border-color: rgba(255,255,255,.16);
+  background: rgba(255,255,255,.05);
+}
+
+.btn:hover, .chip:hover{
+  transform: translateY(-1px);
+}
+
+/* ===== Scroll reveal ===== */
+[data-anim]{
+  opacity: 0;
+  transform: translateY(14px);
+  filter: blur(2px);
+}
+.reveal{
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  filter: blur(0) !important;
+  transition: opacity .6s ease, transform .6s ease, filter .6s ease;
+}
