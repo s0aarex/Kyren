@@ -1,0 +1,23 @@
+[
+  {
+    "version": "v1.08.0",
+    "title": "Sync & polish",
+    "date": "2026-01-22",
+    "summary": "Padronização geral e melhorias no formato do JSON.",
+    "added": [
+      "Novo padrão de campos obrigatórios",
+      "Checklist de validação pra novas entradas"
+    ],
+    "changed": [
+      "Organização por categorias",
+      "Nomes mais consistentes (menos variação)"
+    ],
+    "fixed": [
+      "Erro de parsing em entradas com caracteres especiais"
+    ],
+    "removed": [
+      "Entradas duplicadas / quebradas"
+    ],
+    "stats": { "added": 14, "updated": 9, "cleaned": 6 }
+  }
+]
