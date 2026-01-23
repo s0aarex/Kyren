@@ -216,14 +216,14 @@ async function loadLatestPatch() {
       <div class="patchDesc">${p.summary || I18N[lang].latest_desc_default}</div>
 
       <ul class="patchList">
-        ${bullets.map(c => `<li>${c}</li>`).join("")}
-      </ul>
+  ${(p.changes || []).map(c => `<li>• ${c}</li>`).join("")}
+</ul>
 
       <div class="patchFoot">
-        <span>+${Math.max(0, (p.changes || []).length - bullets.length)}</span>
-        <span>•</span>
-        <span>${(p.tags || []).slice(0, 2).join(" • ")}</span>
-      </div>
+  ${(p.tags || []).map(t => `
+    <span class="badge">${tagEmoji(t)} ${t}</span>
+  `).join("")}
+</div>
     `;
   } catch (e) {
     root.innerHTML = `<div class="patchDesc">${I18N[lang].err_patch}</div>`;
