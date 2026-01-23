@@ -168,3 +168,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // expose
 window.setLang = setLang;
+
+// ===== Scroll reveal =====
+function setupReveal(){
+  const els = document.querySelectorAll("[data-anim]");
+  if(!els.length) return;
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        e.target.classList.add("reveal");
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  els.forEach(el => io.observe(el));
+}
+
+document.addEventListener("DOMContentLoaded", setupReveal);
