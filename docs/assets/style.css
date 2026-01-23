@@ -310,3 +310,16 @@ h1 .ital{font-style:italic; font-weight:500}
 @media (max-width: 900px){
   .card{grid-column: span 12;}
 }
+
+html, body {
+  background: #050505;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.wrap {
+  padding-bottom: 140px;
+}
+
