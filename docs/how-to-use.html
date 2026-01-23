@@ -1,22 +1,64 @@
 <!doctype html>
-<html>
+<html lang="pt-br">
 <head>
-  <meta charset="utf-8">
-  <title>Como usar • Kyren</title>
-  <link rel="stylesheet" href="assets/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Como usar — Kyren</title>
+  <link rel="icon" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
-<header>
-  <a href="index.html">← Voltar</a>
-</header>
+  <div class="bg"></div>
 
-<main>
-  <h1>Como usar</h1>
-  <ol>
-    <li>Abrir o Hydra Launcher</li>
-    <li>Ir em Sources</li>
-    <li>Adicionar a source Kyren</li>
-  </ol>
-</main>
+  <div class="topbar">
+    <div class="pill">
+      <a class="brand" href="index.html" style="text-decoration:none; color:inherit;">
+        <span class="dot"></span>
+        <div style="display:flex; flex-direction:column; gap:2px;">
+          <strong>KYREN — SOURCE HUB</strong>
+          <small>how to use</small>
+        </div>
+      </a>
+
+      <div class="actions">
+        <a class="chip" href="patch-notes.html">🧾 Patch notes</a>
+        <a class="chip" href="feedback.html">💬 Feedback</a>
+        <div class="lang">
+          🌐
+          <button data-lang="pt" class="active" onclick="setLang('pt')">PT-BR</button>
+          <span>—</span>
+          <button data-lang="en" onclick="setLang('en')">EN</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <section class="hero" style="padding-top:46px;">
+      <h1>Como <em>usar</em></h1>
+      <p>
+        Guia rápido. (Se quiser, eu deixo isso mais “tutorialzão” com prints depois.)
+      </p>
+
+      <div class="card" style="margin-top:18px;">
+        <h3>🚀 Passo a passo</h3>
+        <p style="margin-bottom:0;">
+          1) Abra o launcher<br/>
+          2) Vá em <b>Sources</b><br/>
+          3) Clique em <b>Add source</b><br/>
+          4) Cole/seleciona a fonte conforme as instruções do próprio app
+        </p>
+      </div>
+
+      <div class="cta" style="margin-top:14px;">
+        <a class="btn" href="index.html">← Home</a>
+        <a class="btn" href="feedback.html">💬 Suporte/feedback</a>
+      </div>
+    </section>
+
+    <footer class="footer">ⓒ Kyren — Source Hub</footer>
+  </main>
+
+  <script src="assets/app.js"></script>
 </body>
 </html>
