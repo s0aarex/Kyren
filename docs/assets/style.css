@@ -360,3 +360,15 @@ body {
   0%,100% { transform: translateY(0) }
   50% { transform: translateY(-12px) }
 }
+
+.hero {
+  text-align: center;
+}
+
+.content,
+.section,
+.cards {
+  text-align: left;
+  max-width: 900px;
+  margin: 0 auto;
+}
