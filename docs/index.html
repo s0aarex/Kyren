@@ -1,178 +1,101 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Kyren</title>
-  <link rel="stylesheet" href="./assets/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kyren — Source Hub</title>
+
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/style.css" />
 </head>
-<body>
-  <div class="bg-layer">
-    <div class="bg-glow"></div>
-    <div class="bg-grid"></div>
-    <div class="bg-grain"></div>
-    <div class="bg-scribbles" id="bgScribbles"></div>
-  </div>
 
-  <div class="wrap">
-    <div class="top">
-      <div class="brand"><span class="dot"></span><span>KYREN</span><span style="opacity:.55">—</span><span id="tag">SOURCE HUB</span></div>
-      <div class="actions">
-        <a class="pill" href="https://github.com/s0aarex/Kyren" target="_blank" rel="noreferrer">🐙 GitHub</a>
-        <a class="pill" href="./feedback.html" id="top_feedback">💬 Feedback</a>
-        <div class="lang" id="langToggle">🌐 <span id="langLabel">PT-BR</span> <small>↔</small> EN</div>
-      </div>
+<body class="bg">
+  <!-- background scribbles -->
+  <div id="scribbles" aria-hidden="true"></div>
+
+  <header class="topbar reveal">
+    <div class="topbar__left">
+      <span class="dot"></span>
+      <span class="topbar__tag" id="tag">KYREN — SOURCE HUB</span>
     </div>
 
-    <h1 class="reveal" id="title">Kyren <span class="ital">official</span></h1>
-    <p class="sub reveal" id="sub">
-      Site oficial da source Kyren — guia rápido, patch notes e uma área pra pedidos/sugestões/bugs (tudo rastreável no GitHub).
-    </p>
+    <nav class="topbar__right">
+      <a class="pill" id="githubBtn" href="https://github.com/s0aarex/Kyren" target="_blank" rel="noreferrer">👾 GitHub</a>
+      <a class="pill" id="feedbackTopBtn" href="./feedback.html">💬 Feedback</a>
 
-    <div class="ctaRow reveal">
-      <a class="btn" href="./how-to-use.html" id="cta1">🚀 Como usar</a>
-      <a class="btn ghost" href="./patch-notes.html" id="cta2">🧾 Patch notes</a>
-      <a class="btn ghost" href="./feedback.html" id="cta3">💬 Feedback</a>
-    </div>
+      <button class="pill" id="langToggle" type="button">🌐 PT-BR → EN</button>
+    </nav>
+  </header>
 
-    <div class="section reveal">
-      <div class="label" id="label1">O QUE TEM AQUI</div>
-      <div class="grid">
-        <div class="card">
-          <h3>⚡ Quick setup</h3>
-          <p id="c1">Passo a passo curto e direto pra importar a source no Hydra.</p>
-        </div>
-        <div class="card">
-          <h3>🧪 Updates</h3>
-          <p id="c2">Mudanças organizadas: o que entrou, o que mudou e o que foi corrigido.</p>
-        </div>
-        <div class="card">
-          <h3>🧷 Tickets</h3>
-          <p id="c3">Pedidos, sugestões e bugs viram tickets — dá pra acompanhar e comentar.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="section reveal">
-  <div class="label" id="latest_label">LATEST PATCH</div>
-
-  <div class="grid">
-    <div class="card" id="latestPatchCard">
-      <h3>⏳ Carregando…</h3>
-      <p style="opacity:.75">Se não carregar, é cache ou caminho do JSON.</p>
-    </div>
-  </div>
-
-  <div class="ctaRow" style="margin-top:18px;">
-    <a class="btn ghost" href="./patch-notes.html" id="latest_btn">🧾 Ver patch notes</a>
-  </div>
-</div>
-
-    <div class="section reveal">
-      <div class="label" id="label2">ATALHOS</div>
-      <div class="ctaRow">
-        <a class="btn ghost" href="https://github.com/s0aarex/Kyren/issues/new/choose" target="_blank" rel="noreferrer" id="forms">📌 Abrir formulários</a>
-      </div>
-    </div>
-  </div>
-
-  <script src="./assets/app.js"></script>
-  <script>
-    kyrenMountScribbles();
-    kyrenReveal();
-    
-async function kyrenLoadLatestPatch(){
-  try{
-    const res = await fetch("./patch-notes.json", { cache: "no-store" });
-    const patches = await res.json();
-    const latest = patches?.[0];
-    const card = document.getElementById("latestPatchCard");
-    if(!latest || !card) return;
-
-    // idioma atual (pt/en)
-    const lang = (localStorage.getItem("kyren_lang") || "pt-BR").startsWith("en")
-      ? "en"
-      : "pt";
-
-    // resolve objeto vs string
-    const title = (typeof latest.title === "object") ? (latest.title[lang] || "") : (latest.title || "");
-    const summary = (typeof latest.summary === "object") ? (latest.summary[lang] || "") : (latest.summary || "");
-    const highlights = (typeof latest.highlights === "object")
-      ? (latest.highlights[lang] || [])
-      : (latest.highlights || []);
-
-    card.innerHTML = `
-      <h3>🚀 ${latest.version} • ${title}</h3>
-
-      <p style="margin-top:10px; opacity:.75">
-        🗓️ ${latest.date}<br>
-        ${summary}
+  <main class="wrap">
+    <section class="hero reveal">
+      <h1 class="hero__title"><span id="heroTitleA">Kyren</span> <em id="heroTitleB">official</em></h1>
+      <p class="hero__sub" id="heroSub">
+        Site oficial da source Kyren — guia rápido, patch notes e uma área pra pedidos/sugestões/bugs (tudo rastreável no GitHub).
       </p>
 
-      ${
-        highlights.length
-          ? `<div style="margin-top:14px; display:flex; flex-direction:column; gap:8px;">
-              ${highlights.slice(0,3).map(h => `
-                <div style="
-                  padding:10px 12px;
-                  border:1px solid rgba(255,255,255,.08);
-                  border-radius:14px;
-                  background:rgba(255,255,255,.03);
-                ">${h}</div>
-              `).join("")}
-            </div>`
-          : ""
-      }
+      <div class="hero__cta">
+        <a class="btn" id="cta1" href="./how-to-use.html">🚀 Como usar</a>
+        <a class="btn" id="cta2" href="./patch-notes.html">🧾 Patch notes</a>
+        <a class="btn" id="cta3" href="./feedback.html">💬 Feedback</a>
+      </div>
+    </section>
 
-      ${latest.stats ? `
-        <p style="margin-top:12px;opacity:.85">
-          📌 +${latest.stats.added ?? 0}
-          • ✏️ ${latest.stats.updated ?? 0}
-          • 🧼 ${latest.stats.cleaned ?? 0}
-        </p>
-      ` : ""}
-    `;
-  } catch(e){
-    console.error(e);
-    const card = document.getElementById("latestPatchCard");
-    if(card) card.innerHTML =
-      `<h3>⚠️ Não carregou</h3><p style="opacity:.75">Checa se <b>./patch-notes.json</b> existe em <b>/docs</b>.</p>`;
-  }
-}
-kyrenLoadLatestPatch();
-</script>
+    <div class="divider reveal"></div>
 
-    function setUI(lang){
-      localStorage.setItem("kyren_lang", lang);
-      document.documentElement.lang = (lang==="en") ? "en" : "pt-BR";
-      const d = copy[lang];
+    <section class="section reveal">
+      <p class="kicker" id="label1">O QUE TEM AQUI</p>
 
-      document.getElementById("langLabel").textContent = d.langLabel;
-      document.getElementById("tag").textContent = d.tag;
-      document.getElementById("top_feedback").textContent = d.top_feedback;
+      <div class="grid">
+        <article class="card">
+          <h3>⚡ <span id="c1t">Quick setup</span></h3>
+          <p id="c1">Passo a passo curto e direto pra importar a source no Hydra.</p>
+          <a class="link" href="./how-to-use.html" id="c1a">Abrir guia →</a>
+        </article>
 
-      document.getElementById("title").innerHTML = d.title;
-      document.getElementById("sub").textContent = d.sub;
+        <article class="card">
+          <h3>🧩 <span id="c2t">Updates</span></h3>
+          <p id="c2">Mudanças organizadas: o que entrou, o que mudou e o que foi corrigido.</p>
+          <a class="link" href="./patch-notes.html" id="c2a">Ver patch notes →</a>
+        </article>
 
-      document.getElementById("cta1").textContent = d.cta1;
-      document.getElementById("cta2").textContent = d.cta2;
-      document.getElementById("cta3").textContent = d.cta3;
+        <article class="card">
+          <h3>🎫 <span id="c3t">Tickets</span></h3>
+          <p id="c3">Pedidos, sugestões e bugs viram tickets — dá pra acompanhar e comentar.</p>
+          <a class="link" href="./feedback.html" id="c3a">Abrir feedback →</a>
+        </article>
+      </div>
+    </section>
 
-      document.getElementById("label1").textContent = d.label1;
-      document.getElementById("c1").textContent = d.c1;
-      document.getElementById("c2").textContent = d.c2;
-      document.getElementById("c3").textContent = d.c3;
+    <div class="divider reveal"></div>
 
-      document.getElementById("label2").textContent = d.label2;
-      document.getElementById("forms").textContent = d.forms;
+    <section class="section reveal">
+      <div class="row">
+        <p class="kicker" id="latestLabel">ÚLTIMO PATCH</p>
+        <a class="pill" id="latestBtn" href="./patch-notes.html">🧾 Ver patch notes</a>
+      </div>
 
-      document.getElementById("latest_label").textContent = d.latest_label;
-      document.getElementById("latest_btn").textContent = d.latest_btn;
-    }
+      <div class="card card--patch" id="latestPatchCard">
+        <h3>⏳ Carregando…</h3>
+        <p style="opacity:.7;margin-top:8px">Buscando <b>patch-notes.json</b></p>
+      </div>
+    </section>
 
-    kyrenInitLang(setUI);
+    <div class="divider reveal"></div>
+
+    <section class="section reveal">
+      <p class="kicker" id="label2">ATALHOS</p>
+      <div class="row">
+        <a class="btn" id="formsBtn" href="./feedback.html">📌 Abrir formulários</a>
+        <a class="btn btn--ghost" id="repoBtn" href="https://github.com/s0aarex/Kyren" target="_blank" rel="noreferrer">👾 Ver repo</a>
+      </div>
+    </section>
+
+    <footer class="footer reveal">
+      <p>🖤 Kyren — Source Hub</p>
+    </footer>
+  </main>
+
   <script src="./assets/app.js"></script>
-  </script>
 </body>
 </html>
