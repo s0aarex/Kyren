@@ -1,194 +1,136 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Feedback • Kyren</title>
-
-<style>
-  :root{--bg:#050505;--text:#f5f5f5;--muted:#a1a1a1;--border:rgba(255,255,255,.18)}
-  *{box-sizing:border-box}
-  html,body{height:100%}
-  body{margin:0;background:var(--bg);color:var(--text);font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Arial;letter-spacing:.02em;overflow-x:hidden}
-  a{color:inherit;text-decoration:none}
-
-  .bg-lines{position:fixed;inset:0;pointer-events:none;opacity:.28;background:
-    radial-gradient(900px 600px at 70% 10%, rgba(255,255,255,.08), transparent 60%),
-    radial-gradient(700px 500px at 20% 70%, rgba(255,255,255,.06), transparent 60%),
-    linear-gradient(to bottom, rgba(255,255,255,.05), transparent 40%);
-    mix-blend-mode:screen;animation:bgFloat 10s ease-in-out infinite}
-  @keyframes bgFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-
-  .wrap{max-width:1100px;margin:0 auto;padding:54px 24px 120px;position:relative;z-index:1}
-  .top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:64px;padding:14px 16px;border:1px solid var(--border);border-radius:999px;background:rgba(255,255,255,.03);backdrop-filter:blur(10px);
-    transform:translateY(-6px);opacity:0;animation:enter 650ms cubic-bezier(.2,.9,.2,1) forwards}
-  @keyframes enter{to{opacity:1;transform:translateY(0)}}
-  .brand{display:flex;align-items:center;gap:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:12px;color:rgba(255,255,255,.86)}
-  .dot{width:10px;height:10px;border-radius:999px;background:#fff;box-shadow:0 0 0 6px rgba(255,255,255,.08);animation:pulse 2.6s ease-in-out infinite}
-  @keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.15);opacity:.85}}
-  .actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-  .pill{display:inline-flex;gap:10px;align-items:center;padding:10px 14px;border:1px solid var(--border);border-radius:999px;background:rgba(255,255,255,.03);color:rgba(255,255,255,.86);
-    font-size:13px;letter-spacing:.08em;text-transform:uppercase;transition:transform .18s ease,background .18s ease;cursor:pointer}
-  .pill:hover{transform:translateY(-2px);background:rgba(255,255,255,.07)}
-  .langBadge{display:inline-flex;gap:8px;align-items:center;padding:10px 14px;border:1px solid var(--border);border-radius:999px;background:rgba(255,255,255,.03);color:rgba(255,255,255,.86);
-    font-size:13px;letter-spacing:.10em;text-transform:uppercase;cursor:pointer;user-select:none;transition:transform .18s ease,background .18s ease}
-  .langBadge:hover{transform:translateY(-2px);background:rgba(255,255,255,.07)}
-  .langBadge small{color:rgba(255,255,255,.6);letter-spacing:.16em}
-
-  h1{font-size:clamp(48px,7vw,96px);font-weight:300;line-height:.95;margin:0 0 18px;opacity:0;transform:translateY(10px);
-    animation:fadeUp 800ms cubic-bezier(.2,.9,.2,1) 120ms forwards}
-  h1 .ital{font-style:italic;font-weight:500}
-  @keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
-
-  .section{max-width:860px;font-size:18px;line-height:1.9;color:rgba(255,255,255,.78);opacity:0;transform:translateY(10px);
-    animation:fadeUp 800ms cubic-bezier(.2,.9,.2,1) 220ms forwards}
-  .section + .section{margin-top:60px;padding-top:60px;border-top:1px solid var(--border);animation-delay:320ms}
-  .label{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.62);margin-bottom:12px}
-  .list{padding-left:20px}
-  .list li{margin:14px 0}
-
-  .btnRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
-  .btn{
-    display:inline-flex;align-items:center;gap:10px;
-    padding:14px 22px;border:1px solid #fff;border-radius:999px;
-    font-size:13px;letter-spacing:.18em;text-transform:uppercase;
-    transition:transform .18s ease,background .18s ease,color .18s ease;
-  }
-  .btn:hover{transform:translateY(-2px);background:#fff;color:#000}
-  .btn.ghost{border-color:var(--border);color:rgba(255,255,255,.9)}
-  .btn.ghost:hover{border-color:#fff}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Feedback • Kyren</title>
+  <link rel="stylesheet" href="./assets/style.css">
 </head>
 
 <body>
-<div class="bg-lines"></div>
+  <div class="bg-layer">
+    <div class="bg-glow"></div>
+    <div class="bg-grid"></div>
+    <div class="bg-grain"></div>
+    <div class="bg-scribbles" id="bgScribbles"></div>
+  </div>
 
-<div class="wrap">
-  <div class="top">
-    <div class="brand">
-      <span class="dot"></span>
-      <span>KYREN</span>
-      <span style="color:rgba(255,255,255,.55)">—</span>
-      <span id="ui_tag">FEEDBACK</span>
+  <div class="wrap">
+    <div class="top">
+      <div class="brand">
+        <span class="dot"></span>
+        <span>KYREN</span>
+        <span style="color:rgba(255,255,255,.55)">—</span>
+        <span id="ui_tag">FEEDBACK</span>
+      </div>
+
+      <div class="actions">
+        <a class="pill" href="./index.html">🏠 Home</a>
+        <a class="pill" href="https://github.com/s0aarex/Kyren" target="_blank" rel="noreferrer">🐙 GitHub</a>
+        <div class="langBadge" id="langToggle">🌐 <span id="langLabel">PT-BR</span> <small>↔</small> EN</div>
+      </div>
     </div>
 
-    <div class="actions">
-      <a class="pill" href="./index.html">🏠 Home</a>
-      <a class="pill" href="https://github.com/s0aarex/Kyren" target="_blank" rel="noreferrer">🐙 GitHub</a>
-      <div class="langBadge" id="langToggle">🌐 <span id="langLabel">PT-BR</span> <small>↔</small> EN</div>
+    <h1 id="ui_title">Sugestões <span class="ital">& pedidos</span></h1>
+
+    <div class="section">
+      <svg class="corner" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 90 C70 20 170 20 210 110" stroke="rgba(255,255,255,.20)" stroke-width="2" fill="none"/>
+        <path d="M30 200 C80 150 120 150 210 170" stroke="rgba(255,255,255,.12)" stroke-width="2" fill="none"/>
+      </svg>
+
+      <div class="label" id="ui_label_1">PARTICIPE</div>
+      <p id="ui_p1"></p>
+
+      <ul class="list" id="ui_list"></ul>
+
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:18px">
+        <a class="btn" id="ui_btn_req" href="https://github.com/s0aarex/Kyren/issues/new?template=pedido-jogo.yml" target="_blank" rel="noreferrer">🎮 Pedido</a>
+        <a class="btn ghost" id="ui_btn_sug" href="https://github.com/s0aarex/Kyren/issues/new?template=sugestao.yml" target="_blank" rel="noreferrer">💡 Sugestão</a>
+        <a class="btn ghost" id="ui_btn_bug" href="https://github.com/s0aarex/Kyren/issues/new?template=bug.yml" target="_blank" rel="noreferrer">🐛 Bug</a>
+        <a class="btn ghost" id="ui_btn_all" href="https://github.com/s0aarex/Kyren/issues/new/choose" target="_blank" rel="noreferrer">📌 Ver formulários</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="label" id="ui_label_2">REGRINHAS (SEM CAOS)</div>
+      <ul class="list" id="ui_rules"></ul>
     </div>
   </div>
 
-  <h1 id="ui_title">Sugestões <span class="ital">& pedidos</span></h1>
+  <script src="./assets/app.js"></script>
+  <script>
+    kyrenMountScribbles();
 
-  <div class="section">
-    <div class="label" id="ui_label_1">PARTICIPE</div>
-    <p id="ui_p1">
-      Aqui é o lugar certo pra pedir, sugerir e reportar problema. Tudo vira ticket, fica organizado e você consegue acompanhar o status.
-    </p>
+    const copy = {
+      "pt-BR": {
+        langLabel:"PT-BR",
+        ui_tag:"FEEDBACK",
+        ui_title:'Sugestões <span class="ital">& pedidos</span>',
+        ui_label_1:"PARTICIPE",
+        ui_p1:"Aqui é o lugar certo pra pedir, sugerir e reportar problema. Tudo vira ticket, fica organizado e dá pra acompanhar o status. (Sem perder nada no chat infinito 🤝).",
+        ui_list:[
+          "🎮 Pedido de jogo",
+          "💡 Sugestão de melhoria",
+          "🐛 Bug / link quebrado"
+        ],
+        ui_btn_req:"🎮 Pedido",
+        ui_btn_sug:"💡 Sugestão",
+        ui_btn_bug:"🐛 Bug",
+        ui_btn_all:"📌 Ver formulários",
+        ui_label_2:"REGRINHAS (SEM CAOS)",
+        ui_rules:[
+          "Se já existe um ticket igual, comenta nele ao invés de criar outro.",
+          "Quanto mais detalhe, mais rápido dá pra resolver.",
+          "Se for bug, manda patch/versão que você tá usando."
+        ]
+      },
+      "en": {
+        langLabel:"EN",
+        ui_tag:"FEEDBACK",
+        ui_title:'Suggestions <span class="ital">& requests</span>',
+        ui_label_1:"JOIN IN",
+        ui_p1:"This is the right place to request, suggest, and report issues. Everything becomes a ticket — organized and trackable. (No infinite chat chaos 🤝).",
+        ui_list:[
+          "🎮 Game request",
+          "💡 Improvement suggestion",
+          "🐛 Bug / broken link"
+        ],
+        ui_btn_req:"🎮 Request",
+        ui_btn_sug:"💡 Suggest",
+        ui_btn_bug:"🐛 Bug",
+        ui_btn_all:"📌 View forms",
+        ui_label_2:"HOUSE RULES (NO CHAOS)",
+        ui_rules:[
+          "If a similar ticket exists, comment there instead of opening a new one.",
+          "More details = faster fixes.",
+          "For bugs, include the patch/version you’re using."
+        ]
+      }
+    };
 
-    <ul class="list" id="ui_list">
-      <li>🎮 Pedido de jogo</li>
-      <li>💡 Sugestão</li>
-      <li>🐛 Bug / link quebrado</li>
-    </ul>
+    function setUI(lang){
+      const d = copy[lang];
+      localStorage.setItem("kyren_lang", lang);
+      document.documentElement.lang = (lang==="en") ? "en" : "pt-BR";
+      document.getElementById("langLabel").textContent = d.langLabel;
 
-    <div class="btnRow">
-      <a class="btn" id="ui_btn_req" href="https://github.com/s0aarex/Kyren/issues/new?template=pedido-jogo.yml" target="_blank" rel="noreferrer">🎮 Pedido</a>
-      <a class="btn ghost" id="ui_btn_sug" href="https://github.com/s0aarex/Kyren/issues/new?template=sugestao.yml" target="_blank" rel="noreferrer">💡 Sugestão</a>
-      <a class="btn ghost" id="ui_btn_bug" href="https://github.com/s0aarex/Kyren/issues/new?template=bug.yml" target="_blank" rel="noreferrer">🐛 Bug</a>
-    </div>
+      document.getElementById("ui_tag").textContent = d.ui_tag;
+      document.getElementById("ui_title").innerHTML = d.ui_title;
+      document.getElementById("ui_label_1").textContent = d.ui_label_1;
+      document.getElementById("ui_p1").textContent = d.ui_p1;
+      document.getElementById("ui_list").innerHTML = d.ui_list.map(x=>`<li>${x}</li>`).join("");
 
-    <div class="btnRow">
-      <a class="btn ghost" id="ui_btn_all" href="https://github.com/s0aarex/Kyren/issues/new/choose" target="_blank" rel="noreferrer">📌 Ver formulários</a>
-    </div>
-  </div>
+      document.getElementById("ui_btn_req").textContent = d.ui_btn_req;
+      document.getElementById("ui_btn_sug").textContent = d.ui_btn_sug;
+      document.getElementById("ui_btn_bug").textContent = d.ui_btn_bug;
+      document.getElementById("ui_btn_all").textContent = d.ui_btn_all;
 
-  <div class="section">
-    <div class="label" id="ui_label_2">REGRINHAS (SEM CAOS)</div>
-    <ul class="list" id="ui_rules">
-      <li>Se já existe um ticket igual, comenta nele ao invés de criar outro.</li>
-      <li>Quanto mais detalhe, mais rápido dá pra resolver.</li>
-      <li>Se for bug, manda o patch/versão que você tá usando.</li>
-    </ul>
-  </div>
-</div>
-
-<script>
-  const copy = {
-    "pt-BR": {
-      langLabel:"PT-BR",
-      ui_tag:"FEEDBACK",
-      ui_title:'Sugestões <span class="ital">& pedidos</span>',
-      ui_label_1:"PARTICIPE",
-      ui_p1:"Aqui é o lugar certo pra pedir, sugerir e reportar problema. Tudo vira ticket, fica organizado e você consegue acompanhar o status.",
-      ui_list:[
-        "🎮 Pedido de jogo",
-        "💡 Sugestão",
-        "🐛 Bug / link quebrado"
-      ],
-      ui_btn_req:"🎮 Pedido",
-      ui_btn_sug:"💡 Sugestão",
-      ui_btn_bug:"🐛 Bug",
-      ui_btn_all:"📌 Ver formulários",
-      ui_label_2:"REGRINHAS (SEM CAOS)",
-      ui_rules:[
-        "Se já existe um ticket igual, comenta nele ao invés de criar outro.",
-        "Quanto mais detalhe, mais rápido dá pra resolver.",
-        "Se for bug, manda o patch/versão que você tá usando."
-      ]
-    },
-    "en": {
-      langLabel:"EN",
-      ui_tag:"FEEDBACK",
-      ui_title:'Suggestions <span class="ital">& requests</span>',
-      ui_label_1:"JOIN IN",
-      ui_p1:"This is the right place to request, suggest and report issues. Everything becomes a ticket — organized, trackable, and easy to follow.",
-      ui_list:[
-        "🎮 Game request",
-        "💡 Suggestion",
-        "🐛 Bug / broken link"
-      ],
-      ui_btn_req:"🎮 Request",
-      ui_btn_sug:"💡 Suggest",
-      ui_btn_bug:"🐛 Bug",
-      ui_btn_all:"📌 View forms",
-      ui_label_2:"HOUSE RULES (NO CHAOS)",
-      ui_rules:[
-        "If a similar ticket exists, comment there instead of opening a new one.",
-        "More details = faster fixes.",
-        "For bugs, include the patch/version you’re using."
-      ]
+      document.getElementById("ui_label_2").textContent = d.ui_label_2;
+      document.getElementById("ui_rules").innerHTML = d.ui_rules.map(x=>`<li>${x}</li>`).join("");
     }
-  };
 
-  function setLang(lang){
-    const d = copy[lang];
-    localStorage.setItem("kyren_lang", lang);
-    document.documentElement.lang = (lang==="en") ? "en" : "pt-BR";
-    document.getElementById("langLabel").textContent = d.langLabel;
-
-    document.getElementById("ui_tag").textContent = d.ui_tag;
-    document.getElementById("ui_title").innerHTML = d.ui_title;
-    document.getElementById("ui_label_1").textContent = d.ui_label_1;
-    document.getElementById("ui_p1").textContent = d.ui_p1;
-
-    document.getElementById("ui_list").innerHTML = d.ui_list.map(x=>`<li>${x}</li>`).join("");
-
-    document.getElementById("ui_btn_req").textContent = d.ui_btn_req;
-    document.getElementById("ui_btn_sug").textContent = d.ui_btn_sug;
-    document.getElementById("ui_btn_bug").textContent = d.ui_btn_bug;
-    document.getElementById("ui_btn_all").textContent = d.ui_btn_all;
-
-    document.getElementById("ui_label_2").textContent = d.ui_label_2;
-    document.getElementById("ui_rules").innerHTML = d.ui_rules.map(x=>`<li>${x}</li>`).join("");
-  }
-
-  setLang(localStorage.getItem("kyren_lang") || "pt-BR");
-  document.getElementById("langToggle").addEventListener("click", ()=>{
-    const cur = localStorage.getItem("kyren_lang") || "pt-BR";
-    setLang(cur==="pt-BR" ? "en" : "pt-BR");
-  });
-</script>
+    kyrenInitLang(copy, setUI);
+  </script>
 </body>
 </html>
