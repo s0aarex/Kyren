@@ -1,14 +1,11 @@
 <!doctype html>
 <html lang="pt-BR">
-  <link rel="stylesheet" href="./assets/style.css">
-<script src="./assets/app.js"></script>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>How to use • Kyren</title>
   <link rel="stylesheet" href="./assets/style.css">
 </head>
-
 <body>
   <div class="bg-layer">
     <div class="bg-glow"></div>
@@ -20,112 +17,124 @@
   <div class="wrap">
     <div class="top">
       <div class="brand">
-        <span class="dot"></span>
-        <span>KYREN</span>
-        <span style="color:rgba(255,255,255,.55)">—</span>
-        <span id="ui_tag">GUIDE</span>
+        <span class="dot"></span><span>KYREN</span><span style="opacity:.55">—</span><span id="tag">GUIDE</span>
       </div>
-
       <div class="actions">
-        <a class="pill" href="./index.html">🏠 Home</a>
+        <a class="pill" href="./index.html" id="home">🏠 Home</a>
         <a class="pill" href="https://github.com/s0aarex/Kyren" target="_blank" rel="noreferrer">🐙 GitHub</a>
-        <div class="langBadge" id="langToggle">🌐 <span id="langLabel">PT-BR</span> <small>↔</small> EN</div>
+        <a class="pill" href="./feedback.html" id="top_feedback">💬 Feedback</a>
+        <div class="lang" id="langToggle">🌐 <span id="langLabel">PT-BR</span> <small>↔</small> EN</div>
       </div>
     </div>
 
-    <h1 id="ui_title">Como <span class="ital">usar</span></h1>
+    <h1 class="reveal" id="title">🚀 Como usar</h1>
+    <p class="sub reveal" id="sub">
+      Setup rápido, sem mistério. Se algo quebrar, abre um ticket e a gente resolve.
+    </p>
 
-    <div class="section">
-      <svg class="corner" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10 70 C80 10 170 20 210 90" stroke="rgba(255,255,255,.25)" stroke-width="2" fill="none"/>
-        <path d="M30 200 C80 120 150 120 210 150" stroke="rgba(255,255,255,.15)" stroke-width="2" fill="none"/>
-      </svg>
+    <div class="section reveal">
+      <div class="label" id="label1">PASSO A PASSO</div>
+      <ol class="list" id="steps">
+        <li>Abra o Hydra Launcher.</li>
+        <li>Vá em <b>Importar / Fontes</b>.</li>
+        <li>Cole o link do JSON da source (do seu repositório).</li>
+        <li>Confirme e pronto ✅</li>
+      </ol>
 
-      <div class="label" id="ui_label_1">GUIA RÁPIDO</div>
-
-      <ol class="list" id="ui_steps"></ol>
-
-      <p id="ui_after"></p>
-
-      <a class="btn ghost" href="./feedback.html" id="ui_btn_hint">💬 Abrir feedback</a>
+      <div class="ctaRow">
+        <a class="btn ghost" href="./feedback.html" id="cta1">💬 Abrir um ticket</a>
+        <a class="btn ghost" href="https://github.com/s0aarex/Kyren" target="_blank" rel="noreferrer" id="cta2">🐙 Ver repositório</a>
+      </div>
     </div>
 
-    <div class="section">
-      <div class="label" id="ui_label_2">TROUBLESHOOT</div>
-      <ul class="list" id="ui_tips"></ul>
-
-      <a class="btn" href="./feedback.html" id="ui_btn">Reportar / sugerir</a>
+    <div class="section reveal">
+      <div class="label" id="label2">DICAS</div>
+      <ul class="list" id="tips">
+        <li>Se o link não importar, tenta atualizar o app e reiniciar.</li>
+        <li>Se um item estiver fora do padrão, manda o nome + print no ticket.</li>
+        <li>Patch notes ficam organizados na aba de atualizações.</li>
+      </ul>
     </div>
   </div>
 
   <script src="./assets/app.js"></script>
   <script>
     kyrenMountScribbles();
+    kyrenReveal();
 
     const copy = {
       "pt-BR": {
         langLabel:"PT-BR",
-        ui_tag:"GUIDE",
-        ui_title:'Como <span class="ital">usar</span>',
-        ui_label_1:"GUIA RÁPIDO",
-        ui_steps:[
-          "Abra o <b>Hydra Launcher</b>.",
+        tag:"GUIDE",
+        home:"🏠 Home",
+        top_feedback:"💬 Feedback",
+        title:"🚀 Como usar",
+        sub:"Setup rápido, sem mistério. Se algo quebrar, abre um ticket e a gente resolve.",
+        label1:"PASSO A PASSO",
+        steps:[
+          "Abra o Hydra Launcher.",
           "Vá em <b>Importar / Fontes</b>.",
-          "Cole o link da source Kyren (JSON do repositório).",
-          "Confirme e aguarde a sincronização ✅"
+          "Cole o link do JSON da source (do seu repositório).",
+          "Confirme e pronto ✅"
         ],
-        ui_after:"Depois da importação, a source aparece no launcher e sincroniza quando o repositório é atualizado. Se algo falhar, reporta — ticket bem feito = fix mais rápido. 🧠",
-        ui_btn_hint:"💬 Abrir feedback",
-        ui_label_2:"TROUBLESHOOT",
-        ui_tips:[
-          "Não apareceu? espera um pouco e atualiza a lista.",
-          "Quebrou? abre um bug — fica rastreável e mais fácil de resolver.",
-          "Evita pedir a mesma coisa 20x: comenta no ticket existente."
-        ],
-        ui_btn:"Reportar / sugerir"
+        cta1:"💬 Abrir um ticket",
+        cta2:"🐙 Ver repositório",
+        label2:"DICAS",
+        tips:[
+          "Se o link não importar, tenta atualizar o app e reiniciar.",
+          "Se um item estiver fora do padrão, manda o nome + print no ticket.",
+          "Patch notes ficam organizados na aba de atualizações."
+        ]
       },
       "en": {
         langLabel:"EN",
-        ui_tag:"GUIDE",
-        ui_title:'How to <span class="ital">use</span>',
-        ui_label_1:"QUICK START",
-        ui_steps:[
-          "Open <b>Hydra Launcher</b>.",
+        tag:"GUIDE",
+        home:"🏠 Home",
+        top_feedback:"💬 Feedback",
+        title:"🚀 How to use",
+        sub:"Quick setup, no drama. If something breaks, open a ticket and we’ll fix it.",
+        label1:"STEP BY STEP",
+        steps:[
+          "Open Hydra Launcher.",
           "Go to <b>Import / Sources</b>.",
-          "Paste Kyren source link (repo JSON).",
-          "Confirm and wait for sync ✅"
+          "Paste the source JSON link (from your repo).",
+          "Confirm and you’re done ✅"
         ],
-        ui_after:"After importing, the source shows up in the launcher and syncs whenever the repository is updated. If something breaks, report it — good tickets = faster fixes. 🧠",
-        ui_btn_hint:"💬 Open feedback",
-        ui_label_2:"TROUBLESHOOT",
-        ui_tips:[
-          "Not showing? wait a bit and refresh.",
-          "Broken? open a bug — trackable and easier to fix.",
-          "Avoid duplicates: comment on the existing ticket."
-        ],
-        ui_btn:"Report / suggest"
+        cta1:"💬 Open a ticket",
+        cta2:"🐙 View repository",
+        label2:"TIPS",
+        tips:[
+          "If import fails, update the app and restart.",
+          "If an item looks wrong, send the name + screenshot in the ticket.",
+          "Patch notes are listed on the updates page."
+        ]
       }
     };
 
     function setUI(lang){
-      const d = copy[lang];
       localStorage.setItem("kyren_lang", lang);
       document.documentElement.lang = (lang==="en") ? "en" : "pt-BR";
+      const d = copy[lang];
+
       document.getElementById("langLabel").textContent = d.langLabel;
+      document.getElementById("tag").textContent = d.tag;
+      document.getElementById("home").textContent = d.home;
+      document.getElementById("top_feedback").textContent = d.top_feedback;
 
-      document.getElementById("ui_tag").textContent = d.ui_tag;
-      document.getElementById("ui_title").innerHTML = d.ui_title;
-      document.getElementById("ui_label_1").textContent = d.ui_label_1;
-      document.getElementById("ui_after").textContent = d.ui_after;
-      document.getElementById("ui_btn_hint").textContent = d.ui_btn_hint;
-      document.getElementById("ui_label_2").textContent = d.ui_label_2;
-      document.getElementById("ui_btn").textContent = d.ui_btn;
+      document.getElementById("title").textContent = d.title;
+      document.getElementById("sub").textContent = d.sub;
 
-      document.getElementById("ui_steps").innerHTML = d.ui_steps.map(x=>`<li>${x}</li>`).join("");
-      document.getElementById("ui_tips").innerHTML  = d.ui_tips.map(x=>`<li>${x}</li>`).join("");
+      document.getElementById("label1").textContent = d.label1;
+      document.getElementById("steps").innerHTML = d.steps.map(s=>`<li>${s}</li>`).join("");
+
+      document.getElementById("cta1").textContent = d.cta1;
+      document.getElementById("cta2").textContent = d.cta2;
+
+      document.getElementById("label2").textContent = d.label2;
+      document.getElementById("tips").innerHTML = d.tips.map(s=>`<li>${s}</li>`).join("");
     }
 
-    kyrenInitLang(copy, setUI);
+    kyrenInitLang(setUI);
   </script>
 </body>
 </html>
