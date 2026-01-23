@@ -1,165 +1,126 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Patch Notes • Kyren</title>
-
-<style>
-  :root{--bg:#050505;--text:#f5f5f5;--muted:#a1a1a1;--border:rgba(255,255,255,.18)}
-  *{box-sizing:border-box}
-  html,body{height:100%}
-  body{margin:0;background:var(--bg);color:var(--text);font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Arial;letter-spacing:.02em;overflow-x:hidden}
-  a{color:inherit;text-decoration:none}
-
-  .bg-lines{position:fixed;inset:0;pointer-events:none;opacity:.28;background:
-    radial-gradient(900px 600px at 70% 10%, rgba(255,255,255,.08), transparent 60%),
-    radial-gradient(700px 500px at 20% 70%, rgba(255,255,255,.06), transparent 60%),
-    linear-gradient(to bottom, rgba(255,255,255,.05), transparent 40%);
-    mix-blend-mode:screen;animation:bgFloat 10s ease-in-out infinite}
-  @keyframes bgFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-
-  .wrap{max-width:1100px;margin:0 auto;padding:54px 24px 120px;position:relative;z-index:1}
-  .top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:64px;padding:14px 16px;border:1px solid var(--border);border-radius:999px;background:rgba(255,255,255,.03);backdrop-filter:blur(10px);
-    transform:translateY(-6px);opacity:0;animation:enter 650ms cubic-bezier(.2,.9,.2,1) forwards}
-  @keyframes enter{to{opacity:1;transform:translateY(0)}}
-  .brand{display:flex;align-items:center;gap:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:12px;color:rgba(255,255,255,.86)}
-  .dot{width:10px;height:10px;border-radius:999px;background:#fff;box-shadow:0 0 0 6px rgba(255,255,255,.08);animation:pulse 2.6s ease-in-out infinite}
-  @keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.15);opacity:.85}}
-  .actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-  .pill{display:inline-flex;gap:10px;align-items:center;padding:10px 14px;border:1px solid var(--border);border-radius:999px;background:rgba(255,255,255,.03);color:rgba(255,255,255,.86);
-    font-size:13px;letter-spacing:.08em;text-transform:uppercase;transition:transform .18s ease,background .18s ease;cursor:pointer}
-  .pill:hover{transform:translateY(-2px);background:rgba(255,255,255,.07)}
-  .langBadge{display:inline-flex;gap:8px;align-items:center;padding:10px 14px;border:1px solid var(--border);border-radius:999px;background:rgba(255,255,255,.03);color:rgba(255,255,255,.86);
-    font-size:13px;letter-spacing:.10em;text-transform:uppercase;cursor:pointer;user-select:none;transition:transform .18s ease,background .18s ease}
-  .langBadge:hover{transform:translateY(-2px);background:rgba(255,255,255,.07)}
-  .langBadge small{color:rgba(255,255,255,.6);letter-spacing:.16em}
-
-  h1{font-size:clamp(48px,7vw,96px);font-weight:300;line-height:.95;margin:0 0 18px;opacity:0;transform:translateY(10px);
-    animation:fadeUp 800ms cubic-bezier(.2,.9,.2,1) 120ms forwards}
-  h1 .ital{font-style:italic;font-weight:500}
-  @keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
-
-  .section{max-width:860px;font-size:18px;line-height:1.9;color:rgba(255,255,255,.78);opacity:0;transform:translateY(10px);
-    animation:fadeUp 800ms cubic-bezier(.2,.9,.2,1) 220ms forwards}
-  .section + .section{margin-top:60px;padding-top:60px;border-top:1px solid var(--border);animation-delay:320ms}
-  .label{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.62);margin-bottom:12px}
-  .list{padding-left:20px}
-  .list li{margin:14px 0}
-  .btn{display:inline-flex;align-items:center;gap:10px;margin-top:22px;padding:14px 22px;border:1px solid #fff;border-radius:999px;
-    font-size:13px;letter-spacing:.18em;text-transform:uppercase;transition:transform .18s ease,background .18s ease,color .18s ease}
-  .btn:hover{transform:translateY(-2px);background:#fff;color:#000}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Patch notes • Kyren</title>
+  <link rel="stylesheet" href="./assets/style.css">
 </head>
 
 <body>
-<div class="bg-lines"></div>
+  <div class="bg-layer">
+    <div class="bg-glow"></div>
+    <div class="bg-grid"></div>
+    <div class="bg-grain"></div>
+    <div class="bg-scribbles" id="bgScribbles"></div>
+  </div>
 
-<div class="wrap">
-  <div class="top">
-    <div class="brand">
-      <span class="dot"></span>
-      <span>KYREN</span>
-      <span style="color:rgba(255,255,255,.55)">—</span>
-      <span id="ui_tag">UPDATES</span>
+  <div class="wrap">
+    <div class="top">
+      <div class="brand">
+        <span class="dot"></span>
+        <span>KYREN</span>
+        <span style="color:rgba(255,255,255,.55)">—</span>
+        <span id="ui_tag">UPDATES</span>
+      </div>
+
+      <div class="actions">
+        <a class="pill" href="./index.html">🏠 Home</a>
+        <a class="pill" href="https://github.com/s0aarex/Kyren" target="_blank" rel="noreferrer">🐙 GitHub</a>
+        <div class="langBadge" id="langToggle">🌐 <span id="langLabel">PT-BR</span> <small>↔</small> EN</div>
+      </div>
     </div>
 
-    <div class="actions">
-      <a class="pill" href="./index.html">🏠 Home</a>
-      <a class="pill" href="https://github.com/s0aarex/Kyren" target="_blank" rel="noreferrer">🐙 GitHub</a>
-      <div class="langBadge" id="langToggle">🌐 <span id="langLabel">PT-BR</span> <small>↔</small> EN</div>
+    <h1 id="ui_title">Patch <span class="ital">Notes</span></h1>
+
+    <div class="section">
+      <svg class="corner" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 60 C90 20 160 30 210 90" stroke="rgba(255,255,255,.22)" stroke-width="2" fill="none"/>
+        <circle cx="165" cy="160" r="40" stroke="rgba(255,255,255,.12)" stroke-width="2" fill="none"/>
+      </svg>
+
+      <div class="label" id="ui_label_1">O QUE MUDA</div>
+      <p id="ui_p1"></p>
+
+      <ul class="list" id="ui_list"></ul>
+
+      <a class="btn" id="ui_btn" href="https://github.com/s0aarex/Kyren/releases" target="_blank" rel="noreferrer">Ver releases</a>
+      <a class="btn ghost" id="ui_btn2" href="./feedback.html">Abrir feedback</a>
+    </div>
+
+    <div class="section">
+      <div class="label" id="ui_label_2">DICAS</div>
+      <ul class="list" id="ui_tips"></ul>
     </div>
   </div>
 
-  <h1 id="ui_title">Patch <span class="ital">Notes</span></h1>
+  <script src="./assets/app.js"></script>
+  <script>
+    kyrenMountScribbles();
 
-  <div class="section">
-    <div class="label" id="ui_label_1">O QUE MUDA</div>
-    <p id="ui_p1">
-      As atualizações da Kyren são publicadas continuamente. Cada patch pode incluir ajustes de organização, correções e mudanças internas.
-    </p>
+    const copy = {
+      "pt-BR": {
+        langLabel:"PT-BR",
+        ui_tag:"UPDATES",
+        ui_title:'Patch <span class="ital">Notes</span>',
+        ui_label_1:"O QUE MUDA",
+        ui_p1:"Atualizações são contínuas. Cada patch pode trazer melhorias internas, organização, correções e ajustes gerais. (Sem drama, só evolução. 🧬)",
+        ui_list:[
+          "<b>Added</b> — novas entradas.",
+          "<b>Fixed</b> — correções e ajustes.",
+          "<b>Changed</b> — melhorias internas.",
+          "<b>Removed</b> — remoções necessárias."
+        ],
+        ui_btn:"Ver releases",
+        ui_btn2:"Abrir feedback",
+        ui_label_2:"DICAS",
+        ui_tips:[
+          "Se algo ficou estranho depois do update, abre bug com detalhes.",
+          "Se você tiver uma ideia boa, manda sugestão (ticket = histórico).",
+          "Evita duplicar: se já existe, comenta lá."
+        ]
+      },
+      "en": {
+        langLabel:"EN",
+        ui_tag:"UPDATES",
+        ui_title:'Patch <span class="ital">Notes</span>',
+        ui_label_1:"WHAT CHANGES",
+        ui_p1:"Updates are continuous. Each patch may include internal improvements, organization tweaks, fixes, and general adjustments. (No drama, just progress. 🧬)",
+        ui_list:[
+          "<b>Added</b> — new entries.",
+          "<b>Fixed</b> — fixes and adjustments.",
+          "<b>Changed</b> — internal improvements.",
+          "<b>Removed</b> — necessary removals."
+        ],
+        ui_btn:"View releases",
+        ui_btn2:"Open feedback",
+        ui_label_2:"TIPS",
+        ui_tips:[
+          "If something looks off after an update, open a bug with details.",
+          "If you have a solid idea, send a suggestion (tickets = history).",
+          "Avoid duplicates: if it exists, comment there."
+        ]
+      }
+    };
 
-    <ul class="list" id="ui_list">
-      <li><b>Added</b> — novas entradas.</li>
-      <li><b>Fixed</b> — correções e ajustes.</li>
-      <li><b>Changed</b> — melhorias internas.</li>
-      <li><b>Removed</b> — remoções necessárias.</li>
-    </ul>
+    function setUI(lang){
+      const d = copy[lang];
+      localStorage.setItem("kyren_lang", lang);
+      document.documentElement.lang = (lang==="en") ? "en" : "pt-BR";
+      document.getElementById("langLabel").textContent = d.langLabel;
 
-    <a class="btn" id="ui_btn" href="https://github.com/s0aarex/Kyren/releases" target="_blank" rel="noreferrer">Ver releases</a>
-  </div>
-
-  <div class="section">
-    <div class="label" id="ui_label_2">BOA PRÁTICA</div>
-    <p id="ui_p2">
-      Se você achou algo estranho ou quebrado, abre um ticket na aba de feedback. Ajuda demais a manter o histórico organizado.
-    </p>
-    <a class="btn" href="./feedback.html" id="ui_btn2">Abrir feedback</a>
-  </div>
-</div>
-
-<script>
-  const copy = {
-    "pt-BR": {
-      langLabel:"PT-BR",
-      ui_tag:"UPDATES",
-      ui_title:'Patch <span class="ital">Notes</span>',
-      ui_label_1:"O QUE MUDA",
-      ui_p1:"As atualizações da Kyren são publicadas continuamente. Cada patch pode incluir ajustes de organização, correções e mudanças internas.",
-      ui_list:[
-        "<b>Added</b> — novas entradas.",
-        "<b>Fixed</b> — correções e ajustes.",
-        "<b>Changed</b> — melhorias internas.",
-        "<b>Removed</b> — remoções necessárias."
-      ],
-      ui_btn:"Ver releases",
-      ui_label_2:"BOA PRÁTICA",
-      ui_p2:"Se você achou algo estranho ou quebrado, abre um ticket na aba de feedback. Ajuda demais a manter o histórico organizado.",
-      ui_btn2:"Abrir feedback"
-    },
-    "en": {
-      langLabel:"EN",
-      ui_tag:"UPDATES",
-      ui_title:'Patch <span class="ital">Notes</span>',
-      ui_label_1:"WHAT CHANGES",
-      ui_p1:"Kyren updates are published continuously. Each patch may include organization tweaks, fixes, and internal improvements.",
-      ui_list:[
-        "<b>Added</b> — new entries.",
-        "<b>Fixed</b> — fixes and adjustments.",
-        "<b>Changed</b> — internal improvements.",
-        "<b>Removed</b> — necessary removals."
-      ],
-      ui_btn:"View releases",
-      ui_label_2:"GOOD PRACTICE",
-      ui_p2:"If something looks off or broken, open a ticket in the feedback page. It helps keep everything trackable and organized.",
-      ui_btn2:"Open feedback"
+      document.getElementById("ui_tag").textContent = d.ui_tag;
+      document.getElementById("ui_title").innerHTML = d.ui_title;
+      document.getElementById("ui_label_1").textContent = d.ui_label_1;
+      document.getElementById("ui_p1").textContent = d.ui_p1;
+      document.getElementById("ui_list").innerHTML = d.ui_list.map(x=>`<li>${x}</li>`).join("");
+      document.getElementById("ui_btn").textContent = d.ui_btn;
+      document.getElementById("ui_btn2").textContent = d.ui_btn2;
+      document.getElementById("ui_label_2").textContent = d.ui_label_2;
+      document.getElementById("ui_tips").innerHTML = d.ui_tips.map(x=>`<li>${x}</li>`).join("");
     }
-  };
 
-  function setLang(lang){
-    const d = copy[lang];
-    localStorage.setItem("kyren_lang", lang);
-    document.documentElement.lang = (lang==="en") ? "en" : "pt-BR";
-    document.getElementById("langLabel").textContent = d.langLabel;
-
-    document.getElementById("ui_tag").textContent = d.ui_tag;
-    document.getElementById("ui_title").innerHTML = d.ui_title;
-    document.getElementById("ui_label_1").textContent = d.ui_label_1;
-    document.getElementById("ui_p1").textContent = d.ui_p1;
-
-    document.getElementById("ui_list").innerHTML = d.ui_list.map(x=>`<li>${x}</li>`).join("");
-
-    document.getElementById("ui_btn").textContent = d.ui_btn;
-    document.getElementById("ui_label_2").textContent = d.ui_label_2;
-    document.getElementById("ui_p2").textContent = d.ui_p2;
-    document.getElementById("ui_btn2").textContent = d.ui_btn2;
-  }
-
-  setLang(localStorage.getItem("kyren_lang") || "pt-BR");
-  document.getElementById("langToggle").addEventListener("click", ()=>{
-    const cur = localStorage.getItem("kyren_lang") || "pt-BR";
-    setLang(cur==="pt-BR" ? "en" : "pt-BR");
-  });
-</script>
+    kyrenInitLang(copy, setUI);
+  </script>
 </body>
 </html>
