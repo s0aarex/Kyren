@@ -125,8 +125,36 @@ function setLang(next) {
   lang = next;
   localStorage.setItem("lang", next);
   applyI18n();
-  loadLatestPatch();   // home
-  loadPatchPageList(); // patch-notes.html
+  loadLatestPatch(
+    function tagEmoji(tag){
+  const map = {
+    jogos: "🎮",
+    games: "🎮",
+    fix: "🛠️",
+    fixes: "🛠️",
+    reparo: "🛠️",
+    json: "📦",
+    quality: "✨",
+    hotfix: "🚑"
+  };
+  return map[tag] || "🔹";
+}
+  );   // home
+  loadPatchPageList(
+    function tagEmoji(tag){
+  const map = {
+    jogos: "🎮",
+    games: "🎮",
+    fix: "🛠️",
+    fixes: "🛠️",
+    reparo: "🛠️",
+    json: "📦",
+    quality: "✨",
+    hotfix: "🚑"
+  };
+  return map[tag] || "🔹";
+}
+  ); // patch-notes.html
 }
 
 function applyI18n() {
