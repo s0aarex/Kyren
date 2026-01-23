@@ -16,7 +16,7 @@
 
   <div class="topbar">
     <div class="pill">
-      <a class="brand" href="index.html" style="text-decoration:none; color:inherit;">
+      <a class="brand" href="index.html">
         <span class="dot"></span>
         <div style="display:flex; flex-direction:column; gap:2px;">
           <strong>KYREN — SOURCE HUB</strong>
@@ -26,7 +26,7 @@
 
       <div class="actions">
         <a class="chip" href="patch-notes.html">🧾 <span data-i18n="cta_patch">Patch notes</span></a>
-        <a class="chip" href="https://github.com/s0aarex/Kyren" target="_blank">🐙 <span data-i18n="nav_github">GitHub</span></a>
+        <a class="chip" data-repo-link href="#" target="_blank">🐙 <span data-i18n="nav_github">GitHub</span></a>
 
         <div class="lang">
           🌐
@@ -40,36 +40,32 @@
 
   <main class="wrap">
     <section class="hero" style="padding-top:46px;" data-anim>
-      <h1 data-i18n-html="feedback_heading_html"><em>Feedback</em></h1>
-      <p data-i18n="feedback_subtitle">
-        Tudo via GitHub Issues pra ficar rastreável. Escolhe um tipo e abre o ticket 👇
-      </p>
+      <h1 data-i18n-html="fb_heading_html"><em>Feedback</em></h1>
+      <p data-i18n="fb_subtitle"></p>
 
       <div class="grid3" style="margin-top:16px;" data-anim>
         <div class="card">
           <h3>🐞 <span data-i18n="fb_bug">Bug</span></h3>
-          <p data-i18n="fb_bug_desc">Algo quebrou? Link caiu? Explica e manda prints.</p>
-          <a href="https://github.com/s0aarex/Kyren/issues/new?template=bug.yml" target="_blank">Open →</a>
+          <p data-i18n="fb_bug_desc"></p>
+          <a href="https://github.com/s0aarex/Kyren/issues/new?template=bug.yml" target="_blank" data-i18n="fb_open">Abrir →</a>
         </div>
 
         <div class="card">
-          <h3>🎮 <span data-i18n="fb_request">Pedido</span></h3>
-          <p data-i18n="fb_request_desc">Pede algo específico com detalhes.</p>
-          <a href="https://github.com/s0aarex/Kyren/issues/new?template=pedido-jogo.yml" target="_blank">Open →</a>
+          <h3>🎮 <span data-i18n="fb_request">Pedido de jogo</span></h3>
+          <p data-i18n="fb_request_desc"></p>
+          <a href="https://github.com/s0aarex/Kyren/issues/new?template=pedido-jogo.yml" target="_blank" data-i18n="fb_open">Abrir →</a>
         </div>
 
         <div class="card">
           <h3>✨ <span data-i18n="fb_suggest">Sugestão</span></h3>
-          <p data-i18n="fb_suggest_desc">Ideias pro site/source, melhorias e etc.</p>
-          <a href="https://github.com/s0aarex/Kyren/issues/new?template=sugestao.yml" target="_blank">Open →</a>
+          <p data-i18n="fb_suggest_desc"></p>
+          <a href="https://github.com/s0aarex/Kyren/issues/new?template=sugestao.yml" target="_blank" data-i18n="fb_open">Abrir →</a>
         </div>
       </div>
 
       <div class="cta" style="margin-top:16px;">
         <a class="btn" href="index.html" data-i18n="back_home">← Home</a>
-        <a class="btn" href="https://github.com/s0aarex/Kyren/issues" target="_blank" data-i18n="fb_all">
-          🧾 Ver todos os tickets
-        </a>
+        <a class="btn" href="https://github.com/s0aarex/Kyren/issues" target="_blank" data-i18n="fb_all">🧾 Ver todos os tickets</a>
       </div>
     </section>
 
