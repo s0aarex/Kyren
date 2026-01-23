@@ -323,3 +323,31 @@ body {
   padding-bottom: 140px;
 }
 
+.hero {
+  margin-top: 32px;
+}
+
+.cardGrid {
+  margin-top: 56px;
+}
+
+.hero h1 {
+  position: relative;
+}
+
+.hero h1::after {
+  content: "";
+  position: absolute;
+  inset: -40px;
+  background: radial-gradient(circle, rgba(255,255,255,.15), transparent 60%);
+  opacity: .35;
+  z-index: -1;
+}
+
+.btn {
+  transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+}
+
+.btn:hover {
+  box-shadow: 0 10px 40px rgba(0,0,0,.45);
+}
