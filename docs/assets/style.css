@@ -23,6 +23,13 @@ body{
   overflow-x:hidden;
 }
 
+html{ font-size: 16px; }
+body{ font-size: 14.5px; }
+
+.hero p{ font-size: 15px; }
+.card p{ font-size: 13px; }
+.patchDesc, .patchList{ font-size: 13px; }
+
 /* subtle swirls like the screenshot */
 .bg{
   position:fixed;
@@ -37,13 +44,25 @@ body{
   filter: blur(0px);
 }
 
-.wrap{ max-width: var(--max); margin: 0 auto; padding: 24px; }
+.wrap{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 24px;
+  position: relative;
+  z-index: 5;
+}
 
+/* backgrounds always behind */
 .bg,
-.bg-lines,
-.blob{
+.bg-lines{
   position: fixed;
   inset: 0;
+  z-index: 0;
+}
+
+/* blobs are NOT full-screen */
+.blob{
+  position: fixed;
   z-index: 0;
 }
 
@@ -382,12 +401,6 @@ body{
   transform: translateY(0) !important;
   filter: blur(0) !important;
   transition: opacity .6s ease, transform .6s ease, filter .6s ease;
-}
-
-/* remove qualquer bloco fantasma */
-section:empty,
-div:empty{
-  display: none;
 }
 
 /* garante que nada empurre o body */
