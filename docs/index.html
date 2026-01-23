@@ -2,100 +2,179 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kyren — Source Hub</title>
 
   <link rel="icon" href="./assets/favicon.png">
-  <link rel="stylesheet" href="./assets/style.css">
+  <link rel="stylesheet" href="./assets/style.css" />
 </head>
 
-<body class="bg">
-  <!-- background scribbles -->
-  <div id="scribbles" aria-hidden="true"></div>
+<body>
+  <!-- fundo desenho -->
+  <div id="scribbles"></div>
 
-  <header class="topbar reveal">
-    <div class="topbar__left">
-      <span class="dot"></span>
-      <span class="topbar__tag" id="tag">KYREN — SOURCE HUB</span>
+  <!-- topo -->
+  <div class="topbar">
+    <div class="pillbar">
+      <div class="brand">
+        <span class="brandDot"></span>
+        <span>KYREN — SOURCE HUB</span>
+      </div>
+
+      <div class="pillLinks">
+        <a class="pillBtn" href="https://github.com/s0aarex/Kyren" target="_blank" rel="noreferrer">👾 GitHub</a>
+        <a class="pillBtn" href="./feedback.html">💬 Feedback</a>
+        <button class="pillBtn" id="langToggle" type="button">🌐 PT-BR → EN</button>
+      </div>
     </div>
-
-    <nav class="topbar__right">
-      <a class="pill" id="githubBtn" href="https://github.com/s0aarex/Kyren" target="_blank" rel="noreferrer">👾 GitHub</a>
-      <a class="pill" id="feedbackTopBtn" href="./feedback.html">💬 Feedback</a>
-
-      <button class="pill" id="langToggle" type="button">🌐 PT-BR → EN</button>
-    </nav>
-  </header>
+  </div>
 
   <main class="wrap">
-    <section class="hero reveal">
-      <h1 class="hero__title"><span id="heroTitleA">Kyren</span> <em id="heroTitleB">official</em></h1>
-      <p class="hero__sub" id="heroSub">
+    <!-- hero -->
+    <section class="hero">
+      <h1 class="heroTitle">Kyren <em>official</em></h1>
+
+      <p class="heroSub" id="sub">
         Site oficial da source Kyren — guia rápido, patch notes e uma área pra pedidos/sugestões/bugs (tudo rastreável no GitHub).
       </p>
 
-      <div class="hero__cta">
-        <a class="btn" id="cta1" href="./how-to-use.html">🚀 Como usar</a>
-        <a class="btn" id="cta2" href="./patch-notes.html">🧾 Patch notes</a>
-        <a class="btn" id="cta3" href="./feedback.html">💬 Feedback</a>
+      <div class="heroBtns">
+        <a class="pillBtn" href="./how-to-use.html">🚀 Como usar</a>
+        <a class="pillBtn" href="./patch-notes.html">🧾 Patch notes</a>
+        <a class="pillBtn" href="./feedback.html">💬 Feedback</a>
       </div>
+
+      <hr class="hr" />
     </section>
 
-    <div class="divider reveal"></div>
+    <!-- cards -->
+    <div class="kicker" id="kicker1">O QUE TEM AQUI</div>
 
-    <section class="section reveal">
-      <p class="kicker" id="label1">O QUE TEM AQUI</p>
+    <section class="grid3">
+      <article class="card">
+        <h3>⚡ Quick setup</h3>
+        <p>Passo a passo curto e direto pra importar a source no Hydra.</p>
+        <a class="miniLink" href="./how-to-use.html" id="c1">Abrir guia →</a>
+      </article>
 
-      <div class="grid">
-        <article class="card">
-          <h3>⚡ <span id="c1t">Quick setup</span></h3>
-          <p id="c1">Passo a passo curto e direto pra importar a source no Hydra.</p>
-          <a class="link" href="./how-to-use.html" id="c1a">Abrir guia →</a>
-        </article>
+      <article class="card">
+        <h3>🧩 Updates</h3>
+        <p>Mudanças organizadas: o que entrou, o que mudou e o que foi corrigido.</p>
+        <a class="miniLink" href="./patch-notes.html" id="c2">Ver patch notes →</a>
+      </article>
 
-        <article class="card">
-          <h3>🧩 <span id="c2t">Updates</span></h3>
-          <p id="c2">Mudanças organizadas: o que entrou, o que mudou e o que foi corrigido.</p>
-          <a class="link" href="./patch-notes.html" id="c2a">Ver patch notes →</a>
-        </article>
-
-        <article class="card">
-          <h3>🎫 <span id="c3t">Tickets</span></h3>
-          <p id="c3">Pedidos, sugestões e bugs viram tickets — dá pra acompanhar e comentar.</p>
-          <a class="link" href="./feedback.html" id="c3a">Abrir feedback →</a>
-        </article>
-      </div>
+      <article class="card">
+        <h3>🟨 Tickets</h3>
+        <p>Pedidos, sugestões e bugs viram tickets — dá pra acompanhar e comentar.</p>
+        <a class="miniLink" href="./feedback.html" id="c3">Abrir feedback →</a>
+      </article>
     </section>
 
-    <div class="divider reveal"></div>
+    <!-- latest patch -->
+    <div class="kicker" style="margin-top:22px" id="kicker2">ÚLTIMO PATCH</div>
 
-    <section class="section reveal">
-      <div class="row">
-        <p class="kicker" id="latestLabel">ÚLTIMO PATCH</p>
-        <a class="pill" id="latestBtn" href="./patch-notes.html">🧾 Ver patch notes</a>
-      </div>
+    <section class="latestWrap">
+      <article class="latestCard" id="latestPatchCard">
+        <h4>⏳ Carregando patch notes…</h4>
+        <div class="meta">Se travar, confere se `docs/patch-notes.json` existe.</div>
+      </article>
 
-      <div class="card card--patch" id="latestPatchCard">
-        <h3>⏳ Carregando…</h3>
-        <p style="opacity:.7;margin-top:8px">Buscando <b>patch-notes.json</b></p>
-      </div>
+      <aside class="sideCard">
+        <a class="pillBtn" href="./patch-notes.html" id="latest_btn">🧾 Ver patch notes</a>
+      </aside>
     </section>
 
-    <div class="divider reveal"></div>
+    <!-- footer / atalhos -->
+    <section class="shortcuts">
+      <div>
+        <a class="pillBtn" href="./feedback.html">📌 Abrir formulários</a>
+        <span class="smallNote">Kyren — Source Hub</span>
+      </div>
 
-    <section class="section reveal">
-      <p class="kicker" id="label2">ATALHOS</p>
-      <div class="row">
-        <a class="btn" id="formsBtn" href="./feedback.html">📌 Abrir formulários</a>
-        <a class="btn btn--ghost" id="repoBtn" href="https://github.com/s0aarex/Kyren" target="_blank" rel="noreferrer">👾 Ver repo</a>
+      <div>
+        <a class="pillBtn" href="https://github.com/s0aarex/Kyren" target="_blank" rel="noreferrer">👾 Ver repo</a>
       </div>
     </section>
-
-    <footer class="footer reveal">
-      <p>🖤 Kyren — Source Hub</p>
-    </footer>
   </main>
 
-  <script src="./assets/app.js"></script>
+  <script>
+    // --- patch card (lê docs/patch-notes.json) ---
+    async function kyrenLoadLatestPatch(){
+      try{
+        const res = await fetch("./patch-notes.json", { cache: "no-store" });
+        const patches = await res.json();
+        const latest = patches?.[0];
+        const card = document.getElementById("latestPatchCard");
+        if(!latest || !card) return;
+
+        const items = [
+          ...(latest.added?.slice?.(0,2) || []),
+          ...(latest.fixed?.slice?.(0,1) || []),
+          ...(latest.changed?.slice?.(0,1) || []),
+        ].filter(Boolean);
+
+        card.innerHTML = `
+          <h4>🚀 ${latest.version} • ${latest.title}</h4>
+          <div class="meta">📅 ${latest.date} <span style="opacity:.55">•</span> ${latest.summary || ""}</div>
+          ${items.length ? `<ul>${items.map(x => `<li>${x}</li>`).join("")}</ul>` : ""}
+          ${latest.stats ? `
+            <div class="stats">
+              <span>📌 +${latest.stats.added ?? 0}</span>
+              <span>🧷 ${latest.stats.updated ?? 0}</span>
+              <span>🧼 ${latest.stats.cleaned ?? 0}</span>
+            </div>` : ``}
+        `;
+      }catch(e){
+        const card = document.getElementById("latestPatchCard");
+        if(card) card.innerHTML = `<h4>⚠️ Não carregou</h4><div class="meta">Confere se <b>docs/patch-notes.json</b> existe e é JSON válido.</div>`;
+      }
+    }
+    kyrenLoadLatestPatch();
+
+    // --- idioma (simples) ---
+    const copy = {
+      "pt-BR": {
+        btn:"🌐 PT-BR → EN",
+        sub:"Site oficial da source Kyren — guia rápido, patch notes e uma área pra pedidos/sugestões/bugs (tudo rastreável no GitHub).",
+        kicker1:"O QUE TEM AQUI",
+        kicker2:"ÚLTIMO PATCH",
+        c1:"Abrir guia →",
+        c2:"Ver patch notes →",
+        c3:"Abrir feedback →",
+        latest_btn:"🧾 Ver patch notes"
+      },
+      "en": {
+        btn:"🌐 EN → PT-BR",
+        sub:"Official Kyren source site — quick guide, patch notes, and a place for requests/suggestions/bugs (all tracked on GitHub).",
+        kicker1:"WHAT'S HERE",
+        kicker2:"LATEST PATCH",
+        c1:"Open guide →",
+        c2:"View patch notes →",
+        c3:"Open feedback →",
+        latest_btn:"🧾 View patch notes"
+      }
+    };
+
+    function setLang(lang){
+      localStorage.setItem("kyren_lang", lang);
+      document.documentElement.lang = lang === "en" ? "en" : "pt-BR";
+      document.getElementById("langToggle").textContent = copy[lang].btn;
+      document.getElementById("sub").textContent = copy[lang].sub;
+      document.getElementById("kicker1").textContent = copy[lang].kicker1;
+      document.getElementById("kicker2").textContent = copy[lang].kicker2;
+      document.getElementById("c1").textContent = copy[lang].c1;
+      document.getElementById("c2").textContent = copy[lang].c2;
+      document.getElementById("c3").textContent = copy[lang].c3;
+      document.getElementById("latest_btn").textContent = copy[lang].latest_btn;
+    }
+
+    const saved = localStorage.getItem("kyren_lang") || "pt-BR";
+    setLang(saved);
+
+    document.getElementById("langToggle").addEventListener("click", () => {
+      const current = localStorage.getItem("kyren_lang") || "pt-BR";
+      setLang(current === "pt-BR" ? "en" : "pt-BR");
+    });
+  </script>
 </body>
 </html>
