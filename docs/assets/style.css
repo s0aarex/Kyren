@@ -1,36 +1,58 @@
+:root{
+  --bg:#050505;
+  --panel: rgba(255,255,255,.06);
+  --panel2: rgba(255,255,255,.04);
+  --stroke: rgba(255,255,255,.10);
+  --text: rgba(255,255,255,.92);
+  --muted: rgba(255,255,255,.62);
+  --muted2: rgba(255,255,255,.40);
+  --shadow: 0 20px 60px rgba(0,0,0,.55);
+  --r: 18px;
+  --r2: 26px;
+  --max: 1080px;
+}
+
+*{ box-sizing: border-box; }
+html,body{ height:100%; }
 body{
-  background:#0b0b0b;
-  color:#fff;
-  font-family: Inter, system-ui, sans-serif;
+  margin:0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial;
+  overflow-x:hidden;
 }
 
-header, main{
-  max-width:1100px;
-  margin:auto;
-  padding:24px;
+/* subtle swirls like the screenshot */
+.bg{
+  position:fixed;
+  inset:-20%;
+  pointer-events:none;
+  opacity:.9;
+  background:
+    radial-gradient(1200px 700px at 20% 25%, rgba(255,255,255,.07), transparent 60%),
+    radial-gradient(900px 600px at 70% 20%, rgba(255,255,255,.06), transparent 60%),
+    radial-gradient(1000px 700px at 60% 70%, rgba(255,255,255,.05), transparent 60%),
+    radial-gradient(800px 600px at 25% 80%, rgba(255,255,255,.04), transparent 60%);
+  filter: blur(0px);
 }
 
-nav a, .chip{
-  color:#fff;
-  opacity:.7;
-  margin-right:12px;
-  cursor:pointer;
-  text-decoration:none;
-}
+.wrap{ max-width: var(--max); margin: 0 auto; padding: 24px; }
 
-.chip.active{ opacity:1; }
-
-.patch-card{
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:16px;
-  padding:16px;
-  margin:16px 0;
-  background:rgba(255,255,255,.03);
-}
-
-.patch-top{
+/* topbar */
+.topbar{
+  position: sticky;
+  top: 16px;
+  z-index: 20;
   display:flex;
-  justify-content:space-between;
+  justify-content:center;
 }
-
-ul{ padding-left:18px; }
+.topbar .pill{
+  width: min(1080px, calc(100% - 48px));
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 14px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.45);
+  border: 1
