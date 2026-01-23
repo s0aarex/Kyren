@@ -125,8 +125,7 @@ function setLang(next) {
   lang = next;
   localStorage.setItem("lang", next);
   applyI18n();
-  loadLatestPatch(
-    function tagEmoji(tag){
+  function tagEmoji(tag){
   const map = {
     jogos: "🎮",
     games: "🎮",
@@ -139,9 +138,7 @@ function setLang(next) {
   };
   return map[tag] || "🔹";
 }
-  );   // home
-  loadPatchPageList(
-    function tagEmoji(tag){
+  function tagEmoji(tag){
   const map = {
     jogos: "🎮",
     games: "🎮",
@@ -154,7 +151,8 @@ function setLang(next) {
   };
   return map[tag] || "🔹";
 }
-  ); // patch-notes.html
+  loadLatestPatch();   // home
+  loadPatchPageList(); // patch-notes.html
 }
 
 function applyI18n() {
