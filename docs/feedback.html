@@ -4,15 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Feedback — Kyren</title>
-  <link rel="icon" href="assets/favicon.svg" />
+  <link rel="icon" href="assets/favicon.svg?v=1" type="image/svg+xml" />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
-  <div class="bg"></div>
-<div class="bg-lines"></div>
-<div class="blob blob1"></div>
-<div class="blob blob2"></div>
-<div class="blob blob3"></div>
+  <div class="bg" aria-hidden="true"></div>
+  <div class="bg-lines" aria-hidden="true"></div>
+  <div class="blob blob1" aria-hidden="true"></div>
+  <div class="blob blob2" aria-hidden="true"></div>
+  <div class="blob blob3" aria-hidden="true"></div>
 
   <div class="topbar">
     <div class="pill">
@@ -25,7 +25,9 @@
       </a>
 
       <div class="actions">
-        <a class="chip" href="patch-notes.html">🧾 Patch notes</a>
+        <a class="chip" href="patch-notes.html">🧾 <span data-i18n="cta_patch">Patch notes</span></a>
+        <a class="chip" href="https://github.com/s0aarex/Kyren" target="_blank">🐙 <span data-i18n="nav_github">GitHub</span></a>
+
         <div class="lang">
           🌐
           <button data-lang="pt" class="active" onclick="setLang('pt')">PT-BR</button>
@@ -37,35 +39,37 @@
   </div>
 
   <main class="wrap">
-    <section class="hero" style="padding-top:46px;">
-      <h1><em>Feedback</em></h1>
-      <p>
+    <section class="hero" style="padding-top:46px;" data-anim>
+      <h1 data-i18n-html="feedback_heading_html"><em>Feedback</em></h1>
+      <p data-i18n="feedback_subtitle">
         Tudo via GitHub Issues pra ficar rastreável. Escolhe um tipo e abre o ticket 👇
       </p>
 
-      <div class="grid3" style="margin-top:16px;">
+      <div class="grid3" style="margin-top:16px;" data-anim>
         <div class="card">
-          <h3>🐞 Bug</h3>
-          <p>Algo quebrou? Link caiu? Explica e manda prints.</p>
-          <a href="https://github.com/s0aarex/Kyren/issues/new?template=bug.yml" target="_blank">Abrir ticket →</a>
+          <h3>🐞 <span data-i18n="fb_bug">Bug</span></h3>
+          <p data-i18n="fb_bug_desc">Algo quebrou? Link caiu? Explica e manda prints.</p>
+          <a href="https://github.com/s0aarex/Kyren/issues/new?template=bug.yml" target="_blank">Open →</a>
         </div>
 
         <div class="card">
-          <h3>🎮 Pedido de jogo</h3>
-          <p>Me diz o nome certinho e infos do que você quer.</p>
-          <a href="https://github.com/s0aarex/Kyren/issues/new?template=pedido-jogo.yml" target="_blank">Pedir →</a>
+          <h3>🎮 <span data-i18n="fb_request">Pedido</span></h3>
+          <p data-i18n="fb_request_desc">Pede algo específico com detalhes.</p>
+          <a href="https://github.com/s0aarex/Kyren/issues/new?template=pedido-jogo.yml" target="_blank">Open →</a>
         </div>
 
         <div class="card">
-          <h3>✨ Sugestão</h3>
-          <p>Ideias pro site/source, melhorias e etc.</p>
-          <a href="https://github.com/s0aarex/Kyren/issues/new?template=sugestao.yml" target="_blank">Sugerir →</a>
+          <h3>✨ <span data-i18n="fb_suggest">Sugestão</span></h3>
+          <p data-i18n="fb_suggest_desc">Ideias pro site/source, melhorias e etc.</p>
+          <a href="https://github.com/s0aarex/Kyren/issues/new?template=sugestao.yml" target="_blank">Open →</a>
         </div>
       </div>
 
       <div class="cta" style="margin-top:16px;">
-        <a class="btn" href="index.html">← Home</a>
-        <a class="btn" href="https://github.com/s0aarex/Kyren/issues" target="_blank">🧾 Ver todos os tickets</a>
+        <a class="btn" href="index.html" data-i18n="back_home">← Home</a>
+        <a class="btn" href="https://github.com/s0aarex/Kyren/issues" target="_blank" data-i18n="fb_all">
+          🧾 Ver todos os tickets
+        </a>
       </div>
     </section>
 
