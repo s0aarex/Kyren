@@ -443,3 +443,17 @@ footer,
   background: transparent !important;
   min-height: auto;
 }
+
+#scribbles{
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0; /* deixa ele "atrás", mas ainda existe */
+}
+
+body > *:not(#scribbles){
+  position: relative;
+  z-index: 1; /* conteúdo na frente */
+}
