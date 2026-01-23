@@ -6,7 +6,6 @@
   <title>Feedback • Kyren</title>
   <link rel="stylesheet" href="./assets/style.css">
 </head>
-
 <body>
   <div class="bg-layer">
     <div class="bg-glow"></div>
@@ -18,119 +17,151 @@
   <div class="wrap">
     <div class="top">
       <div class="brand">
-        <span class="dot"></span>
-        <span>KYREN</span>
-        <span style="color:rgba(255,255,255,.55)">—</span>
-        <span id="ui_tag">FEEDBACK</span>
+        <span class="dot"></span><span>KYREN</span><span style="opacity:.55">—</span><span id="tag">FEEDBACK</span>
       </div>
-
       <div class="actions">
-        <a class="pill" href="./index.html">🏠 Home</a>
-        <a class="pill" href="https://github.com/s0aarex/Kyren" target="_blank" rel="noreferrer">🐙 GitHub</a>
-        <div class="langBadge" id="langToggle">🌐 <span id="langLabel">PT-BR</span> <small>↔</small> EN</div>
+        <a class="pill" href="./index.html" id="home">🏠 Home</a>
+        <a class="pill" href="./how-to-use.html" id="guide">🚀 Guide</a>
+        <a class="pill" href="./patch-notes.html" id="updates">🧾 Updates</a>
+        <div class="lang" id="langToggle">🌐 <span id="langLabel">PT-BR</span> <small>↔</small> EN</div>
       </div>
     </div>
 
-    <h1 id="ui_title">Sugestões <span class="ital">& pedidos</span></h1>
+    <h1 class="reveal" id="title">💬 Sugestões & pedidos</h1>
+    <p class="sub reveal" id="sub">
+      Aqui é o lugar oficial pra enviar sugestão, pedir algo novo ou reportar bug. Tudo vira ticket no GitHub.
+    </p>
 
-    <div class="section">
-      <svg class="corner" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10 90 C70 20 170 20 210 110" stroke="rgba(255,255,255,.20)" stroke-width="2" fill="none"/>
-        <path d="M30 200 C80 150 120 150 210 170" stroke="rgba(255,255,255,.12)" stroke-width="2" fill="none"/>
-      </svg>
+    <div class="section reveal">
+      <div class="label" id="label1">ABRIR UM TICKET</div>
 
-      <div class="label" id="ui_label_1">PARTICIPE</div>
-      <p id="ui_p1"></p>
+      <div class="grid">
+        <div class="card">
+          <h3 id="h1">🎮 Pedido</h3>
+          <p id="d1">Peça uma adição com o máximo de detalhes possível.</p>
+          <div class="ctaRow" style="margin-top:14px;">
+            <a class="btn ghost" href="https://github.com/s0aarex/Kyren/issues/new/choose" target="_blank" rel="noreferrer" id="b1">Abrir</a>
+          </div>
+        </div>
 
-      <ul class="list" id="ui_list"></ul>
+        <div class="card">
+          <h3 id="h2">✨ Sugestão</h3>
+          <p id="d2">Ideias de melhoria: layout, organização, padrão, etc.</p>
+          <div class="ctaRow" style="margin-top:14px;">
+            <a class="btn ghost" href="https://github.com/s0aarex/Kyren/issues/new/choose" target="_blank" rel="noreferrer" id="b2">Abrir</a>
+          </div>
+        </div>
 
-      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:18px">
-        <a class="btn" id="ui_btn_req" href="https://github.com/s0aarex/Kyren/issues/new?template=pedido-jogo.yml" target="_blank" rel="noreferrer">🎮 Pedido</a>
-        <a class="btn ghost" id="ui_btn_sug" href="https://github.com/s0aarex/Kyren/issues/new?template=sugestao.yml" target="_blank" rel="noreferrer">💡 Sugestão</a>
-        <a class="btn ghost" id="ui_btn_bug" href="https://github.com/s0aarex/Kyren/issues/new?template=bug.yml" target="_blank" rel="noreferrer">🐛 Bug</a>
-        <a class="btn ghost" id="ui_btn_all" href="https://github.com/s0aarex/Kyren/issues/new/choose" target="_blank" rel="noreferrer">📌 Ver formulários</a>
+        <div class="card">
+          <h3 id="h3">🐛 Bug</h3>
+          <p id="d3">Algo não funciona? Manda print + passos pra reproduzir.</p>
+          <div class="ctaRow" style="margin-top:14px;">
+            <a class="btn ghost" href="https://github.com/s0aarex/Kyren/issues/new/choose" target="_blank" rel="noreferrer" id="b3">Abrir</a>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="section">
-      <div class="label" id="ui_label_2">REGRINHAS (SEM CAOS)</div>
-      <ul class="list" id="ui_rules"></ul>
+    <div class="section reveal">
+      <div class="label" id="label2">DICA</div>
+      <ul class="list" id="tips">
+        <li>Pra bug: descreve o que você esperava vs. o que aconteceu.</li>
+        <li>Pra pedido: manda nome, versão, idioma e onde conseguiu o link.</li>
+        <li>Pra sugestão: explica o “porquê” — ajuda MUITO a decidir.</li>
+      </ul>
     </div>
   </div>
 
   <script src="./assets/app.js"></script>
   <script>
     kyrenMountScribbles();
+    kyrenReveal();
 
     const copy = {
       "pt-BR": {
         langLabel:"PT-BR",
-        ui_tag:"FEEDBACK",
-        ui_title:'Sugestões <span class="ital">& pedidos</span>',
-        ui_label_1:"PARTICIPE",
-        ui_p1:"Aqui é o lugar certo pra pedir, sugerir e reportar problema. Tudo vira ticket, fica organizado e dá pra acompanhar o status. (Sem perder nada no chat infinito 🤝).",
-        ui_list:[
-          "🎮 Pedido de jogo",
-          "💡 Sugestão de melhoria",
-          "🐛 Bug / link quebrado"
-        ],
-        ui_btn_req:"🎮 Pedido",
-        ui_btn_sug:"💡 Sugestão",
-        ui_btn_bug:"🐛 Bug",
-        ui_btn_all:"📌 Ver formulários",
-        ui_label_2:"REGRINHAS (SEM CAOS)",
-        ui_rules:[
-          "Se já existe um ticket igual, comenta nele ao invés de criar outro.",
-          "Quanto mais detalhe, mais rápido dá pra resolver.",
-          "Se for bug, manda patch/versão que você tá usando."
+        tag:"FEEDBACK",
+        home:"🏠 Home",
+        guide:"🚀 Guide",
+        updates:"🧾 Updates",
+        title:"💬 Sugestões & pedidos",
+        sub:"Aqui é o lugar oficial pra enviar sugestão, pedir algo novo ou reportar bug. Tudo vira ticket no GitHub.",
+        label1:"ABRIR UM TICKET",
+        h1:"🎮 Pedido",
+        d1:"Peça uma adição com o máximo de detalhes possível.",
+        b1:"Abrir",
+        h2:"✨ Sugestão",
+        d2:"Ideias de melhoria: layout, organização, padrão, etc.",
+        b2:"Abrir",
+        h3:"🐛 Bug",
+        d3:"Algo não funciona? Manda print + passos pra reproduzir.",
+        b3:"Abrir",
+        label2:"DICA",
+        tips:[
+          "Pra bug: descreve o que você esperava vs. o que aconteceu.",
+          "Pra pedido: manda nome, versão, idioma e onde conseguiu o link.",
+          "Pra sugestão: explica o “porquê” — ajuda MUITO a decidir."
         ]
       },
       "en": {
         langLabel:"EN",
-        ui_tag:"FEEDBACK",
-        ui_title:'Suggestions <span class="ital">& requests</span>',
-        ui_label_1:"JOIN IN",
-        ui_p1:"This is the right place to request, suggest, and report issues. Everything becomes a ticket — organized and trackable. (No infinite chat chaos 🤝).",
-        ui_list:[
-          "🎮 Game request",
-          "💡 Improvement suggestion",
-          "🐛 Bug / broken link"
-        ],
-        ui_btn_req:"🎮 Request",
-        ui_btn_sug:"💡 Suggest",
-        ui_btn_bug:"🐛 Bug",
-        ui_btn_all:"📌 View forms",
-        ui_label_2:"HOUSE RULES (NO CHAOS)",
-        ui_rules:[
-          "If a similar ticket exists, comment there instead of opening a new one.",
-          "More details = faster fixes.",
-          "For bugs, include the patch/version you’re using."
+        tag:"FEEDBACK",
+        home:"🏠 Home",
+        guide:"🚀 Guide",
+        updates:"🧾 Updates",
+        title:"💬 Feedback & requests",
+        sub:"This is the official place to send suggestions, request new additions, or report bugs. Everything becomes a GitHub ticket.",
+        label1:"OPEN A TICKET",
+        h1:"🎮 Request",
+        d1:"Request an addition with as many details as possible.",
+        b1:"Open",
+        h2:"✨ Suggestion",
+        d2:"Improve the project: layout, organization, standards, etc.",
+        b2:"Open",
+        h3:"🐛 Bug",
+        d3:"Something not working? Send a screenshot + steps to reproduce.",
+        b3:"Open",
+        label2:"TIP",
+        tips:[
+          "For bugs: expected vs actual behavior helps a lot.",
+          "For requests: include name, version, language, and source details.",
+          "For suggestions: explain the why — it makes decisions easier."
         ]
       }
     };
 
     function setUI(lang){
-      const d = copy[lang];
       localStorage.setItem("kyren_lang", lang);
       document.documentElement.lang = (lang==="en") ? "en" : "pt-BR";
+      const d = copy[lang];
+
       document.getElementById("langLabel").textContent = d.langLabel;
+      document.getElementById("tag").textContent = d.tag;
+      document.getElementById("home").textContent = d.home;
+      document.getElementById("guide").textContent = d.guide;
+      document.getElementById("updates").textContent = d.updates;
 
-      document.getElementById("ui_tag").textContent = d.ui_tag;
-      document.getElementById("ui_title").innerHTML = d.ui_title;
-      document.getElementById("ui_label_1").textContent = d.ui_label_1;
-      document.getElementById("ui_p1").textContent = d.ui_p1;
-      document.getElementById("ui_list").innerHTML = d.ui_list.map(x=>`<li>${x}</li>`).join("");
+      document.getElementById("title").textContent = d.title;
+      document.getElementById("sub").textContent = d.sub;
 
-      document.getElementById("ui_btn_req").textContent = d.ui_btn_req;
-      document.getElementById("ui_btn_sug").textContent = d.ui_btn_sug;
-      document.getElementById("ui_btn_bug").textContent = d.ui_btn_bug;
-      document.getElementById("ui_btn_all").textContent = d.ui_btn_all;
+      document.getElementById("label1").textContent = d.label1;
+      document.getElementById("h1").textContent = d.h1;
+      document.getElementById("d1").textContent = d.d1;
+      document.getElementById("b1").textContent = d.b1;
 
-      document.getElementById("ui_label_2").textContent = d.ui_label_2;
-      document.getElementById("ui_rules").innerHTML = d.ui_rules.map(x=>`<li>${x}</li>`).join("");
+      document.getElementById("h2").textContent = d.h2;
+      document.getElementById("d2").textContent = d.d2;
+      document.getElementById("b2").textContent = d.b2;
+
+      document.getElementById("h3").textContent = d.h3;
+      document.getElementById("d3").textContent = d.d3;
+      document.getElementById("b3").textContent = d.b3;
+
+      document.getElementById("label2").textContent = d.label2;
+      document.getElementById("tips").innerHTML = d.tips.map(s=>`<li>${s}</li>`).join("");
     }
 
-    kyrenInitLang(copy, setUI);
+    kyrenInitLang(setUI);
   </script>
 </body>
 </html>
