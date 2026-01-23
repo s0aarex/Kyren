@@ -38,8 +38,8 @@ const I18N = {
 
     how_title_html:"Como <em>usar</em>",
     how_subtitle:"Guia rápido.",
-    how_steps_html:"1) Abra o Hydra<br/>2) Vá em <b>Sources</b><br/>3) Clique em <b>Add source</b><br/>4) Abra a Kyren na Library e instale",
-    how_open_library:"Abrir Kyren na Library",
+    how_steps_html:"1) Clique no botao abaixo Instalar no Hydra<br/>2) Clique em <b>Abrir Hydra</b><br/>3) Clique em <b>Importar</b>",
+    how_open_library:"Instalar no Hydra",
 
     fb_title_html:"<em>Feedback</em>",
     fb_subtitle:"Tudo via GitHub Issues pra ficar rastreável. Escolhe um tipo e abre o ticket 👇",
@@ -85,8 +85,8 @@ const I18N = {
 
     how_title_html:"How to <em>use</em>",
     how_subtitle:"Quick guide.",
-    how_steps_html:"1) Open Hydra<br/>2) Go to <b>Sources</b><br/>3) Click <b>Add source</b><br/>4) Open Kyren in the Library and install",
-    how_open_library:"Open Kyren in Library",
+    how_steps_html:"1) Click in the button Install on Hydra<br/>2) Click in <b>Open Hydra</b><br/>3) Click in <b>Import</b>",
+    how_open_library:"Install on Hydra",
 
     fb_title_html:"<em>Feedback</em>",
     fb_subtitle:"Everything via GitHub Issues so it’s trackable. Pick a type and open a ticket 👇",
