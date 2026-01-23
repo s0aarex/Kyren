@@ -1,141 +1,167 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>How to use • Kyren</title>
-  <link rel="stylesheet" href="./assets/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kyren — Como usar</title>
+
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./assets/style.css" />
 </head>
-<body>
-  <div class="bg-layer">
-    <div class="bg-glow"></div>
-    <div class="bg-grid"></div>
-    <div class="bg-grain"></div>
-    <div class="bg-scribbles" id="bgScribbles"></div>
-  </div>
 
-  <div class="wrap">
-    <div class="top">
-      <div class="brand">
-        <span class="dot"></span><span>KYREN</span><span style="opacity:.55">—</span><span id="tag">GUIDE</span>
-      </div>
-      <div class="actions">
-        <a class="pill" href="./index.html" id="home">🏠 Home</a>
-        <a class="pill" href="https://github.com/s0aarex/Kyren" target="_blank" rel="noreferrer">🐙 GitHub</a>
-        <a class="pill" href="./feedback.html" id="top_feedback">💬 Feedback</a>
-        <div class="lang" id="langToggle">🌐 <span id="langLabel">PT-BR</span> <small>↔</small> EN</div>
-      </div>
+<body class="bg">
+  <div id="scribbles" aria-hidden="true"></div>
+
+  <header class="topbar reveal">
+    <div class="topbar__left">
+      <span class="dot"></span>
+      <span class="topbar__tag" id="tag">KYREN — GUIDE</span>
     </div>
 
-    <h1 class="reveal" id="title">🚀 Como usar</h1>
-    <p class="sub reveal" id="sub">
-      Setup rápido, sem mistério. Se algo quebrar, abre um ticket e a gente resolve.
-    </p>
+    <nav class="topbar__right">
+      <a class="pill" href="./index.html">🏠 <span id="homeTxt">Home</span></a>
+      <a class="pill" href="https://github.com/s0aarex/Kyren" target="_blank" rel="noreferrer">👾 GitHub</a>
+      <a class="pill" href="./feedback.html">💬 <span id="fbTxt">Feedback</span></a>
+      <button class="pill" id="langToggle" type="button">🌐 PT-BR → EN</button>
+    </nav>
+  </header>
 
-    <div class="section reveal">
-      <div class="label" id="label1">PASSO A PASSO</div>
-      <ol class="list" id="steps">
-        <li>Abra o Hydra Launcher.</li>
-        <li>Vá em <b>Importar / Fontes</b>.</li>
-        <li>Cole o link do JSON da source (do seu repositório).</li>
-        <li>Confirme e pronto ✅</li>
-      </ol>
+  <main class="wrap">
+    <section class="hero reveal">
+      <h1 class="hero__title"><span>🚀</span> <em id="title">Como usar</em></h1>
+      <p class="hero__sub" id="sub">
+        Passo a passo rápido pra importar a source Kyren no Hydra.
+      </p>
 
-      <div class="ctaRow">
-        <a class="btn ghost" href="./feedback.html" id="cta1">💬 Abrir um ticket</a>
-        <a class="btn ghost" href="https://github.com/s0aarex/Kyren" target="_blank" rel="noreferrer" id="cta2">🐙 Ver repositório</a>
+      <div class="hero__cta">
+        <a class="btn" href="./index.html">⬅️ <span id="backTxt">Voltar</span></a>
+        <a class="btn" href="./feedback.html">🎫 <span id="ticketTxt">Abrir ticket</span></a>
       </div>
-    </div>
+    </section>
 
-    <div class="section reveal">
-      <div class="label" id="label2">DICAS</div>
-      <ul class="list" id="tips">
-        <li>Se o link não importar, tenta atualizar o app e reiniciar.</li>
-        <li>Se um item estiver fora do padrão, manda o nome + print no ticket.</li>
-        <li>Patch notes ficam organizados na aba de atualizações.</li>
-      </ul>
-    </div>
-  </div>
+    <div class="divider reveal"></div>
+
+    <section class="section reveal">
+      <p class="kicker" id="k1">PASSO A PASSO</p>
+
+      <div class="grid" style="grid-template-columns:1fr;">
+        <article class="card">
+          <h3>1) <span id="s1t">Abra o Hydra Launcher</span></h3>
+          <p id="s1d">De preferência já logado e com internet ok.</p>
+        </article>
+
+        <article class="card">
+          <h3>2) <span id="s2t">Vá em Importar / Fontes</span></h3>
+          <p id="s2d">A área onde você adiciona novas sources.</p>
+        </article>
+
+        <article class="card">
+          <h3>3) <span id="s3t">Cole o link do JSON da Kyren</span></h3>
+          <p id="s3d">
+            Cole o link do arquivo <b>kyren.json</b> do repositório (raw).
+          </p>
+          <div class="hi">
+            <div class="hi__item">💡 <b id="tip1">Dica:</b> use o link <b>raw</b> do GitHub (termina em <b>.json</b>).</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>4) <span id="s4t">Confirme e pronto ✅</span></h3>
+          <p id="s4d">Se aparecer erro, abre um ticket em Feedback.</p>
+        </article>
+      </div>
+    </section>
+
+    <div class="divider reveal"></div>
+
+    <section class="section reveal">
+      <p class="kicker" id="k2">TROUBLESHOOT</p>
+
+      <div class="grid">
+        <article class="card">
+          <h3>🧯 <span id="t1t">Deu erro de parsing?</span></h3>
+          <p id="t1d">Pode ser link errado (não raw) ou JSON quebrado.</p>
+        </article>
+
+        <article class="card">
+          <h3>🔒 <span id="t2t">Link caiu?</span></h3>
+          <p id="t2d">Troca por um mirror e reporta no ticket.</p>
+        </article>
+
+        <article class="card">
+          <h3>📌 <span id="t3t">Sugestão / pedido?</span></h3>
+          <p id="t3d">Abre ticket com o nome do jogo e fonte do link.</p>
+        </article>
+      </div>
+
+      <div class="row" style="margin-top:14px">
+        <a class="btn" href="./feedback.html">💬 <span id="openFb">Ir pro Feedback</span></a>
+        <a class="btn btn--ghost" href="./patch-notes.html">🧾 <span id="openPn">Ver Patch notes</span></a>
+      </div>
+    </section>
+
+    <footer class="footer reveal">
+      <p>🖤 Kyren — Guide</p>
+    </footer>
+  </main>
 
   <script src="./assets/app.js"></script>
   <script>
-    kyrenMountScribbles();
-    kyrenReveal();
+    // Simple i18n for this page using kyren_lang
+    const lang = (localStorage.getItem("kyren_lang") || "pt-BR").startsWith("en") ? "en" : "pt";
+    const set = (id, txt) => { const el = document.getElementById(id); if(el) el.textContent = txt; };
 
-    const copy = {
-      "pt-BR": {
-        langLabel:"PT-BR",
-        tag:"GUIDE",
-        home:"🏠 Home",
-        top_feedback:"💬 Feedback",
-        title:"🚀 Como usar",
-        sub:"Setup rápido, sem mistério. Se algo quebrar, abre um ticket e a gente resolve.",
-        label1:"PASSO A PASSO",
-        steps:[
-          "Abra o Hydra Launcher.",
-          "Vá em <b>Importar / Fontes</b>.",
-          "Cole o link do JSON da source (do seu repositório).",
-          "Confirme e pronto ✅"
-        ],
-        cta1:"💬 Abrir um ticket",
-        cta2:"🐙 Ver repositório",
-        label2:"DICAS",
-        tips:[
-          "Se o link não importar, tenta atualizar o app e reiniciar.",
-          "Se um item estiver fora do padrão, manda o nome + print no ticket.",
-          "Patch notes ficam organizados na aba de atualizações."
-        ]
+    const dict = {
+      pt: {
+        tag:"KYREN — GUIDE",
+        homeTxt:"Home", fbTxt:"Feedback",
+        title:"Como usar",
+        sub:"Passo a passo rápido pra importar a source Kyren no Hydra.",
+        backTxt:"Voltar", ticketTxt:"Abrir ticket",
+        k1:"PASSO A PASSO",
+        s1t:"Abra o Hydra Launcher", s1d:"De preferência já logado e com internet ok.",
+        s2t:"Vá em Importar / Fontes", s2d:"A área onde você adiciona novas sources.",
+        s3t:"Cole o link do JSON da Kyren", s3d:"Cole o link do arquivo kyren.json do repositório (raw).",
+        tip1:"Dica:",
+        s4t:"Confirme e pronto ✅", s4d:"Se aparecer erro, abre um ticket em Feedback.",
+        k2:"TROUBLESHOOT",
+        t1t:"Deu erro de parsing?", t1d:"Pode ser link errado (não raw) ou JSON quebrado.",
+        t2t:"Link caiu?", t2d:"Troca por um mirror e reporta no ticket.",
+        t3t:"Sugestão / pedido?", t3d:"Abre ticket com o nome do jogo e fonte do link.",
+        openFb:"Ir pro Feedback",
+        openPn:"Ver Patch notes",
       },
-      "en": {
-        langLabel:"EN",
-        tag:"GUIDE",
-        home:"🏠 Home",
-        top_feedback:"💬 Feedback",
-        title:"🚀 How to use",
-        sub:"Quick setup, no drama. If something breaks, open a ticket and we’ll fix it.",
-        label1:"STEP BY STEP",
-        steps:[
-          "Open Hydra Launcher.",
-          "Go to <b>Import / Sources</b>.",
-          "Paste the source JSON link (from your repo).",
-          "Confirm and you’re done ✅"
-        ],
-        cta1:"💬 Open a ticket",
-        cta2:"🐙 View repository",
-        label2:"TIPS",
-        tips:[
-          "If import fails, update the app and restart.",
-          "If an item looks wrong, send the name + screenshot in the ticket.",
-          "Patch notes are listed on the updates page."
-        ]
+      en: {
+        tag:"KYREN — GUIDE",
+        homeTxt:"Home", fbTxt:"Feedback",
+        title:"How to use",
+        sub:"Quick steps to import the Kyren source into Hydra.",
+        backTxt:"Back", ticketTxt:"Open ticket",
+        k1:"STEP BY STEP",
+        s1t:"Open Hydra Launcher", s1d:"Preferably logged in and with stable internet.",
+        s2t:"Go to Import / Sources", s2d:"The place where you add new sources.",
+        s3t:"Paste Kyren JSON link", s3d:"Paste the raw link to kyren.json from the repo.",
+        tip1:"Tip:",
+        s4t:"Confirm and done ✅", s4d:"If anything breaks, open a ticket in Feedback.",
+        k2:"TROUBLESHOOT",
+        t1t:"Parsing error?", t1d:"Usually wrong link (not raw) or broken JSON.",
+        t2t:"Dead link?", t2d:"Switch to a mirror and report it in a ticket.",
+        t3t:"Request / suggestion?", t3d:"Open a ticket with game name and link source.",
+        openFb:"Go to Feedback",
+        openPn:"View Patch notes",
       }
     };
 
-    function setUI(lang){
-      localStorage.setItem("kyren_lang", lang);
-      document.documentElement.lang = (lang==="en") ? "en" : "pt-BR";
-      const d = copy[lang];
-
-      document.getElementById("langLabel").textContent = d.langLabel;
-      document.getElementById("tag").textContent = d.tag;
-      document.getElementById("home").textContent = d.home;
-      document.getElementById("top_feedback").textContent = d.top_feedback;
-
-      document.getElementById("title").textContent = d.title;
-      document.getElementById("sub").textContent = d.sub;
-
-      document.getElementById("label1").textContent = d.label1;
-      document.getElementById("steps").innerHTML = d.steps.map(s=>`<li>${s}</li>`).join("");
-
-      document.getElementById("cta1").textContent = d.cta1;
-      document.getElementById("cta2").textContent = d.cta2;
-
-      document.getElementById("label2").textContent = d.label2;
-      document.getElementById("tips").innerHTML = d.tips.map(s=>`<li>${s}</li>`).join("");
+    const d = dict[lang];
+    Object.keys(d).forEach(k => set(k, d[k]));
+    const btn = document.getElementById("langToggle");
+    if(btn){
+      btn.textContent = (lang === "en") ? "🌐 EN → PT-BR" : "🌐 PT-BR → EN";
+      btn.onclick = () => {
+        localStorage.setItem("kyren_lang", (lang === "en") ? "pt-BR" : "en");
+        location.reload();
+      };
     }
-
-    kyrenInitLang(setUI);
   </script>
 </body>
 </html>
