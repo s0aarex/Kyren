@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <radialGradient id="g" cx="50%" cy="45%" r="70%">
+      <stop offset="0%" stop-color="#0b0b0b"/>
+      <stop offset="100%" stop-color="#000"/>
+    </radialGradient>
+    <filter id="soft">
+      <feGaussianBlur stdDeviation="0.6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- background -->
+  <rect width="256" height="256" rx="56" fill="url(#g)"/>
+
+  <!-- subtle rings (site vibe) -->
+  <g opacity="0.18" fill="none" stroke="#fff">
+    <circle cx="190" cy="70" r="54"/>
+    <circle cx="70" cy="200" r="64"/>
+  </g>
+
+  <!-- monogram K -->
+  <g filter="url(#soft)" fill="#fff">
+    <path d="M78 60h28v62l46-62h34l-55 72 58 64h-36l-47-52v52H78V60z"/>
+  </g>
+</svg>
