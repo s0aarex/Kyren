@@ -1,45 +1,142 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Feedback • Kyren</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kyren</title>
 
 <style>
-  :root{--bg:#0b0f19;--card:rgba(255,255,255,.06);--border:rgba(255,255,255,.12);--text:rgba(255,255,255,.92);--muted:rgba(255,255,255,.70);--radius:18px;}
-  *{box-sizing:border-box}
-  html,body{height:100%}
-  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;color:var(--text);
-    background:radial-gradient(1200px 600px at 20% 10%, rgba(109,123,255,.25), transparent 55%),
-              radial-gradient(900px 500px at 80% 0%, rgba(34,197,94,.18), transparent 55%),
-              var(--bg);min-height:100vh;}
-  .wrap{max-width:900px;margin:0 auto;padding:28px 18px 60px}
-  a{color:inherit}
-  .back{display:inline-flex;gap:8px;align-items:center;color:var(--muted);text-decoration:none;padding:10px 12px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.04)}
-  .back:hover{background:rgba(255,255,255,.08)}
-  h1{margin:18px 0 14px}
-  .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:18px;box-shadow:0 10px 40px rgba(0,0,0,.35)}
-  .muted{color:var(--muted)}
-  .btn{display:inline-flex;gap:10px;align-items:center;padding:12px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);margin:10px 10px 0 0;text-decoration:none;font-weight:800}
-  .btn:hover{background:rgba(255,255,255,.10)}
+:root{
+  --bg:#050505;
+  --text:#f5f5f5;
+  --muted:#a1a1a1;
+  --border:rgba(255,255,255,.18);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  letter-spacing:.02em;
+}
+a{color:inherit;text-decoration:none}
+
+.wrap{
+  max-width:1100px;
+  margin:0 auto;
+  padding:80px 24px 120px;
+}
+
+.back{
+  display:inline-block;
+  margin-bottom:40px;
+  font-size:14px;
+  color:var(--muted);
+  border-bottom:1px solid transparent;
+}
+.back:hover{border-color:var(--muted)}
+
+h1{
+  font-size:clamp(42px,7vw,96px);
+  font-weight:300;
+  line-height:1;
+  margin:0 0 32px;
+}
+h1 span{
+  font-style:italic;
+  font-weight:500;
+}
+
+.section{
+  max-width:820px;
+  font-size:18px;
+  line-height:1.8;
+  color:#ddd;
+}
+
+.section + .section{
+  margin-top:60px;
+  padding-top:60px;
+  border-top:1px solid var(--border);
+}
+
+.label{
+  font-size:13px;
+  letter-spacing:.18em;
+  color:var(--muted);
+  margin-bottom:16px;
+}
+
+.list{
+  padding-left:20px;
+}
+.list li{
+  margin:14px 0;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:28px;
+  padding:14px 28px;
+  border:1px solid #fff;
+  border-radius:999px;
+  font-size:14px;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+.btn:hover{
+  background:#fff;
+  color:#000;
+}
 </style>
 </head>
-
 <body>
-  <div class="wrap">
-    <a class="back" href="./index.html">← Voltar</a>
-    <h1>💬 Sugestões & pedidos</h1>
 
-    <div class="card">
-      <p class="muted">Use os formulários do GitHub (vira ticket e fica organizado).</p>
+<div class="wrap">
+  <a class="back" href="./index.html">← voltar</a>
 
-      <a class="btn" href="https://github.com/s0aarex/Kyren/issues/new?template=pedido-jogo.yml" target="_blank" rel="noreferrer">🎮 Pedido de jogo</a>
-      <a class="btn" href="https://github.com/s0aarex/Kyren/issues/new?template=sugestao.yml" target="_blank" rel="noreferrer">💡 Sugestão</a>
-      <a class="btn" href="https://github.com/s0aarex/Kyren/issues/new?template=bug.yml" target="_blank" rel="noreferrer">🐛 Bug</a>
+  <h1>Sugestões <span>& pedidos</span></h1>
 
-      <p class="muted" style="margin-top:14px;">
-        Ver todos: <a href="https://github.com/s0aarex/Kyren/issues/new/choose" target="_blank" rel="noreferrer">Issues → New issue</a>
-      </p>
-    </div>
-  </div>
+<div class="section">
+  <div class="label">PARTICIPE</div>
+
+  <p>
+    A source Kyren é mantida de forma aberta e colaborativa.
+    Sugestões, pedidos de jogos e reportes de erro ajudam
+    a manter o projeto ativo e organizado.
+  </p>
+
+  <ul class="list">
+    <li>Pedidos de novos jogos</li>
+    <li>Sugestões de melhoria</li>
+    <li>Links quebrados ou erros</li>
+  </ul>
+
+  <a class="btn" href="https://github.com/s0aarex/Kyren/issues/new?template=pedido-jogo.yml" target="_blank">
+    Pedido de jogo
+  </a>
+
+  <a class="btn" href="https://github.com/s0aarex/Kyren/issues/new?template=sugestao.yml" target="_blank">
+    Sugestão
+  </a>
+
+  <a class="btn" href="https://github.com/s0aarex/Kyren/issues/new?template=bug.yml" target="_blank">
+    Reportar bug
+  </a>
+</div>
+
+<div class="section">
+  <div class="label">ORGANIZAÇÃO</div>
+
+  <p>
+    Todas as solicitações são registradas como tickets públicos,
+    garantindo histórico, transparência e melhor acompanhamento
+    das respostas e correções.
+  </p>
+</div>
+
+</div>
 </body>
 </html>
