@@ -286,6 +286,7 @@ body{
   padding: 42px 0 24px;
   color: rgba(255,255,255,.40);
   font-size: 12px;
+  margin-bottom: 0;
 }
 
 /* ===== Motion defaults ===== */
