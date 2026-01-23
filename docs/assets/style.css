@@ -222,3 +222,91 @@ h1 .ital{font-style:italic; font-weight:500}
 @media (max-width: 900px){
   .corner{display:none}
 }
+
+/* ===== HOME UI ===== */
+.hero{
+  margin-top:18px;
+  max-width:980px;
+}
+.sub{
+  max-width:720px;
+  color:rgba(255,255,255,.72);
+  font-size:18px;
+  line-height:1.8;
+}
+
+.ctaRow{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:18px;
+}
+
+.cardGrid{
+  margin-top:44px;
+  display:grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap:14px;
+}
+.card{
+  grid-column: span 4;
+  padding:18px 18px 16px;
+  border:1px solid var(--border);
+  border-radius:22px;
+  background: rgba(255,255,255,.03);
+  backdrop-filter: blur(10px);
+  transition: transform .2s ease, background .2s ease, border-color .2s ease;
+  position:relative;
+  overflow:hidden;
+}
+.card:hover{
+  transform: translateY(-4px);
+  background: rgba(255,255,255,.06);
+  border-color: rgba(255,255,255,.26);
+}
+.card::after{
+  content:"";
+  position:absolute;
+  inset:-40px -40px auto auto;
+  width:140px;height:140px;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.18), transparent 55%);
+  opacity:.55;
+  pointer-events:none;
+  transform: rotate(12deg);
+}
+
+.card h3{
+  margin:0 0 8px;
+  font-size:14px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.86);
+}
+.card p{
+  margin:0;
+  color:rgba(255,255,255,.70);
+  line-height:1.7;
+  font-size:15px;
+}
+
+.chip{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background: rgba(255,255,255,.03);
+  color:rgba(255,255,255,.78);
+  font-size:12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+/* reveal micro animation */
+.reveal{opacity:0; transform:translateY(10px); transition: opacity .6s ease, transform .6s ease;}
+.reveal.in{opacity:1; transform:translateY(0);}
+
+@media (max-width: 900px){
+  .card{grid-column: span 12;}
+}
