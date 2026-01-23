@@ -1,23 +1,67 @@
 [
   {
     "version": "v1.08.0",
-    "title": "Sync & polish",
+    "title": { "pt": "Sync & polish", "en": "Sync & polish" },
     "date": "2026-01-22",
-    "summary": "Padronização geral e melhorias no formato do JSON.",
-    "added": [
-      "Novo padrão de campos obrigatórios",
-      "Checklist de validação pra novas entradas"
-    ],
-    "changed": [
-      "Organização por categorias",
-      "Nomes mais consistentes (menos variação)"
-    ],
-    "fixed": [
-      "Erro de parsing em entradas com caracteres especiais"
-    ],
-    "removed": [
-      "Entradas duplicadas / quebradas"
-    ],
+
+    "summary": {
+      "pt": "Padronização geral e melhorias no formato do JSON.",
+      "en": "General standardization and improvements to the JSON format."
+    },
+
+    "highlights": {
+      "pt": [
+        "✅ Novo padrão de campos obrigatórios",
+        "🧯 Corrigido parsing com caracteres especiais",
+        "🧼 Limpeza de duplicados/quebrados"
+      ],
+      "en": [
+        "✅ New required fields standard",
+        "🧯 Fixed parsing with special characters",
+        "🧼 Cleaned duplicates/broken entries"
+      ]
+    },
+
+    "added": {
+      "pt": [
+        "Novo padrão de campos obrigatórios",
+        "Checklist de validação pra novas entradas"
+      ],
+      "en": [
+        "New required fields standard",
+        "Validation checklist for new entries"
+      ]
+    },
+
+    "changed": {
+      "pt": [
+        "Organização por categorias",
+        "Nomes mais consistentes (menos variação)"
+      ],
+      "en": [
+        "Organization by categories",
+        "More consistent naming (less variation)"
+      ]
+    },
+
+    "fixed": {
+      "pt": [
+        "Erro de parsing em entradas com caracteres especiais"
+      ],
+      "en": [
+        "Parsing error with special characters"
+      ]
+    },
+
+    "removed": {
+      "pt": [
+        "Entradas duplicadas / quebradas"
+      ],
+      "en": [
+        "Duplicate / broken entries"
+      ]
+    },
+
     "stats": { "added": 14, "updated": 9, "cleaned": 6 }
   }
 ]
