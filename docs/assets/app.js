@@ -2,7 +2,7 @@
 const CONFIG = {
   repoUrl: "https://github.com/s0aarex/Kyren",
   // Coloca aqui o link REAL da Kyren na Hydra Library (quando você tiver)
-  hydraLibraryUrl: "https://library.hydra-launcher.org/"
+  hydraLibraryUrl: "https://library.hydra.wiki/sources/86"
 };
 
 // ===== i18n =====
