@@ -35,3 +35,17 @@ function kyrenMountScribbles(){
   </svg>
   `;
 }
+
+function kyrenReveal(){
+  const els = document.querySelectorAll(".reveal");
+  const obs = new IntersectionObserver((entries)=>{
+    for(const e of entries){
+      if(e.isIntersecting){
+        e.target.classList.add("in");
+        obs.unobserve(e.target);
+      }
+    }
+  }, { threshold: 0.12 });
+
+  els.forEach(el=>obs.observe(el));
+}
