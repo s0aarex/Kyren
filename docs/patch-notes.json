@@ -1,7 +1,18 @@
 {
   "pt": [
     {
-      "version": "v1.08.0",
+      "version": "v1.09",
+      "date": "2026-01-23",
+      "title": "Jogos e Reparo",
+      "sumary": "Novos Jogos Adicionados e links quebrados corrigidos",
+      "changes": [
+        "29 Jogos adicionados a fonte",
+        "7 Links quebrados corrigidos"
+      ]
+      "tags": ["json","jogos", "reparo"]
+    }
+    {
+      "version": "v1.08",
       "date": "2026-01-22",
       "title": "Sync & polish",
       "summary": "Padronização geral e melhorias no formato do JSON.",
@@ -16,7 +27,18 @@
   ],
   "en": [
     {
-      "version": "v1.08.0",
+      "version": "v1.09",
+      "date": "2026-01-23",
+      "title": "Games and Fixes",
+      "sumary": "New games added and broken links fixed",
+      "changes": [
+        "29 games added in source",
+        "7 broken links fixed"
+      ]
+      "tags": ["json","games", "fixes"]
+    }
+    {
+      "version": "v1.08",
       "date": "2026-01-22",
       "title": "Sync & polish",
       "summary": "General standardization and improvements to the JSON format.",
