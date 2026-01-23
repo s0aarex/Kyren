@@ -143,41 +143,6 @@ async function kyrenLoadLatestPatch(){
 kyrenLoadLatestPatch();
 </script>
 
-    const copy = {
-      "pt-BR": {
-        langLabel:"PT-BR",
-        tag:"SOURCE HUB",
-        top_feedback:"💬 Feedback",
-        title:'Kyren <span class="ital">official</span>',
-        sub:"Site oficial da source Kyren — guia rápido, patch notes e uma área pra pedidos/sugestões/bugs (tudo rastreável no GitHub).",
-        cta1:"🚀 Como usar", cta2:"🧾 Patch notes", cta3:"💬 Feedback",
-        label1:"O QUE TEM AQUI",
-        c1:"Passo a passo curto e direto pra importar a source no Hydra.",
-        c2:"Mudanças organizadas: o que entrou, o que mudou e o que foi corrigido.",
-        c3:"Pedidos, sugestões e bugs viram tickets — dá pra acompanhar e comentar.",
-        label2:"ATALHOS",
-        forms:"📌 Abrir formulários",
-        latest_label: "🔥 ÚLTIMO PATCH",
-        latest_btn: "🧾 Ver patch notes"
-      },
-      "en": {
-        langLabel:"EN",
-        tag:"SOURCE HUB",
-        top_feedback:"💬 Feedback",
-        title:'Kyren <span class="ital">official</span>',
-        sub:"Official Kyren source site — quick guide, patch notes, and a place for requests/suggestions/bugs (all trackable on GitHub).",
-        cta1:"🚀 How to use", cta2:"🧾 Patch notes", cta3:"💬 Feedback",
-        label1:"WHAT’S HERE",
-        c1:"Short, straight-to-the-point steps to import the source into Hydra.",
-        c2:"Organized updates: what’s added, changed, and fixed.",
-        c3:"Requests, suggestions, and bugs become tickets — track and comment.",
-        label2:"SHORTCUTS",
-        forms:"📌 Open forms",
-        latest_label: "🔥 LATEST PATCH",
-        latest_btn: "🧾 View patch notes"
-      }
-    };
-
     function setUI(lang){
       localStorage.setItem("kyren_lang", lang);
       document.documentElement.lang = (lang==="en") ? "en" : "pt-BR";
