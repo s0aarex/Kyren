@@ -1,23 +1,6 @@
-// Shared language toggle (sync across pages)
-function kyrenInitLang(copy, setUI){
-  const saved = localStorage.getItem("kyren_lang") || "pt-BR";
-  setUI(saved);
-
-  const toggle = document.getElementById("langToggle");
-  if (toggle){
-    toggle.addEventListener("click", () => {
-      const cur = localStorage.getItem("kyren_lang") || "pt-BR";
-      const next = cur === "pt-BR" ? "en" : "pt-BR";
-      setUI(next);
-    });
-  }
-}
-
-// Inject background "scribbles" (SVG drawings)
 function kyrenMountScribbles(){
   const host = document.getElementById("bgScribbles");
   if(!host) return;
-
   host.innerHTML = `
   <svg width="100%" height="100%" viewBox="0 0 1200 800" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
     <g fill="none" stroke="rgba(255,255,255,.22)" stroke-width="2">
@@ -32,8 +15,7 @@ function kyrenMountScribbles(){
       <circle cx="140" cy="620" r="160"/>
       <circle cx="610" cy="120" r="90"/>
     </g>
-  </svg>
-  `;
+  </svg>`;
 }
 
 function kyrenReveal(){
@@ -46,6 +28,19 @@ function kyrenReveal(){
       }
     }
   }, { threshold: 0.12 });
-
   els.forEach(el=>obs.observe(el));
+}
+
+function kyrenInitLang(setUI){
+  const saved = localStorage.getItem("kyren_lang") || "pt-BR";
+  setUI(saved);
+
+  const toggle = document.getElementById("langToggle");
+  if(toggle){
+    toggle.addEventListener("click", ()=>{
+      const cur = localStorage.getItem("kyren_lang") || "pt-BR";
+      const next = cur === "pt-BR" ? "en" : "pt-BR";
+      setUI(next);
+    });
+  }
 }
