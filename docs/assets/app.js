@@ -149,6 +149,12 @@ function applyI18n(){
 
 // ===== patch notes data =====
 async function getPatchData(){
+  const base = window.location.pathname.replace(/\/[^\/]*$/, "/"); 
+  const url = `${base}patch-notes.json?v=${Date.now()}`;
+  const res = await fetch(url, { cache: "no-store" });
+  if(!res.ok) throw new Error(`HTTP ${res.status}`);
+  return await res.json();
+}
   // app.js está em /assets, então sobe um nível pra pegar /patch-notes.json
   const res = await fetch(`../patch-notes.json?v=${Date.now()}`, { cache: "no-store" });
   return await res.json();
