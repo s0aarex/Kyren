@@ -431,3 +431,48 @@ body{
   background: rgba(255,255,255,.06);
   border: 1px solid rgba(255,255,255,.12);
 }
+
+/* NEW pill */
+.newPill{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  letter-spacing:.12em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.08);
+  box-shadow: 0 0 0 8px rgba(255,255,255,.05);
+}
+
+/* Patch recente (efeito especial) */
+.patchCard.is-new{
+  border-color: rgba(255,255,255,.22);
+  background: rgba(255,255,255,.06);
+  position: relative;
+  overflow: hidden;
+  animation: newFloat 3.6s ease-in-out infinite;
+}
+
+@keyframes newFloat{
+  0%,100%{ transform: translateY(0); }
+  50%{ transform: translateY(-2px); }
+}
+
+/* brilho passando (só no patch recente) */
+.patchCard.is-new::before{
+  content:"";
+  position:absolute;
+  inset:-40%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.10), transparent 55%);
+  transform: translateX(-30%) rotate(8deg);
+  animation: shine 2.8s ease-in-out infinite;
+  pointer-events:none;
+}
+
+@keyframes shine{
+  0%,100%{ transform: translateX(-30%) rotate(8deg); opacity:.25; }
+  50%{ transform: translateX(18%) rotate(8deg); opacity:.45; }
+}
