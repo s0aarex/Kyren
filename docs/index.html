@@ -98,38 +98,58 @@
   </main>
 
   <script>
-    // --- patch card (lê docs/patch-notes.json) ---
-    async function kyrenLoadLatestPatch(){
-      try{
-        const res = await fetch("./patch-notes.json", { cache: "no-store" });
-        const patches = await res.json();
-        const latest = patches?.[0];
-        const card = document.getElementById("latestPatchCard");
-        if(!latest || !card) return;
-
-        const items = [
-          ...(latest.added?.slice?.(0,2) || []),
-          ...(latest.fixed?.slice?.(0,1) || []),
-          ...(latest.changed?.slice?.(0,1) || []),
-        ].filter(Boolean);
-
-        card.innerHTML = `
-          <h4>🚀 ${latest.version} • ${latest.title}</h4>
-          <div class="meta">📅 ${latest.date} <span style="opacity:.55">•</span> ${latest.summary || ""}</div>
-          ${items.length ? `<ul>${items.map(x => `<li>${x}</li>`).join("")}</ul>` : ""}
-          ${latest.stats ? `
-            <div class="stats">
-              <span>📌 +${latest.stats.added ?? 0}</span>
-              <span>🧷 ${latest.stats.updated ?? 0}</span>
-              <span>🧼 ${latest.stats.cleaned ?? 0}</span>
-            </div>` : ``}
-        `;
-      }catch(e){
-        const card = document.getElementById("latestPatchCard");
-        if(card) card.innerHTML = `<h4>⚠️ Não carregou</h4><div class="meta">Confere se <b>docs/patch-notes.json</b> existe e é JSON válido.</div>`;
-      }
+  function pickText(val, lang){
+    if (!val) return "";
+    if (typeof val === "string") return val;
+    if (typeof val === "object") {
+      return val[lang] || val["pt-BR"] || val["en"] || "";
     }
-    kyrenLoadLatestPatch();
+    return String(val);
+  }
+
+  function pickList(list, lang){
+    if (!Array.isArray(list)) return [];
+    return list.map(item => pickText(item, lang)).filter(Boolean);
+  }
+
+  async function kyrenLoadLatestPatch(){
+    const lang = localStorage.getItem("kyren_lang") || "pt-BR";
+
+    try{
+      const res = await fetch("./patch-notes.json", { cache: "no-store" });
+      const patches = await res.json();
+      const latest = patches?.[0];
+      const card = document.getElementById("latestPatchCard");
+      if(!latest || !card) return;
+
+      const title = pickText(latest.title, lang);
+      const summary = pickText(latest.summary, lang);
+
+      const items = [
+        ...pickList(latest.added, lang).slice(0,2),
+        ...pickList(latest.fixed, lang).slice(0,1),
+        ...pickList(latest.changed, lang).slice(0,1),
+      ];
+
+      card.innerHTML = `
+        <h4>🚀 ${latest.version} • ${title}</h4>
+        <div class="meta">📅 ${latest.date} <span style="opacity:.55">•</span> ${summary}</div>
+        ${items.length ? `<ul>${items.map(x => `<li>${x}</li>`).join("")}</ul>` : ""}
+        ${latest.stats ? `
+          <div class="stats">
+            <span>📌 +${latest.stats.added ?? 0}</span>
+            <span>🧷 ${latest.stats.updated ?? 0}</span>
+            <span>🧼 ${latest.stats.cleaned ?? 0}</span>
+          </div>` : ``}
+      `;
+    }catch(e){
+      const card = document.getElementById("latestPatchCard");
+      if(card) card.innerHTML = `<h4>⚠️ Não carregou</h4><div class="meta">Confere se <b>docs/patch-notes.json</b> existe e é JSON válido.</div>`;
+    }
+  }
+
+  kyrenLoadLatestPatch();
+</script>
 
     // --- idioma (simples) ---
     const copy = {
