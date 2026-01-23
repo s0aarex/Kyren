@@ -114,6 +114,8 @@ function setLang(next){
 function applyI18n(){
   document.documentElement.lang = (lang === "pt") ? "pt-br" : "en";
   const dict = I18N[lang];
+  const installBtn = document.getElementById("installBtn");
+if (installBtn) installBtn.href = CONFIG.installDeepLink;
 
   document.querySelectorAll("[data-i18n]").forEach(el=>{
     const k = el.getAttribute("data-i18n");
