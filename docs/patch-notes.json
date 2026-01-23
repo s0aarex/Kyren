@@ -3,22 +3,30 @@
     {
       "version": "v1.08.0",
       "date": "2026-01-22",
+      "title": "Sync & polish",
+      "summary": "Padronização geral e melhorias no formato do JSON.",
       "changes": [
-        "Correção de links quebrados",
-        "Melhoria no downloader",
-        "Novos jogos adicionados"
-      ]
+        "Novo padrão de campos obrigatórios",
+        "Corrigido parsing com caracteres especiais",
+        "Limpeza de duplicados/quebrados",
+        "Ajustes gerais de estabilidade"
+      ],
+      "tags": ["json", "quality"]
     }
   ],
   "en": [
     {
       "version": "v1.08.0",
       "date": "2026-01-22",
+      "title": "Sync & polish",
+      "summary": "General standardization and improvements to the JSON format.",
       "changes": [
-        "Fixed broken links",
-        "Downloader improvements",
-        "New games added"
-      ]
+        "New required fields standard",
+        "Fixed parsing with special characters",
+        "Cleaned duplicates/broken entries",
+        "General stability tweaks"
+      ],
+      "tags": ["json", "quality"]
     }
   ]
 }
