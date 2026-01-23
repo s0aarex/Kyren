@@ -54,6 +54,21 @@
     </div>
 
     <div class="section reveal">
+  <div class="label" id="latest_label">LATEST PATCH</div>
+
+  <div class="grid">
+    <div class="card" id="latestPatchCard">
+      <h3>⏳ Carregando…</h3>
+      <p style="opacity:.75">Se não carregar, é cache ou caminho do JSON.</p>
+    </div>
+  </div>
+
+  <div class="ctaRow" style="margin-top:18px;">
+    <a class="btn ghost" href="./patch-notes.html" id="latest_btn">🧾 Ver patch notes</a>
+  </div>
+</div>
+
+    <div class="section reveal">
       <div class="label" id="label2">ATALHOS</div>
       <div class="ctaRow">
         <a class="btn ghost" href="https://github.com/s0aarex/Kyren/issues/new/choose" target="_blank" rel="noreferrer" id="forms">📌 Abrir formulários</a>
@@ -65,6 +80,34 @@
   <script>
     kyrenMountScribbles();
     kyrenReveal();
+
+    <script>
+async function kyrenLoadLatestPatch(){
+  try{
+    const res = await fetch("./patch-notes.json", { cache: "no-store" });
+    const patches = await res.json();
+    const latest = patches?.[0];
+    const card = document.getElementById("latestPatchCard");
+    if(!latest || !card) return;
+
+    card.innerHTML = `
+      <h3>🚀 ${latest.version} • ${latest.title}</h3>
+      <p style="margin-top:10px; opacity:.75">
+        🗓️ ${latest.date}<br>
+        ${latest.summary || ""}
+      </p>
+      ${latest.stats ? `
+      <p style="margin-top:12px;opacity:.8">
+        📌 +${latest.stats.added ?? 0} • ✏️ ${latest.stats.updated ?? 0} • 🧼 ${latest.stats.cleaned ?? 0}
+      </p>` : ``}
+    `;
+  } catch(e){
+    const card = document.getElementById("latestPatchCard");
+    if(card) card.innerHTML = `<h3>⚠️ Não carregou</h3><p style="opacity:.75">Checa se <b>./patch-notes.json</b> existe em <b>/docs</b>.</p>`;
+  }
+}
+kyrenLoadLatestPatch();
+</script>
 
     const copy = {
       "pt-BR": {
@@ -79,7 +122,9 @@
         c2:"Mudanças organizadas: o que entrou, o que mudou e o que foi corrigido.",
         c3:"Pedidos, sugestões e bugs viram tickets — dá pra acompanhar e comentar.",
         label2:"ATALHOS",
-        forms:"📌 Abrir formulários"
+        forms:"📌 Abrir formulários",
+        latest_label: "🔥 ÚLTIMO PATCH",
+        latest_btn: "🧾 Ver patch notes"
       },
       "en": {
         langLabel:"EN",
@@ -93,7 +138,9 @@
         c2:"Organized updates: what’s added, changed, and fixed.",
         c3:"Requests, suggestions, and bugs become tickets — track and comment.",
         label2:"SHORTCUTS",
-        forms:"📌 Open forms"
+        forms:"📌 Open forms",
+        latest_label: "🔥 LATEST PATCH",
+        latest_btn: "🧾 View patch notes"
       }
     };
 
@@ -120,6 +167,9 @@
 
       document.getElementById("label2").textContent = d.label2;
       document.getElementById("forms").textContent = d.forms;
+
+      document.getElementById("latest_label").textContent = d.latest_label;
+      document.getElementById("latest_btn").textContent = d.latest_btn;
     }
 
     kyrenInitLang(setUI);
