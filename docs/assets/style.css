@@ -410,3 +410,36 @@ footer, .footer, section, main, .wrap {
   50%  { transform: translate3d(-18px, 10px, 0) scale(1.02); }
   100% { transform: translate3d(0,0,0) scale(1); }
 }
+
+/* ===== KILL ALL BACKGROUNDS (anti-faixa cinza) ===== */
+html, body {
+  background: #070708 !important;
+  min-height: 100%;
+}
+
+/* força todos os containers a serem transparentes */
+body * {
+  background-color: transparent;
+}
+
+/* re-aplica fundo só onde PRECISA (cards, navbar etc) */
+.card,
+.panel,
+.box,
+header,
+.nav,
+.topbar {
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(6px);
+}
+
+/* garante que nada crie faixa no fim */
+main,
+section,
+footer,
+.wrapper,
+.container,
+.content {
+  background: transparent !important;
+  min-height: auto;
+}
