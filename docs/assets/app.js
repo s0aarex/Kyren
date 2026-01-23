@@ -181,7 +181,7 @@ function applyI18n() {
 
 // ===== patch notes data =====
 async function getPatchData() {
-  const res = await fetch(`../patch-notes.json?v=${Date.now()}`, { cache: "no-store" });
+  const res = await fetch(`docs/patch-notes.json?v=${Date.now()}`, { cache: "no-store" });
   return await res.json();
 }
 
