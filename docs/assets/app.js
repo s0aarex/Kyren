@@ -40,7 +40,7 @@ const I18N = {
 
     how_title_html:"Como <em>usar</em>",
     how_subtitle:"Guia rápido.",
-    how_steps_html:"1) Clique no botao abaixo <b>Instalar no Hydra</b><br/>2) Clique em <b>Abrir Hydra</b><br/>3) Clique em <b>Importar</b>",
+    how_steps_html:"1) Clique no botao abaixo <b>Instalar no Hydra</b><br/>2) Clique em <b>Abrir Hydra</b><br/>3) Clique em <b>Adicionar Fonte</b>",
     how_open_library:"Instalar no Hydra",
 
     fb_title_html:"<em>Feedback</em>",
@@ -87,7 +87,7 @@ const I18N = {
 
     how_title_html:"How to <em>use</em>",
     how_subtitle:"Quick guide.",
-    how_steps_html:"1) Click in the button <b>Install on Hydra</b><br/>2) Click in <b>Open Hydra</b><br/>3) Click in <b>Import</b>",
+    how_steps_html:"1) Click in the button <b>Install on Hydra</b><br/>2) Click in <b>Open Hydra</b><br/>3) Click in <b>Add Source</b>",
     how_open_library:"Install on Hydra",
 
     fb_title_html:"<em>Feedback</em>",
