@@ -3,7 +3,6 @@
     {
       "version": "v1.08.0",
       "date": "2026-01-22",
-      "title": "Correções e melhorias",
       "changes": [
         "Correção de links quebrados",
         "Melhoria no downloader",
@@ -15,11 +14,10 @@
     {
       "version": "v1.08.0",
       "date": "2026-01-22",
-      "title": "Fixes and improvements",
       "changes": [
         "Fixed broken links",
         "Downloader improvements",
-        "Added new games"
+        "New games added"
       ]
     }
   ]
