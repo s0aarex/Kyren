@@ -4,15 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Patch Notes — Kyren</title>
-  <link rel="icon" href="assets/favicon.svg" />
+  <link rel="icon" href="assets/favicon.svg?v=1" type="image/svg+xml" />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
-  <div class="bg"></div>
-<div class="bg-lines"></div>
-<div class="blob blob1"></div>
-<div class="blob blob2"></div>
-<div class="blob blob3"></div>
+  <div class="bg" aria-hidden="true"></div>
+  <div class="bg-lines" aria-hidden="true"></div>
+  <div class="blob blob1" aria-hidden="true"></div>
+  <div class="blob blob2" aria-hidden="true"></div>
+  <div class="blob blob3" aria-hidden="true"></div>
 
   <div class="topbar">
     <div class="pill">
@@ -25,8 +25,9 @@
       </a>
 
       <div class="actions">
-        <a class="chip" href="https://github.com/SEU-USUARIO/SEU-REPO" target="_blank">🐙 GitHub</a>
-        <a class="chip" href="feedback.html">💬 Feedback</a>
+        <a class="chip" href="https://github.com/s0aarex/Kyren" target="_blank">🐙 <span data-i18n="nav_github">GitHub</span></a>
+        <a class="chip" href="feedback.html">💬 <span data-i18n="nav_feedback">Feedback</span></a>
+
         <div class="lang">
           🌐
           <button data-lang="pt" class="active" onclick="setLang('pt')">PT-BR</button>
@@ -38,11 +39,11 @@
   </div>
 
   <main class="wrap">
-    <section class="hero" style="padding-top:46px;">
-      <h1>Patch <em>notes</em></h1>
-      <p>Histórico de mudanças organizadas por versão.</p>
+    <section class="hero" style="padding-top:46px;" data-anim>
+      <h1 data-i18n-html="patch_heading_html">Patch <em>notes</em></h1>
+      <p data-i18n="patch_subtitle">Histórico de mudanças organizadas por versão.</p>
       <div class="cta">
-        <a class="btn" href="index.html">← Home</a>
+        <a class="btn" href="index.html" data-i18n="back_home">← Home</a>
       </div>
     </section>
 
