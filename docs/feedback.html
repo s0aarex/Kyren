@@ -1,155 +1,21 @@
 <!doctype html>
-<html lang="pt-BR">
+<html>
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Kyren — Feedback</title>
-
-  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./assets/style.css" />
+  <meta charset="utf-8">
+  <title>Feedback • Kyren</title>
+  <link rel="stylesheet" href="assets/style.css">
 </head>
+<body>
+<header>
+  <a href="index.html">← Voltar</a>
+</header>
 
-<body class="bg">
-  <div id="scribbles" aria-hidden="true"></div>
-
-  <header class="topbar reveal">
-    <div class="topbar__left">
-      <span class="dot"></span>
-      <span class="topbar__tag" id="tag">KYREN — FEEDBACK</span>
-    </div>
-
-    <nav class="topbar__right">
-      <a class="pill" href="./index.html">🏠 <span id="homeTxt">Home</span></a>
-      <a class="pill" href="./how-to-use.html">🚀 <span id="howTxt">Como usar</span></a>
-      <a class="pill" href="./patch-notes.html">🧾 <span id="pnTxt">Patch notes</span></a>
-      <button class="pill" id="langToggle" type="button">🌐 PT-BR → EN</button>
-    </nav>
-  </header>
-
-  <main class="wrap">
-    <section class="hero reveal">
-      <h1 class="hero__title">💬 <em id="title">Sugestões & pedidos</em></h1>
-      <p class="hero__sub" id="sub">
-        Aqui é o “central de tickets” da Kyren: pedido de jogo, sugestão e bug.
-      </p>
-
-      <div class="hero__cta">
-        <a class="btn" href="./index.html">⬅️ <span id="backTxt">Voltar</span></a>
-        <a class="btn btn--ghost" href="https://github.com/s0aarex/Kyren/issues" target="_blank" rel="noreferrer">👾 Issues</a>
-      </div>
-    </section>
-
-    <div class="divider reveal"></div>
-
-    <section class="section reveal">
-      <p class="kicker" id="k1">ABRIR TICKET</p>
-
-      <div class="grid">
-        <article class="card">
-          <h3>🎮 <span id="b1t">Pedido de jogo</span></h3>
-          <p id="b1d">Manda nome do jogo, versão, e de onde veio o link (pra validar).</p>
-          <a class="btn" id="gameBtn" href="#" target="_blank" rel="noreferrer">🎮 <span id="b1a">Abrir</span></a>
-        </article>
-
-        <article class="card">
-          <h3>✨ <span id="b2t">Sugestão</span></h3>
-          <p id="b2d">Ideias pra melhorar a source/site/organização.</p>
-          <a class="btn" id="sugBtn" href="#" target="_blank" rel="noreferrer">✨ <span id="b2a">Abrir</span></a>
-        </article>
-
-        <article class="card">
-          <h3>🐛 <span id="b3t">Bug / link quebrado</span></h3>
-          <p id="b3d">Se algo não abre, dá erro, ou caiu — manda aqui.</p>
-          <a class="btn" id="bugBtn" href="#" target="_blank" rel="noreferrer">🐛 <span id="b3a">Abrir</span></a>
-        </article>
-      </div>
-    </section>
-
-    <div class="divider reveal"></div>
-
-    <section class="section reveal">
-      <p class="kicker" id="k2">REGRAS RÁPIDAS</p>
-      <div class="grid" style="grid-template-columns:1fr;">
-        <article class="card">
-          <h3>🧠 <span id="r1t">Como pedir direito</span></h3>
-          <p class="muted" id="r1d">
-            Nome do jogo + plataforma + se é repack/pre-instalado + fonte do link.
-            Quanto mais detalhes, menos “idk” eu viro.
-          </p>
-
-          <div class="hi" style="margin-top:12px">
-            <div class="hi__item">✅ <span id="ex1">Exemplo:</span> “Miside (v0.93L) — pre-instalado — link: … — fonte: site X”</div>
-            <div class="hi__item">⚠️ <span id="ex2">Evita:</span> “manda jogo aí” (aí eu choro)</div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <footer class="footer reveal">
-      <p>🖤 Kyren — Feedback</p>
-    </footer>
-  </main>
-
-  <script src="./assets/app.js"></script>
-  <script>
-    // COLOCA AQUI SEUS LINKS (Google Form / Issue template / etc)
-    const LINKS = {
-      game: "COLE_AQUI_SEU_LINK_DE_PEDIDO_DE_JOGO",
-      suggestion: "COLE_AQUI_SEU_LINK_DE_SUGESTAO",
-      bug: "COLE_AQUI_SEU_LINK_DE_BUG"
-    };
-
-    document.getElementById("gameBtn").href = LINKS.game;
-    document.getElementById("sugBtn").href = LINKS.suggestion;
-    document.getElementById("bugBtn").href = LINKS.bug;
-
-    const lang = (localStorage.getItem("kyren_lang") || "pt-BR").startsWith("en") ? "en" : "pt";
-    const set = (id, txt) => { const el = document.getElementById(id); if(el) el.textContent = txt; };
-
-    const dict = {
-      pt: {
-        tag:"KYREN — FEEDBACK",
-        homeTxt:"Home", howTxt:"Como usar", pnTxt:"Patch notes",
-        title:"Sugestões & pedidos",
-        sub:"Aqui é o “central de tickets” da Kyren: pedido de jogo, sugestão e bug.",
-        backTxt:"Voltar",
-        k1:"ABRIR TICKET",
-        b1t:"Pedido de jogo", b1d:"Manda nome do jogo, versão, e de onde veio o link (pra validar).", b1a:"Abrir",
-        b2t:"Sugestão", b2d:"Ideias pra melhorar a source/site/organização.", b2a:"Abrir",
-        b3t:"Bug / link quebrado", b3d:"Se algo não abre, dá erro, ou caiu — manda aqui.", b3a:"Abrir",
-        k2:"REGRAS RÁPIDAS",
-        r1t:"Como pedir direito",
-        r1d:"Nome do jogo + plataforma + se é repack/pre-instalado + fonte do link. Quanto mais detalhes, menos “idk” eu viro.",
-        ex1:"Exemplo:", ex2:"Evita:"
-      },
-      en: {
-        tag:"KYREN — FEEDBACK",
-        homeTxt:"Home", howTxt:"How to use", pnTxt:"Patch notes",
-        title:"Requests & feedback",
-        sub:"Kyren ticket center: game requests, suggestions, and bug reports.",
-        backTxt:"Back",
-        k1:"OPEN A TICKET",
-        b1t:"Game request", b1d:"Send game name, version, and where the link came from (for validation).", b1a:"Open",
-        b2t:"Suggestion", b2d:"Ideas to improve the source/site/organization.", b2a:"Open",
-        b3t:"Bug / dead link", b3d:"If something won’t open, errors, or link died — report here.", b3a:"Open",
-        k2:"QUICK RULES",
-        r1t:"How to request properly",
-        r1d:"Game name + platform + repack/pre-installed + link source. More details = faster fix.",
-        ex1:"Example:", ex2:"Avoid:"
-      }
-    };
-
-    const d = dict[lang];
-    Object.keys(d).forEach(k => set(k, d[k]));
-
-    const btn = document.getElementById("langToggle");
-    if(btn){
-      btn.textContent = (lang === "en") ? "🌐 EN → PT-BR" : "🌐 PT-BR → EN";
-      btn.onclick = () => {
-        localStorage.setItem("kyren_lang", (lang === "en") ? "pt-BR" : "en");
-        location.reload();
-      };
-    }
-  </script>
+<main>
+  <h1>Feedback</h1>
+  <p>Relate bugs, links quebrados ou sugestões via GitHub Issues.</p>
+  <a href="https://github.com/SEU-USUARIO/SEU-REPO/issues" target="_blank">
+    Abrir Issues
+  </a>
+</main>
 </body>
 </html>
