@@ -375,3 +375,14 @@ body{
   filter: blur(0) !important;
   transition: opacity .6s ease, transform .6s ease, filter .6s ease;
 }
+
+/* remove qualquer bloco fantasma */
+section:empty,
+div:empty{
+  display: none;
+}
+
+/* garante que nada empurre o body */
+body{
+  overflow-x: hidden;
+}
