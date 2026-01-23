@@ -1,6 +1,8 @@
 const CONFIG = {
   repoUrl: "https://github.com/s0aarex/Kyren",
-  libraryUrl: "hydralauncher://install-source?urls=https://kyren.pages.dev/kyren.json"
+  libraryUrl: "https://library.hydra.wiki/sources/86",
+  sourceJsonUrl: "https://s0aarex.github.io/Kyren/kyren.json",
+  installDeepLink: "hydralauncher://install-source?urls=https://s0aarex.github.io/Kyren/kyren.json"
 };
 
 // ===== i18n =====
