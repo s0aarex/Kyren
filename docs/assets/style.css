@@ -418,3 +418,15 @@ body > *:not(#scribbles){
   position: relative;
   z-index: 1;
 }
+
+/* ====== remove o card gigante do lado do botão ====== */
+.sideCard{
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  min-height: auto !important;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
