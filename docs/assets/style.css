@@ -58,12 +58,14 @@ body{ font-size: 14.5px; }
   position: fixed;
   inset: 0;
   z-index: 0;
+  opacity: .35;   /* antes .22 */
 }
 
 /* blobs are NOT full-screen */
 .blob{
   position: fixed;
   z-index: 0;
+  opacity: .22;   /* antes .14 ~ .20 */
 }
 
 /* topbar */
