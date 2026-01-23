@@ -1,21 +1,73 @@
 <!doctype html>
-<html>
+<html lang="pt-br">
 <head>
-  <meta charset="utf-8">
-  <title>Feedback • Kyren</title>
-  <link rel="stylesheet" href="assets/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Feedback — Kyren</title>
+  <link rel="icon" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
-<header>
-  <a href="index.html">← Voltar</a>
-</header>
+  <div class="bg"></div>
 
-<main>
-  <h1>Feedback</h1>
-  <p>Relate bugs, links quebrados ou sugestões via GitHub Issues.</p>
-  <a href="https://github.com/SEU-USUARIO/SEU-REPO/issues" target="_blank">
-    Abrir Issues
-  </a>
-</main>
+  <div class="topbar">
+    <div class="pill">
+      <a class="brand" href="index.html" style="text-decoration:none; color:inherit;">
+        <span class="dot"></span>
+        <div style="display:flex; flex-direction:column; gap:2px;">
+          <strong>KYREN — SOURCE HUB</strong>
+          <small>tickets</small>
+        </div>
+      </a>
+
+      <div class="actions">
+        <a class="chip" href="patch-notes.html">🧾 Patch notes</a>
+        <div class="lang">
+          🌐
+          <button data-lang="pt" class="active" onclick="setLang('pt')">PT-BR</button>
+          <span>—</span>
+          <button data-lang="en" onclick="setLang('en')">EN</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <section class="hero" style="padding-top:46px;">
+      <h1><em>Feedback</em></h1>
+      <p>
+        Tudo via GitHub Issues pra ficar rastreável. Escolhe um tipo e abre o ticket 👇
+      </p>
+
+      <div class="grid3" style="margin-top:16px;">
+        <div class="card">
+          <h3>🐞 Bug</h3>
+          <p>Algo quebrou? Link caiu? Explica e manda prints.</p>
+          <a href="https://github.com/SEU-USUARIO/SEU-REPO/issues/new?template=bug.yml" target="_blank">Abrir ticket →</a>
+        </div>
+
+        <div class="card">
+          <h3>🎮 Pedido de jogo</h3>
+          <p>Me diz o nome certinho e infos do que você quer.</p>
+          <a href="https://github.com/SEU-USUARIO/SEU-REPO/issues/new?template=pedido-jogo.yml" target="_blank">Pedir →</a>
+        </div>
+
+        <div class="card">
+          <h3>✨ Sugestão</h3>
+          <p>Ideias pro site/source, melhorias e etc.</p>
+          <a href="https://github.com/SEU-USUARIO/SEU-REPO/issues/new?template=sugestao.yml" target="_blank">Sugerir →</a>
+        </div>
+      </div>
+
+      <div class="cta" style="margin-top:16px;">
+        <a class="btn" href="index.html">← Home</a>
+        <a class="btn" href="https://github.com/SEU-USUARIO/SEU-REPO/issues" target="_blank">🧾 Ver todos os tickets</a>
+      </div>
+    </section>
+
+    <footer class="footer">ⓒ Kyren — Source Hub</footer>
+  </main>
+
+  <script src="assets/app.js"></script>
 </body>
 </html>
