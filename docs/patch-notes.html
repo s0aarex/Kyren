@@ -6,7 +6,6 @@
   <title>Patch notes • Kyren</title>
   <link rel="stylesheet" href="./assets/style.css">
 </head>
-
 <body>
   <div class="bg-layer">
     <div class="bg-glow"></div>
@@ -18,109 +17,141 @@
   <div class="wrap">
     <div class="top">
       <div class="brand">
-        <span class="dot"></span>
-        <span>KYREN</span>
-        <span style="color:rgba(255,255,255,.55)">—</span>
-        <span id="ui_tag">UPDATES</span>
+        <span class="dot"></span><span>KYREN</span><span style="opacity:.55">—</span><span id="tag">UPDATES</span>
       </div>
-
       <div class="actions">
-        <a class="pill" href="./index.html">🏠 Home</a>
-        <a class="pill" href="https://github.com/s0aarex/Kyren" target="_blank" rel="noreferrer">🐙 GitHub</a>
-        <div class="langBadge" id="langToggle">🌐 <span id="langLabel">PT-BR</span> <small>↔</small> EN</div>
+        <a class="pill" href="./index.html" id="home">🏠 Home</a>
+        <a class="pill" href="./how-to-use.html" id="guide">🚀 Guide</a>
+        <a class="pill" href="./feedback.html" id="top_feedback">💬 Feedback</a>
+        <div class="lang" id="langToggle">🌐 <span id="langLabel">PT-BR</span> <small>↔</small> EN</div>
       </div>
     </div>
 
-    <h1 id="ui_title">Patch <span class="ital">Notes</span></h1>
+    <h1 class="reveal" id="title">🧾 Patch notes</h1>
+    <p class="sub reveal" id="sub">
+      Mudanças registradas pra você saber exatamente o que rolou.
+    </p>
 
-    <div class="section">
-      <svg class="corner" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
-        <path d="M20 60 C90 20 160 30 210 90" stroke="rgba(255,255,255,.22)" stroke-width="2" fill="none"/>
-        <circle cx="165" cy="160" r="40" stroke="rgba(255,255,255,.12)" stroke-width="2" fill="none"/>
-      </svg>
+    <div class="section reveal">
+      <div class="label" id="label1">ÚLTIMAS ATUALIZAÇÕES</div>
 
-      <div class="label" id="ui_label_1">O QUE MUDA</div>
-      <p id="ui_p1"></p>
+      <div class="grid">
+        <div class="card">
+          <h3 id="v1">v1.07 • Ajustes</h3>
+          <p id="p1">Melhorias no formato, limpeza de entradas e consistência dos dados.</p>
+        </div>
+        <div class="card">
+          <h3 id="v2">v1.06 • Organização</h3>
+          <p id="p2">Padronização de títulos, datas e tamanhos. Menos bagunça, mais paz.</p>
+        </div>
+        <div class="card">
+          <h3 id="v3">v1.05 • Base</h3>
+          <p id="p3">Estrutura inicial do projeto e publicação do site no GitHub Pages.</p>
+        </div>
+      </div>
 
-      <ul class="list" id="ui_list"></ul>
-
-      <a class="btn" id="ui_btn" href="https://github.com/s0aarex/Kyren/releases" target="_blank" rel="noreferrer">Ver releases</a>
-      <a class="btn ghost" id="ui_btn2" href="./feedback.html">Abrir feedback</a>
+      <div class="ctaRow" style="margin-top:22px;">
+        <a class="btn ghost" href="https://github.com/s0aarex/Kyren/commits/main" target="_blank" rel="noreferrer" id="cta1">🧠 Ver commits</a>
+        <a class="btn ghost" href="https://github.com/s0aarex/Kyren/releases" target="_blank" rel="noreferrer" id="cta2">🏷️ Releases</a>
+      </div>
     </div>
 
-    <div class="section">
-      <div class="label" id="ui_label_2">DICAS</div>
-      <ul class="list" id="ui_tips"></ul>
+    <div class="section reveal">
+      <div class="label" id="label2">PRÓXIMOS PASSOS</div>
+      <ul class="list" id="next">
+        <li>Melhorar a curadoria e revisar links inválidos.</li>
+        <li>Adicionar tags/categorias (por gênero / plataforma).</li>
+        <li>Automatizar “latest patch” na home.</li>
+      </ul>
     </div>
   </div>
 
   <script src="./assets/app.js"></script>
   <script>
     kyrenMountScribbles();
+    kyrenReveal();
 
     const copy = {
       "pt-BR": {
         langLabel:"PT-BR",
-        ui_tag:"UPDATES",
-        ui_title:'Patch <span class="ital">Notes</span>',
-        ui_label_1:"O QUE MUDA",
-        ui_p1:"Atualizações são contínuas. Cada patch pode trazer melhorias internas, organização, correções e ajustes gerais. (Sem drama, só evolução. 🧬)",
-        ui_list:[
-          "<b>Added</b> — novas entradas.",
-          "<b>Fixed</b> — correções e ajustes.",
-          "<b>Changed</b> — melhorias internas.",
-          "<b>Removed</b> — remoções necessárias."
-        ],
-        ui_btn:"Ver releases",
-        ui_btn2:"Abrir feedback",
-        ui_label_2:"DICAS",
-        ui_tips:[
-          "Se algo ficou estranho depois do update, abre bug com detalhes.",
-          "Se você tiver uma ideia boa, manda sugestão (ticket = histórico).",
-          "Evita duplicar: se já existe, comenta lá."
+        tag:"UPDATES",
+        home:"🏠 Home",
+        guide:"🚀 Guide",
+        top_feedback:"💬 Feedback",
+        title:"🧾 Patch notes",
+        sub:"Mudanças registradas pra você saber exatamente o que rolou.",
+        label1:"ÚLTIMAS ATUALIZAÇÕES",
+        v1:"v1.07 • Ajustes",
+        p1:"Melhorias no formato, limpeza de entradas e consistência dos dados.",
+        v2:"v1.06 • Organização",
+        p2:"Padronização de títulos, datas e tamanhos. Menos bagunça, mais paz.",
+        v3:"v1.05 • Base",
+        p3:"Estrutura inicial do projeto e publicação do site no GitHub Pages.",
+        cta1:"🧠 Ver commits",
+        cta2:"🏷️ Releases",
+        label2:"PRÓXIMOS PASSOS",
+        next:[
+          "Melhorar a curadoria e revisar links inválidos.",
+          "Adicionar tags/categorias (por gênero / plataforma).",
+          "Automatizar “latest patch” na home."
         ]
       },
       "en": {
         langLabel:"EN",
-        ui_tag:"UPDATES",
-        ui_title:'Patch <span class="ital">Notes</span>',
-        ui_label_1:"WHAT CHANGES",
-        ui_p1:"Updates are continuous. Each patch may include internal improvements, organization tweaks, fixes, and general adjustments. (No drama, just progress. 🧬)",
-        ui_list:[
-          "<b>Added</b> — new entries.",
-          "<b>Fixed</b> — fixes and adjustments.",
-          "<b>Changed</b> — internal improvements.",
-          "<b>Removed</b> — necessary removals."
-        ],
-        ui_btn:"View releases",
-        ui_btn2:"Open feedback",
-        ui_label_2:"TIPS",
-        ui_tips:[
-          "If something looks off after an update, open a bug with details.",
-          "If you have a solid idea, send a suggestion (tickets = history).",
-          "Avoid duplicates: if it exists, comment there."
+        tag:"UPDATES",
+        home:"🏠 Home",
+        guide:"🚀 Guide",
+        top_feedback:"💬 Feedback",
+        title:"🧾 Patch notes",
+        sub:"Logged changes so you always know what happened.",
+        label1:"LATEST UPDATES",
+        v1:"v1.07 • Fixes",
+        p1:"Format improvements, entry cleanup, and data consistency.",
+        v2:"v1.06 • Organization",
+        p2:"Standardized titles, dates, and sizes. Less mess, more peace.",
+        v3:"v1.05 • Base",
+        p3:"Initial structure and site published on GitHub Pages.",
+        cta1:"🧠 View commits",
+        cta2:"🏷️ Releases",
+        label2:"NEXT STEPS",
+        next:[
+          "Improve curation and review invalid links.",
+          "Add tags/categories (genre / platform).",
+          "Auto-show “latest patch” on the home page."
         ]
       }
     };
 
     function setUI(lang){
-      const d = copy[lang];
       localStorage.setItem("kyren_lang", lang);
       document.documentElement.lang = (lang==="en") ? "en" : "pt-BR";
-      document.getElementById("langLabel").textContent = d.langLabel;
+      const d = copy[lang];
 
-      document.getElementById("ui_tag").textContent = d.ui_tag;
-      document.getElementById("ui_title").innerHTML = d.ui_title;
-      document.getElementById("ui_label_1").textContent = d.ui_label_1;
-      document.getElementById("ui_p1").textContent = d.ui_p1;
-      document.getElementById("ui_list").innerHTML = d.ui_list.map(x=>`<li>${x}</li>`).join("");
-      document.getElementById("ui_btn").textContent = d.ui_btn;
-      document.getElementById("ui_btn2").textContent = d.ui_btn2;
-      document.getElementById("ui_label_2").textContent = d.ui_label_2;
-      document.getElementById("ui_tips").innerHTML = d.ui_tips.map(x=>`<li>${x}</li>`).join("");
+      document.getElementById("langLabel").textContent = d.langLabel;
+      document.getElementById("tag").textContent = d.tag;
+      document.getElementById("home").textContent = d.home;
+      document.getElementById("guide").textContent = d.guide;
+      document.getElementById("top_feedback").textContent = d.top_feedback;
+
+      document.getElementById("title").textContent = d.title;
+      document.getElementById("sub").textContent = d.sub;
+
+      document.getElementById("label1").textContent = d.label1;
+      document.getElementById("v1").textContent = d.v1;
+      document.getElementById("p1").textContent = d.p1;
+      document.getElementById("v2").textContent = d.v2;
+      document.getElementById("p2").textContent = d.p2;
+      document.getElementById("v3").textContent = d.v3;
+      document.getElementById("p3").textContent = d.p3;
+
+      document.getElementById("cta1").textContent = d.cta1;
+      document.getElementById("cta2").textContent = d.cta2;
+
+      document.getElementById("label2").textContent = d.label2;
+      document.getElementById("next").innerHTML = d.next.map(s=>`<li>${s}</li>`).join("");
     }
 
-    kyrenInitLang(copy, setUI);
+    kyrenInitLang(setUI);
   </script>
 </body>
 </html>
