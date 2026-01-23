@@ -4,16 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kyren — Source Hub</title>
-  <link rel="icon" href="assets/favicon.svg?v=1">
+  <link rel="icon" href="assets/favicon.svg?v=1" type="image/svg+xml">
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
-  <div class="bg"></div>
-
-<div class="bg-lines" aria-hidden="true"></div>
-<div class="blob blob1" aria-hidden="true"></div>
-<div class="blob blob2" aria-hidden="true"></div>
-<div class="blob blob3" aria-hidden="true"></div>
+  <div class="bg" aria-hidden="true"></div>
+  <div class="bg-lines" aria-hidden="true"></div>
+  <div class="blob blob1" aria-hidden="true"></div>
+  <div class="blob blob2" aria-hidden="true"></div>
+  <div class="blob blob3" aria-hidden="true"></div>
 
   <div class="topbar">
     <div class="pill">
@@ -26,12 +25,8 @@
       </div>
 
       <div class="actions">
-        <a class="chip" href="https://github.com/SEU-USUARIO/SEU-REPO" target="_blank">
-          🐙 <span data-i18n="nav_github">GitHub</span>
-        </a>
-        <a class="chip" href="feedback.html">
-          💬 <span data-i18n="nav_feedback">Feedback</span>
-        </a>
+        <a class="chip" data-repo-link href="#" target="_blank">🐙 <span data-i18n="nav_github">GitHub</span></a>
+        <a class="chip" href="feedback.html">💬 <span data-i18n="nav_feedback">Feedback</span></a>
 
         <div class="lang">
           🌐
@@ -46,9 +41,7 @@
   <main class="wrap">
     <section class="hero" data-anim>
       <h1><span data-i18n="hero_title">Kyren </span><em data-i18n="hero_title_em">official</em></h1>
-      <p data-i18n="hero_desc">
-        Site oficial da source Kyren — guia rápido, patch notes e uma área pra pedidos/sugestões/bugs (tudo rastreável no GitHub).
-      </p>
+      <p data-i18n="hero_desc"></p>
 
       <div class="cta">
         <a class="btn" href="how-to-use.html">🚀 <span data-i18n="cta_how">Como usar</span></a>
@@ -62,19 +55,19 @@
     <section class="grid3" data-anim>
       <div class="card">
         <h3>⚡ <span data-i18n="card_quick_title">Quick setup</span></h3>
-        <p data-i18n="card_quick_desc">Passo a passo curto e direto pra importar a source no Hydra.</p>
+        <p data-i18n="card_quick_desc"></p>
         <a href="how-to-use.html" data-i18n="card_quick_link">Abrir guia →</a>
       </div>
 
       <div class="card">
         <h3>🧩 <span data-i18n="card_updates_title">Updates</span></h3>
-        <p data-i18n="card_updates_desc">Mudanças organizadas: o que entrou, o que mudou e o que foi corrigido.</p>
+        <p data-i18n="card_updates_desc"></p>
         <a href="patch-notes.html" data-i18n="card_updates_link">Ver patch notes →</a>
       </div>
 
       <div class="card">
         <h3>🧾 <span data-i18n="card_tickets_title">Tickets</span></h3>
-        <p data-i18n="card_tickets_desc">Pedidos, sugestões e bugs viram tickets — dá pra acompanhar e comentar.</p>
+        <p data-i18n="card_tickets_desc"></p>
         <a href="feedback.html" data-i18n="card_tickets_link">Abrir feedback →</a>
       </div>
     </section>
@@ -91,7 +84,7 @@
     <div class="sectionTitle" data-i18n="shortcuts">Atalhos</div>
     <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;">
       <a class="btn" href="feedback.html">📌 <span data-i18n="shortcut_forms">Abrir formulários</span></a>
-      <a class="btn" href="https://github.com/SEU-USUARIO/SEU-REPO" target="_blank">🧠 <span data-i18n="shortcut_repo">Ver repo</span></a>
+      <a class="btn" data-repo-link href="#" target="_blank">🧠 <span data-i18n="shortcut_repo">Ver repo</span></a>
     </div>
 
     <footer class="footer">
