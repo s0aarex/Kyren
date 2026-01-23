@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title data-i18n="how_title">Como usar — Kyren</title>
-  <link rel="icon" href="assets/favicon.svg" />
+  <title>How to use — Kyren</title>
+  <link rel="icon" href="assets/favicon.svg?v=1" type="image/svg+xml" />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
-  <div class="bg"></div>
-<div class="bg-lines"></div>
-<div class="blob blob1"></div>
-<div class="blob blob2"></div>
-<div class="blob blob3"></div>
+  <div class="bg" aria-hidden="true"></div>
+  <div class="bg-lines" aria-hidden="true"></div>
+  <div class="blob blob1" aria-hidden="true"></div>
+  <div class="blob blob2" aria-hidden="true"></div>
+  <div class="blob blob3" aria-hidden="true"></div>
 
   <div class="topbar">
     <div class="pill">
@@ -25,8 +25,9 @@
       </a>
 
       <div class="actions">
-        <a class="chip" href="patch-notes.html">🧾 Patch notes</a>
-        <a class="chip" href="feedback.html">💬 Feedback</a>
+        <a class="chip" href="patch-notes.html">🧾 <span data-i18n="cta_patch">Patch notes</span></a>
+        <a class="chip" href="feedback.html">💬 <span data-i18n="nav_feedback">Feedback</span></a>
+
         <div class="lang">
           🌐
           <button data-lang="pt" class="active" onclick="setLang('pt')">PT-BR</button>
@@ -38,24 +39,24 @@
   </div>
 
   <main class="wrap">
-    <section class="hero" style="padding-top:46px;">
-      <h1>Como <em>usar</em></h1>
-      <p>
-        Guia rápido. (Se quiser, eu deixo isso mais “tutorialzão” com prints depois.)
-      </p>
+    <section class="hero" style="padding-top:46px;" data-anim>
+      <h1 data-i18n-html="how_heading_html">Como <em>usar</em></h1>
+      <p data-i18n="how_subtitle">Guia rápido.</p>
 
       <div class="card" style="margin-top:18px;">
-        <h3>🚀 Passo a passo</h3>
-        <p style="margin-bottom:0;">
-          1) Entre no link <b><a href="hydralauncher://install-source?urls=https://kyren.pages.dev/kyren.json">Instalar Fonte</a></b><br/>
-          2) Clique em <b>Abrir Hydra</b><br/>
-          3) Dentro do Hydra, clique em <b>Importar</b><br/>
+        <h3>🚀 <span data-i18n="cta_how">Como usar</span></h3>
+        <p style="margin-bottom:0;" data-i18n-html="how_steps_html">
+          1) Abra o launcher<br/>2) Vá em <b>Sources</b><br/>3) Clique em <b>Add source</b><br/>4) Siga as instruções do próprio app
         </p>
       </div>
 
       <div class="cta" style="margin-top:14px;">
-        <a class="btn" href="index.html">← Home</a>
-        <a class="btn" href="feedback.html">💬 Suporte/feedback</a>
+        <a class="btn" href="index.html" data-i18n="back_home">← Home</a>
+
+        <!-- Troque esse link pelo URL REAL da sua source na Library -->
+        <a class="btn" href="https://library.hydra-launcher.org/" target="_blank">
+          🧩 Hydra Library
+        </a>
       </div>
     </section>
 
