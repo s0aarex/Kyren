@@ -149,8 +149,9 @@ function applyI18n(){
 
 // ===== patch notes data =====
 async function getPatchData(){
-  const base = window.location.pathname.replace(/\/[^\/]*$/, "/"); 
+  const base = window.location.pathname.replace(/\/[^\/]*$/, "/");
   const url = `${base}patch-notes.json?v=${Date.now()}`;
+
   const res = await fetch(url, { cache: "no-store" });
   if(!res.ok) throw new Error(`HTTP ${res.status}`);
   return await res.json();
