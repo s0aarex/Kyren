@@ -1,24 +1,52 @@
 <!doctype html>
 <html lang="pt-br">
 <head>
-  <meta charset="utf-8">
-  <title>Patch Notes • Kyren</title>
-  <link rel="stylesheet" href="assets/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Patch Notes — Kyren</title>
+  <link rel="icon" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
-<header>
-  <nav>
-    <a href="index.html">Home</a>
-    <span class="chip" onclick="setLang('pt')">PT</span>
-    <span class="chip" onclick="setLang('en')">EN</span>
-  </nav>
-</header>
+  <div class="bg"></div>
 
-<main>
-  <h1>Patch Notes</h1>
-  <div id="patch-list"></div>
-</main>
+  <div class="topbar">
+    <div class="pill">
+      <a class="brand" href="index.html" style="text-decoration:none; color:inherit;">
+        <span class="dot"></span>
+        <div style="display:flex; flex-direction:column; gap:2px;">
+          <strong>KYREN — SOURCE HUB</strong>
+          <small>patch notes</small>
+        </div>
+      </a>
 
-<script src="assets/app.js"></script>
+      <div class="actions">
+        <a class="chip" href="https://github.com/SEU-USUARIO/SEU-REPO" target="_blank">🐙 GitHub</a>
+        <a class="chip" href="feedback.html">💬 Feedback</a>
+        <div class="lang">
+          🌐
+          <button data-lang="pt" class="active" onclick="setLang('pt')">PT-BR</button>
+          <span>—</span>
+          <button data-lang="en" onclick="setLang('en')">EN</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <section class="hero" style="padding-top:46px;">
+      <h1>Patch <em>notes</em></h1>
+      <p>Histórico de mudanças organizadas por versão.</p>
+      <div class="cta">
+        <a class="btn" href="index.html">← Home</a>
+      </div>
+    </section>
+
+    <div id="patchList"></div>
+
+    <footer class="footer">ⓒ Kyren — Source Hub</footer>
+  </main>
+
+  <script src="assets/app.js"></script>
 </body>
 </html>
