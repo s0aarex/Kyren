@@ -12,6 +12,7 @@
 
 *{ box-sizing:border-box; }
 html,body{ height:100%; }
+
 body{
   margin:0;
   background:var(--bg);
@@ -19,13 +20,24 @@ body{
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial;
   overflow-x:hidden;
   font-size: 14.5px;
+  isolation: isolate; /* evita bug de composição em alguns drivers */
+}
+
+/* base do fundo (fica sempre no fundo de tudo) */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:#050505;
+  z-index:-10;
+  pointer-events:none;
 }
 
 /* ===== background layers (ALL pages) ===== */
 .bg{
   position:fixed;
   inset:-20%;
-  z-index:0;
+  z-index:-5;
   pointer-events:none;
   opacity:.9;
   background:
@@ -38,7 +50,7 @@ body{
 .bg-lines{
   position:fixed;
   inset:0;
-  z-index:0;
+  z-index:-4;
   pointer-events:none;
   opacity:.30;
   mix-blend-mode: screen;
@@ -57,30 +69,30 @@ body{
 
 .blob{
   position:fixed;
-  z-index:0;
+  z-index:-3;
   width:520px; height:520px;
   border-radius:999px;
   pointer-events:none;
   opacity:.20;
+
+  /* anti-bug de glow no CTRL+SHIFT+R (Chrome/GPU) */
   transform: translate3d(0,0,0);
   will-change: transform, opacity, filter;
   backface-visibility: hidden;
+  -webkit-transform: translate3d(0,0,0);
   -webkit-filter: blur(120px);
   filter: blur(120px);
+
   background:
     radial-gradient(circle at 30% 30%, rgba(255,255,255,.22), transparent 65%),
     radial-gradient(circle at 70% 70%, rgba(255,255,255,.12), transparent 60%);
   mix-blend-mode: screen;
 }
+
 .blob1{
   top:-160px;
   left:-140px;
   animation: float1 14s ease-in-out infinite;
-  transform: translate3d(0,0,0);
-  will-change: transform, opacity, filter;
-  backface-visibility: hidden;
-  -webkit-filter: blur(120px);
-  filter: blur(120px);
 }
 .blob2{
   top:120px;
@@ -89,24 +101,14 @@ body{
   height:620px;
   opacity:.18;
   animation: float2 18s ease-in-out infinite;
-  transform: translate3d(0,0,0);
-  will-change: transform, opacity, filter;
-  backface-visibility: hidden;
-  -webkit-filter: blur(120px);
-  filter: blur(120px);
 }
 .blob3{
   bottom:-220px;
   left:30%;
-  width:680px; 
+  width:680px;
   height:680px;
-  opacity:.14; 
+  opacity:.14;
   animation: float3 20s ease-in-out infinite;
-  transform: translate3d(0,0,0);
-  will-change: transform, opacity, filter;
-  backface-visibility: hidden;
-  -webkit-filter: blur(120px);
-  filter: blur(120px);
 }
 
 @keyframes float1{ 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(40px,60px) scale(1.06)} }
@@ -287,7 +289,7 @@ body{
 }
 .rightLink:hover{ background: rgba(255,255,255,.06); transform: translateY(-1px); }
 
-.patchMeta .line1{ display:flex; gap:10px; align-items:center; }
+.patchMeta .line1{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
 .badge{
   padding:4px 8px;
   border-radius:999px;
@@ -319,46 +321,21 @@ body{
   *{ animation:none !important; transition:none !important; }
 }
 
-.bg, .bg-lines, .blob { will-change: transform, opacity; }
-.bg-lines{ min-height: 100vh; }
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  background:#050505;
-  z-index:-1;
-}
-
+/* NEW + Type badges */
 .badge-new{
   font-size:12px;
   padding:6px 10px;
-  border:1px solid white;
+  border:1px solid rgba(255,255,255,.85);
   border-radius:999px;
   animation:pulse 1.2s infinite;
 }
 
 @keyframes pulse{
   0%,100%{ transform:scale(1); }
-  50%{ transform:scale(1.1); }
+  50%{ transform:scale(1.08); }
 }
 
-.badge-type{
-  opacity:.9;
-}
+.badge-type{ opacity:.9; }
 .badge-hotfix{ font-weight:700; }
 .badge-major{ font-weight:800; border-width:2px; }
-.badge-minor{ opacity:.85; 
-}
-
-/* força o Chrome a “segurar” as luzes mesmo no hard reload */
-.bg, .bg-lines, .blob{
-  transform: translate3d(0,0,0);
-  will-change: transform, opacity, filter;
-  backface-visibility: hidden;
-  -webkit-transform: translate3d(0,0,0);
-}
-
-/* evita bug de composição em alguns drivers */
-body{
-  isolation: isolate;
-}
+.badge-minor{ opacity:.85; }
