@@ -202,6 +202,7 @@ async function loadPatchPageList(){
         <div class="patchMeta">
           <div class="line1">
             <span class="badge">${p.version}${p.title ? ` • ${p.title}` : ""}</span>
+${renderPatchTypeBadge(p)}
           </div>
           <div class="date">${p.date}</div>
         </div>
