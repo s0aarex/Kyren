@@ -347,4 +347,18 @@ body::before{
 }
 .badge-hotfix{ font-weight:700; }
 .badge-major{ font-weight:800; border-width:2px; }
-.badge-minor{ opacity:.85; }
+.badge-minor{ opacity:.85; 
+}
+
+/* força o Chrome a “segurar” as luzes mesmo no hard reload */
+.bg, .bg-lines, .blob{
+  transform: translate3d(0,0,0);
+  will-change: transform, opacity, filter;
+  backface-visibility: hidden;
+  -webkit-transform: translate3d(0,0,0);
+}
+
+/* evita bug de composição em alguns drivers */
+body{
+  isolation: isolate;
+}
