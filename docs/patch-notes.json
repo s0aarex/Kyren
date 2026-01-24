@@ -1,6 +1,16 @@
 {
   "pt": [
     {
+      "version": "v1.1",
+      "date": "2026-01-24",
+      "title": "Jogos",
+      "summary": "Novos jogos adicionados",
+      "changes": [
+        "68 novos jogos adicionados a fonte",
+      ],
+      "tags": ["json", "jogos"]
+    },
+    {
       "version": "v1.09",
       "date": "2026-01-23",
       "title": "Jogos e Reparo",
@@ -26,6 +36,16 @@
     }
   ],
   "en": [
+    {
+      "version": "v1.1",
+      "date": "2026-01-24",
+      "title": "Games",
+      "summary": "New games added",
+      "changes": [
+        "68 new games added in source",
+      ],
+      "tags": ["json", "games"]
+    },
     {
       "version": "v1.09",
       "date": "2026-01-23",
