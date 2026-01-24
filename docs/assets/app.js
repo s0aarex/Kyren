@@ -272,3 +272,10 @@ function renderPatchTypeBadge(patch) {
   const type = (patch.type || "UPDATE").toUpperCase();
   return `<span class="badge badge-type badge-${type.toLowerCase()}">${type}</span>`;
 }
+
+const TYPE_EMOJI = {
+  hotfix: "🔥",
+  minor: "🧩",
+  major: "🚀",
+  update: "📝"
+};
