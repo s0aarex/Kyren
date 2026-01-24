@@ -304,3 +304,10 @@ body::before{
   0%,100%{ transform:scale(1); }
   50%{ transform:scale(1.1); }
 }
+
+.badge-type{
+  opacity:.9;
+}
+.badge-hotfix{ font-weight:700; }
+.badge-major{ font-weight:800; border-width:2px; }
+.badge-minor{ opacity:.85; }
