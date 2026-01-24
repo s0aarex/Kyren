@@ -339,3 +339,28 @@ body::before{
 .badge-hotfix{ font-weight:700; }
 .badge-major{ font-weight:800; border-width:2px; }
 .badge-minor{ opacity:.85; }
+
+/* ===== Fallback anti CTRL+SHIFT+R (sempre aparece) ===== */
+
+/* 1) garante que o fundo NÃO depende do blend pra aparecer */
+.bg-lines{
+  mix-blend-mode: normal !important;
+  opacity: .22 !important;
+}
+
+.blob{
+  mix-blend-mode: normal !important;
+  opacity: .22 !important;
+}
+
+/* 2) se o navegador suportar bem, aí sim liga o blend */
+@supports (mix-blend-mode: screen){
+  .bg-lines{
+    mix-blend-mode: screen !important;
+    opacity: .30 !important;
+  }
+  .blob{
+    mix-blend-mode: screen !important;
+    opacity: .20 !important;
+  }
+}
