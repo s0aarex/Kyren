@@ -62,7 +62,11 @@ body{
   border-radius:999px;
   pointer-events:none;
   opacity:.20;
-  filter: blur(42px);
+  transform: translate3d(0,0,0);
+  will-change: transform, opacity, filter;
+  backface-visibility: hidden;
+  -webkit-filter: blur(120px);
+  filter: blur(120px);
   background:
     radial-gradient(circle at 30% 30%, rgba(255,255,255,.22), transparent 65%),
     radial-gradient(circle at 70% 70%, rgba(255,255,255,.12), transparent 60%);
