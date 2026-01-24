@@ -6,7 +6,7 @@
       "title": "Jogos",
       "summary": "Novos jogos adicionados",
       "changes": [
-        "68 novos jogos adicionados a fonte",
+        "68 novos jogos adicionados a fonte"
       ],
       "tags": ["json", "jogos"]
     },
@@ -42,7 +42,7 @@
       "title": "Games",
       "summary": "New games added",
       "changes": [
-        "68 new games added in source",
+        "68 new games added in source"
       ],
       "tags": ["json", "games"]
     },
