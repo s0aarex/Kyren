@@ -2,6 +2,7 @@
   "pt": [
     {
       "version": "v1.1",
+      "type": "MINOR",
       "date": "2026-01-24",
       "title": "Jogos",
       "summary": "Novos jogos adicionados",
@@ -38,6 +39,7 @@
   "en": [
     {
       "version": "v1.1",
+      "type": "MINOR",
       "date": "2026-01-24",
       "title": "Games",
       "summary": "New games added",
