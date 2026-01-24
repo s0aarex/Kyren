@@ -281,3 +281,13 @@ body{
 @media (prefers-reduced-motion: reduce){
   *{ animation:none !important; transition:none !important; }
 }
+
+.bg, .bg-lines, .blob { will-change: transform, opacity; }
+.bg-lines{ min-height: 100vh; }
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:#050505;
+  z-index:-1;
+}
