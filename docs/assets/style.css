@@ -291,3 +291,16 @@ body::before{
   background:#050505;
   z-index:-1;
 }
+
+.badge-new{
+  font-size:12px;
+  padding:6px 10px;
+  border:1px solid white;
+  border-radius:999px;
+  animation:pulse 1.2s infinite;
+}
+
+@keyframes pulse{
+  0%,100%{ transform:scale(1); }
+  50%{ transform:scale(1.1); }
+}
