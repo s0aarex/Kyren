@@ -247,3 +247,21 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 window.setLang = setLang;
+
+const CACHE_VERSION = "20260124-1";
+
+async function loadGameCount() {
+  const el = document.querySelector("[data-game-count]");
+  if (!el) return;
+
+  try {
+    const res = await fetch(`kyren.json?v=${CACHE_VERSION}`);
+    const data = await res.json();
+
+    el.textContent = data.downloads.length;
+  } catch {
+    el.textContent = "—";
+  }
+}
+
+loadGameCount();
