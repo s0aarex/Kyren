@@ -167,6 +167,7 @@ async function loadLatestPatch(){
       <div class="patchMeta">
         <div class="line1">
           <span class="badge">${p.version}${title}</span>
+${renderPatchTypeBadge(p)}
         </div>
         <div class="date">${p.date}</div>
       </div>
