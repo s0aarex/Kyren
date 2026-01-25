@@ -202,3 +202,4 @@ input:focus, select:focus{
 }
 
 #btnLogin { display: inline-flex !important; }
+#btnLogout { display: inline-flex !important; }
