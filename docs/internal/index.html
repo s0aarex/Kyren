@@ -1,103 +1,101 @@
 <!doctype html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Kyren • Painel Interno</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kyren — Painel Interno</title>
 
-  <!-- ISOLADO: NÃO importar nada do site público -->
-  <link rel="stylesheet" href="assets/internal.css?v=20260125-reset">
+  <link rel="icon" href="../favicon.ico" />
+  <link rel="stylesheet" href="assets/internal.css?v=20260125-1" />
+
+  <!-- Supabase SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 
-<body class="internal-page">
-  <main class="wrap">
-    <header class="topbar">
+<body>
+  <div id="kyren-internal">
+    <header class="top">
       <div class="brand">
         <div class="logo">K</div>
-        <div class="brand-text">
-          <div class="title">Kyren — Painel Interno</div>
-          <div class="sub" id="lastUpdate">Carregando…</div>
+        <div class="titles">
+          <h1>Kyren — Painel Interno</h1>
+          <div class="muted" id="lastUpdate">Última atualização (meta): —</div>
         </div>
       </div>
 
       <div class="actions">
-  <a class="btn ghost" id="btnOpenSite" target="_blank" rel="noreferrer">Abrir site</a>
-  <a class="btn ghost" id="btnOpenRepo" target="_blank" rel="noreferrer">Abrir repo</a>
-  <button class="btn" id="btnReload" type="button">Recarregar</button>
+        <a class="btn ghost" id="btnOpenSite" target="_blank" rel="noreferrer">Abrir site</a>
+        <a class="btn ghost" id="btnOpenRepo" target="_blank" rel="noreferrer">Abrir repo</a>
+        <button class="btn" id="btnReload" type="button">Recarregar</button>
 
-  <button class="btn" id="btnLogin" type="button">Login GitHub</button>
-  <button class="btn ghost" id="btnLogout" type="button" style="display:none;">Sair</button>
-</div>
-
+        <button class="btn" id="btnLogin" type="button">Login GitHub</button>
+        <button class="btn ghost" id="btnLogout" type="button" style="display:none;">Sair</button>
+      </div>
     </header>
 
-    <section class="kpis" id="kpis">
-      <div class="card kpi">
-        <div class="kpi-label">Jogos (estimado)</div>
+    <section class="kpis">
+      <div class="kpi">
+        <div class="kpi-title">Jogos (estimado)</div>
         <div class="kpi-value" id="kpiGames">—</div>
-        <div class="kpi-hint">Contado pelo kyren.json</div>
+        <div class="kpi-sub">Contado pelo kyren.json</div>
       </div>
 
-      <div class="card kpi">
-        <div class="kpi-label">Links marcados como quebrados</div>
+      <div class="kpi">
+        <div class="kpi-title">Links marcados como quebrados</div>
         <div class="kpi-value" id="kpiBroken">—</div>
-        <div class="kpi-hint">Baseado nas tuas tarefas/notas</div>
+        <div class="kpi-sub">Baseado nas tuas tarefas/notas</div>
       </div>
 
-      <div class="card kpi">
-        <div class="kpi-label">Pendências</div>
+      <div class="kpi">
+        <div class="kpi-title">Pendências</div>
         <div class="kpi-value" id="kpiPending">—</div>
-        <div class="kpi-hint">Tasks pendentes + notas pendentes</div>
+        <div class="kpi-sub">Tasks pendentes + notas pendentes</div>
       </div>
     </section>
 
-    <section class="panel card">
+    <section class="panel">
       <div class="panel-top">
-        <div class="tabs" role="tablist">
+        <div class="tabs">
           <button class="tab active" data-tab="tasks" type="button">Tarefas</button>
           <button class="tab" data-tab="notes" type="button">Notas</button>
           <button class="tab" data-tab="decisions" type="button">Decisões</button>
         </div>
 
         <div class="filters">
-          <input id="search" class="input" type="search" placeholder="Buscar por título, tag, texto…" />
-          <select id="statusFilter" class="select">
+          <input id="search" type="text" placeholder="Buscar por título, tag, texto…" />
+          <select id="statusFilter">
             <option value="all">Status: tudo</option>
-            <option value="pending">pendente</option>
-            <option value="active">ativo</option>
+            <option value="pending">pending</option>
             <option value="ok">ok</option>
-            <option value="broken">quebrado</option>
-            <option value="done">feito</option>
-            <option value="archived">arquivado</option>
+            <option value="broken">broken</option>
+            <option value="done">done</option>
+            <option value="active">active</option>
           </select>
-          <input id="tagFilter" class="input" type="text" placeholder="Tag (ex: links, site, source)" />
+          <input id="tagFilter" type="text" placeholder="Tag (ex: links, site, source)" />
         </div>
       </div>
 
-      <div class="panel-body">
-        <div class="tabview active" id="view-tasks">
+      <div class="views">
+        <div class="view active" id="view-tasks">
           <div class="list" id="tasksList"></div>
         </div>
-
-        <div class="tabview" id="view-notes">
+        <div class="view" id="view-notes">
           <div class="list" id="notesList"></div>
         </div>
-
-        <div class="tabview" id="view-decisions">
+        <div class="view" id="view-decisions">
           <div class="list" id="decisionsList"></div>
         </div>
       </div>
 
-      <footer class="panel-footer">
+      <div class="panel-footer">
         <div class="muted" id="counts">—</div>
-        <div class="muted" id="modeBanner"></div>
-        <div class="muted">💡 Dica: isso é “privado por URL”. Não é login real (GitHub Pages é estático).</div>
-      </footer>
+        <div class="muted" id="modeBanner">—</div>
+      </div>
     </section>
-  </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="assets/utils.js?v=20260125-1"></script>
+    <p class="hint">💡 Dica: “privado por URL” não é segurança real. O login é o que manda.</p>
+  </div>
+
   <script src="assets/internal.js?v=20260125-1"></script>
 </body>
 </html>
