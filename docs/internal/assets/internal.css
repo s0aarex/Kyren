@@ -1,343 +1,202 @@
-/* =========================
-   Kyren Internal — Glow Pack
-   cola no FINAL do internal.css
-========================= */
-
 :root{
-  --bg: #070708;
+  --bg:#060607;
   --panel: rgba(255,255,255,.04);
   --panel2: rgba(255,255,255,.06);
-  --stroke: rgba(255,255,255,.08);
-  --stroke2: rgba(255,255,255,.12);
+  --stroke: rgba(255,255,255,.10);
+  --stroke2: rgba(255,255,255,.14);
   --text: rgba(255,255,255,.92);
   --muted: rgba(255,255,255,.62);
-  --muted2: rgba(255,255,255,.45);
-
-  --glow: 0 0 0 1px var(--stroke), 0 16px 60px rgba(0,0,0,.55);
-  --glow2: 0 0 0 1px var(--stroke2), 0 22px 80px rgba(0,0,0,.65);
+  --shadow: 0 18px 70px rgba(0,0,0,.65);
   --r: 18px;
-
-  --ease: cubic-bezier(.2,.9,.2,1);
 }
 
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
 body{
-  background: radial-gradient(1200px 700px at 40% 0%, rgba(255,255,255,.05), transparent 60%),
-              radial-gradient(900px 600px at 90% 10%, rgba(255,255,255,.04), transparent 55%),
-              var(--bg) !important;
-  color: var(--text) !important;
+  margin:0;
+  background:
+    radial-gradient(900px 520px at 20% 0%, rgba(255,255,255,.05), transparent 60%),
+    radial-gradient(700px 420px at 80% 10%, rgba(255,255,255,.04), transparent 55%),
+    var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
 }
 
-/* container principal */
-.container, .wrap, main{
-  max-width: 1080px;
+#kyren-internal{
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 22px;
 }
 
-/* header mais “premium” */
-.header, header{
+.muted{ color: var(--muted); }
+.hint{ color: var(--muted); margin: 16px 6px 0; }
+
+.top{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:14px;
-  padding: 18px 18px !important;
-  border-radius: var(--r) !important;
-  background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)) !important;
-  box-shadow: var(--glow) !important;
-  border: 1px solid var(--stroke) !important;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid var(--stroke);
+  background: linear-gradient(180deg, var(--panel2), var(--panel));
+  border-radius: var(--r);
+  box-shadow: var(--shadow);
   backdrop-filter: blur(10px);
 }
 
-.header .title, header .title{
-  letter-spacing: .2px;
+.brand{
+  display:flex; align-items:center; gap: 12px;
+}
+.logo{
+  width: 36px; height: 36px;
+  border-radius: 12px;
+  display:grid; place-items:center;
+  border: 1px solid var(--stroke);
+  background: rgba(255,255,255,.06);
+  font-weight: 900;
+}
+.titles h1{
+  margin:0;
+  font-size: 16px;
+  letter-spacing:.2px;
+}
+.actions{
+  display:flex; align-items:center; gap: 10px; flex-wrap: wrap;
 }
 
-.header small, header small, .muted{
-  color: var(--muted) !important;
+.btn{
+  border-radius: 999px;
+  border: 1px solid var(--stroke);
+  background: rgba(255,255,255,.05);
+  color: var(--text);
+  padding: 9px 14px;
+  cursor:pointer;
+  text-decoration:none;
+  transition: transform .15s ease, background .15s ease, border-color .15s ease;
+}
+.btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.08); border-color: var(--stroke2); }
+.btn.ghost{ background: rgba(255,255,255,.03); }
+
+.kpis{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+@media (max-width: 900px){
+  .kpis{ grid-template-columns: 1fr; }
 }
 
-/* botões */
-.btn, button, .button{
-  border-radius: 999px !important;
-  border: 1px solid var(--stroke) !important;
-  background: rgba(255,255,255,.05) !important;
-  color: var(--text) !important;
-  padding: 9px 14px !important;
-  transition: transform .18s var(--ease), background .18s var(--ease), border-color .18s var(--ease);
+.kpi{
+  padding: 14px;
+  border-radius: var(--r);
+  border: 1px solid var(--stroke);
+  background: linear-gradient(180deg, var(--panel2), var(--panel));
+  box-shadow: var(--shadow);
+}
+.kpi-title{ color: var(--muted); font-size: 13px; }
+.kpi-value{ font-size: 30px; font-weight: 900; margin-top: 8px; }
+.kpi-sub{ color: var(--muted); margin-top: 6px; font-size: 12px; }
+
+.panel{
+  margin-top: 14px;
+  padding: 12px;
+  border-radius: var(--r);
+  border: 1px solid var(--stroke);
+  background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+  box-shadow: var(--shadow);
 }
 
-.btn:hover, button:hover, .button:hover{
-  transform: translateY(-1px);
-  background: rgba(255,255,255,.08) !important;
-  border-color: rgba(255,255,255,.14) !important;
-}
-
-.btn.ghost, .ghost{
-  background: rgba(255,255,255,.03) !important;
-}
-
-/* cards / blocos */
-.card, .panel, .box, .section{
-  border-radius: var(--r) !important;
-  border: 1px solid var(--stroke) !important;
-  background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02)) !important;
-  box-shadow: var(--glow) !important;
-  backdrop-filter: blur(10px);
-}
-
-/* KPIs mais fortes */
-.kpis, .kpi-grid, .grid{
-  gap: 12px !important;
-}
-
-.kpi, .stat, .kpi-card{
-  border-radius: 16px !important;
-  border: 1px solid var(--stroke) !important;
-  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)) !important;
-  box-shadow: var(--glow) !important;
-  padding: 14px 14px !important;
-}
-
-.kpi .value, .stat .value{
-  font-size: 28px !important;
-  font-weight: 800 !important;
-  letter-spacing: .5px;
-}
-
-.kpi .label, .stat .label{
-  color: var(--muted) !important;
-}
-
-/* barra de filtros */
-.filters, .toolbar{
-  border-radius: var(--r) !important;
-  border: 1px solid var(--stroke) !important;
-  background: rgba(255,255,255,.03) !important;
-  box-shadow: var(--glow) !important;
-  padding: 12px !important;
-  gap: 10px !important;
-}
-
-/* inputs */
-input, select, textarea{
-  border-radius: 14px !important;
-  border: 1px solid var(--stroke) !important;
-  background: rgba(0,0,0,.22) !important;
-  color: var(--text) !important;
-  outline: none !important;
-  padding: 10px 12px !important;
-  transition: border-color .18s var(--ease), background .18s var(--ease);
-}
-
-input:focus, select:focus, textarea:focus{
-  border-color: rgba(255,255,255,.18) !important;
-  background: rgba(0,0,0,.30) !important;
-}
-
-/* tabs */
-.tabs{
-  display:flex;
-  gap: 10px !important;
-}
-
-.tab{
-  border-radius: 999px !important;
-  border: 1px solid var(--stroke) !important;
-  background: rgba(255,255,255,.03) !important;
-  padding: 8px 12px !important;
-  color: var(--muted) !important;
-  transition: background .18s var(--ease), color .18s var(--ease), transform .18s var(--ease);
-}
-
-.tab:hover{ transform: translateY(-1px); }
-
-.tab.active{
-  background: rgba(255,255,255,.10) !important;
-  color: var(--text) !important;
-  border-color: rgba(255,255,255,.16) !important;
-}
-
-/* lista de itens */
-.item{
-  border-radius: 16px !important;
-  border: 1px solid var(--stroke) !important;
-  background: rgba(255,255,255,.03) !important;
-  box-shadow: 0 0 0 1px rgba(255,255,255,.02), 0 14px 40px rgba(0,0,0,.50);
-  padding: 14px 14px !important;
-  transition: transform .18s var(--ease), border-color .18s var(--ease), background .18s var(--ease);
-}
-
-.item:hover{
-  transform: translateY(-1px);
-  border-color: rgba(255,255,255,.14) !important;
-  background: rgba(255,255,255,.04) !important;
-}
-
-.item-title{
-  font-weight: 800 !important;
-  letter-spacing: .2px;
-}
-
-.item-text{
-  color: var(--muted) !important;
-  line-height: 1.45;
-  white-space: pre-wrap;
-}
-
-/* badges */
-.badge{
-  border-radius: 999px !important;
-  border: 1px solid var(--stroke) !important;
-  background: rgba(255,255,255,.04) !important;
-  color: var(--muted) !important;
-  padding: 6px 10px !important;
-  font-size: 12px !important;
-}
-
-.badge.muted{ color: var(--muted2) !important; }
-
-/* status highlights (sem cor gritante) */
-.badge[data-status="broken"], .badge.broken{
-  border-color: rgba(255,255,255,.16) !important;
-  background: rgba(255,255,255,.06) !important;
-  color: var(--text) !important;
-}
-.badge[data-status="pending"], .badge.pending{
-  background: rgba(255,255,255,.05) !important;
-  color: var(--text) !important;
-}
-
-/* footer info */
-.footer, .panel-footer{
+.panel-top{
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap: 12px;
-  margin-top: 10px;
-  color: var(--muted2) !important;
+  flex-wrap: wrap;
+  padding: 8px;
 }
 
-/* animação leve */
-@media (prefers-reduced-motion: no-preference){
-  .card, .panel, .kpi, .item, header, .filters{
-    animation: kyrenPop .35s var(--ease) both;
-  }
-  @keyframes kyrenPop{
-    from{ transform: translateY(6px); opacity: .0; }
-    to{ transform: translateY(0); opacity: 1; }
-  }
+.tabs{ display:flex; gap:10px; }
+.tab{
+  border-radius: 999px;
+  border: 1px solid var(--stroke);
+  background: rgba(255,255,255,.03);
+  color: var(--muted);
+  padding: 8px 12px;
+  cursor:pointer;
+}
+.tab.active{
+  background: rgba(255,255,255,.10);
+  color: var(--text);
+  border-color: var(--stroke2);
 }
 
-/* =========================
-   FIX DE LAYOUT — INTERNAL
-   cola no FINAL
-========================= */
-
-/* garante container central */
-body > * {
-  box-sizing: border-box;
+.filters{
+  display:flex; gap:10px; flex-wrap: wrap;
+}
+input, select{
+  border-radius: 14px;
+  border: 1px solid var(--stroke);
+  background: rgba(0,0,0,.25);
+  color: var(--text);
+  padding: 10px 12px;
+  outline:none;
+}
+input:focus, select:focus{
+  border-color: var(--stroke2);
+  background: rgba(0,0,0,.32);
 }
 
-#app,
-.app,
-.panel-root,
-.internal-root {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 24px;
-}
+.views{ padding: 8px; }
+.view{ display:none; }
+.view.active{ display:block; }
 
-/* força os blocos a se comportarem como cards */
-section,
-.kpi,
-.kpis > div,
-.tasks,
-.notes,
-.decisions,
-.list,
-.item {
-  display: block;
-}
-
-/* KPIs em grid */
-.kpis,
-.kpi-grid {
-  display: grid !important;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-}
-
-@media (max-width: 900px) {
-  .kpis,
-  .kpi-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* header alinhado */
-header,
-.header {
-  max-width: 1100px;
-  margin: 16px auto;
-}
-
-/* lista de itens */
-.list,
-.items,
-.tasks-list,
-.notes-list,
-.decisions-list {
-  display: flex;
+.list{
+  display:flex;
   flex-direction: column;
   gap: 12px;
+  margin-top: 8px;
 }
 
-/* garante fundo correto */
-html, body {
-  overflow-x: hidden;
+.item{
+  border-radius: 16px;
+  border: 1px solid var(--stroke);
+  background: rgba(255,255,255,.03);
+  padding: 14px;
+}
+.item-top{
+  display:flex; align-items:flex-start; justify-content:space-between; gap: 10px;
+}
+.item-title{ font-weight: 900; letter-spacing:.2px; }
+.item-text{ color: var(--muted); margin-top: 8px; white-space: pre-wrap; line-height: 1.45; }
+.item-meta{
+  display:flex; gap: 8px; flex-wrap: wrap;
+  justify-content:flex-end;
 }
 
-/* =========================
-   FIX FINAL — CAMADAS / CONTRASTE
-========================= */
-
-body {
-  background: #060607 !important;
+.badge{
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.04);
+  color: var(--muted);
+  padding: 6px 10px;
+  font-size: 12px;
 }
 
-/* garante que o conteúdo fique acima de QUALQUER fundo */
-#kyren-internal,
-#kyren-internal * {
-  position: relative;
-  z-index: 2;
+.panel-footer{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 12px;
+  padding: 10px 8px 4px;
 }
 
-/* fundo neutro só pro internal */
-#kyren-internal::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background:
-    radial-gradient(900px 500px at 20% 0%, rgba(255,255,255,.04), transparent 60%),
-    radial-gradient(700px 400px at 80% 10%, rgba(255,255,255,.03), transparent 55%),
-    #060607;
-  z-index: -1;
-}
-
-/* cards MUITO mais legíveis */
-#kyren-internal header,
-#kyren-internal .kpi,
-#kyren-internal .item,
-#kyren-internal .filters,
-#kyren-internal .toolbar {
-  background: rgba(18,18,20,.85) !important;
-  border: 1px solid rgba(255,255,255,.12) !important;
-  box-shadow: 0 18px 60px rgba(0,0,0,.75) !important;
-}
-
-/* texto com contraste real */
-#kyren-internal {
-  color: rgba(255,255,255,.94);
-}
-
-#kyren-internal .muted {
-  color: rgba(255,255,255,.65) !important;
+#modeBanner{
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.03);
 }
