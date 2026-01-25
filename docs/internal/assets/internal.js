@@ -40,7 +40,7 @@
   const SUPABASE_URL = "https://wlrzpixcgjcjeyjtjgpz.supabase.co";
   const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndscnpwaXhjZ2pjamV5anRqZ3B6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjkzMTk3NTMsImV4cCI6MjA4NDg5NTc1M30.Knw0pVlnPkVE2HDZI9WwODkrS9ab_f7wdL_J9mLl3uw";
 
-  const supabase = (SUPABASE_URL.includes("https://wlrzpixcgjcjeyjtjgpz.supabase.co"))
+  const supabase = (SUPABASE_URL.includes("COLOCA"))
     ? null
     : window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
