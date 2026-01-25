@@ -225,3 +225,72 @@ input:focus, select:focus, textarea:focus{
     to{ transform: translateY(0); opacity: 1; }
   }
 }
+
+/* =========================
+   FIX DE LAYOUT — INTERNAL
+   cola no FINAL
+========================= */
+
+/* garante container central */
+body > * {
+  box-sizing: border-box;
+}
+
+#app,
+.app,
+.panel-root,
+.internal-root {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* força os blocos a se comportarem como cards */
+section,
+.kpi,
+.kpis > div,
+.tasks,
+.notes,
+.decisions,
+.list,
+.item {
+  display: block;
+}
+
+/* KPIs em grid */
+.kpis,
+.kpi-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+@media (max-width: 900px) {
+  .kpis,
+  .kpi-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* header alinhado */
+header,
+.header {
+  max-width: 1100px;
+  margin: 16px auto;
+}
+
+/* lista de itens */
+.list,
+.items,
+.tasks-list,
+.notes-list,
+.decisions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* garante fundo correto */
+html, body {
+  overflow-x: hidden;
+}
