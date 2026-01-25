@@ -225,3 +225,5 @@ button, a, input, select {
   position: relative;
   z-index: 5;
 }
+
+.top { pointer-events: auto !important; }
