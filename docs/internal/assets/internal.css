@@ -200,3 +200,5 @@ input:focus, select:focus{
   border: 1px solid rgba(255,255,255,.10);
   background: rgba(255,255,255,.03);
 }
+
+#btnLogin { display: inline-flex !important; }
