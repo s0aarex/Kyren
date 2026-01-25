@@ -43,6 +43,7 @@
   const supabase = (SUPABASE_URL.includes("COLOCA"))
     ? null
     : window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  window.sb = supabase;
 
   function norm(str){ return (str ?? "").toString().trim().toLowerCase(); }
   function fmtDate(iso){
