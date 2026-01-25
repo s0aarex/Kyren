@@ -203,3 +203,25 @@ input:focus, select:focus{
 
 #btnLogin { display: inline-flex !important; }
 #btnLogout { display: inline-flex !important; }
+
+/* FIX: nada pode ficar por cima clicável */
+#kyren-internal { position: relative; z-index: 1; }
+
+/* qualquer fundo/overlay invisível não pega clique */
+#kyren-internal::before,
+#kyren-internal::after,
+.top::before,
+.top::after,
+.panel::before,
+.panel::after,
+.bg, .bg-lines, .blob {
+  pointer-events: none !important;
+}
+
+/* garante que botões e inputs peguem clique */
+.actions, .actions * ,
+button, a, input, select {
+  pointer-events: auto !important;
+  position: relative;
+  z-index: 5;
+}
