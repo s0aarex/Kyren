@@ -1,1 +1,16 @@
-
+[
+  {
+    "id": "dec_001",
+    "title": "Não editar JSON direto",
+    "decision": "Se não passou pelo Obsidian/painel, não entra na source.",
+    "why": "Mantém histórico e reduz bug/caos.",
+    "date": "2026-01-25"
+  },
+  {
+    "id": "dec_002",
+    "title": "Cache versionado sempre",
+    "decision": "Sempre atualizar ?v= no CSS/JS em toda mudança visual.",
+    "why": "Evita 'bug fantasma' por cache do navegador.",
+    "date": "2026-01-25"
+  }
+]
