@@ -294,3 +294,50 @@ header,
 html, body {
   overflow-x: hidden;
 }
+
+/* =========================
+   FIX FINAL — CAMADAS / CONTRASTE
+========================= */
+
+body {
+  background: #060607 !important;
+}
+
+/* garante que o conteúdo fique acima de QUALQUER fundo */
+#kyren-internal,
+#kyren-internal * {
+  position: relative;
+  z-index: 2;
+}
+
+/* fundo neutro só pro internal */
+#kyren-internal::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(900px 500px at 20% 0%, rgba(255,255,255,.04), transparent 60%),
+    radial-gradient(700px 400px at 80% 10%, rgba(255,255,255,.03), transparent 55%),
+    #060607;
+  z-index: -1;
+}
+
+/* cards MUITO mais legíveis */
+#kyren-internal header,
+#kyren-internal .kpi,
+#kyren-internal .item,
+#kyren-internal .filters,
+#kyren-internal .toolbar {
+  background: rgba(18,18,20,.85) !important;
+  border: 1px solid rgba(255,255,255,.12) !important;
+  box-shadow: 0 18px 60px rgba(0,0,0,.75) !important;
+}
+
+/* texto com contraste real */
+#kyren-internal {
+  color: rgba(255,255,255,.94);
+}
+
+#kyren-internal .muted {
+  color: rgba(255,255,255,.65) !important;
+}
