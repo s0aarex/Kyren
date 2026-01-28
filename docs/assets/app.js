@@ -9,7 +9,7 @@ const CONFIG = {
 // ===== i18n =====
 const I18N = {
   pt: {
-    brand_sub: "✨ hub",
+    brand_sub: "hub",
 
     nav_feedback: "💬 Feedback",
     nav_repo: "📦 Repo",
@@ -71,7 +71,7 @@ const I18N = {
   },
 
   en: {
-    brand_sub: "✨ hub",
+    brand_sub: "hub",
 
     nav_feedback: "💬 Feedback",
     nav_repo: "📦 Repo",
