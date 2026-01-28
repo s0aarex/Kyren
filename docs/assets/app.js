@@ -284,5 +284,4 @@ function renderPatchTypeBadge(patch) {
   const type = (patch.type || "UPDATE").toLowerCase();
   const emoji = TYPE_EMOJI[type] || TYPE_EMOJI.update;
   return `<span class="badge badge-type badge-${type}">${emoji} ${type.toUpperCase()}</span>`;
-  }
 }
