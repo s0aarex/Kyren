@@ -1,34 +1,28 @@
 {
   "pt": [
     {
-      "version": "v1.0",
+      "version": "v1.1",
       "type": "MINOR",
-      "date": "2026-01-28",
-      "title": "Estrutura",
-      "summary": "Rebuild do site (estrutura + i18n + patch notes).",
+      "date": "2026-01-24",
+      "title": "Jogos",
+      "summary": "Novos jogos adicionados",
       "changes": [
-        "i18n via localStorage",
-        "Patch notes dinâmicos",
-        "Contador lendo source.json",
-        "Fundo animado estável"
+        "68 novos jogos adicionados à source"
       ],
-      "tags": ["site", "ui", "json"]
+      "tags": ["source", "jogos"]
     }
   ],
   "en": [
     {
-      "version": "v1.0",
+      "version": "v1.1",
       "type": "MINOR",
-      "date": "2026-01-28",
-      "title": "Structure",
-      "summary": "Site rebuild (structure + i18n + patch notes).",
+      "date": "2026-01-24",
+      "title": "Games",
+      "summary": "New games added",
       "changes": [
-        "i18n via localStorage",
-        "Dynamic patch notes",
-        "Counter reading source.json",
-        "Stable animated background"
+        "68 new games added to the source"
       ],
-      "tags": ["site", "ui", "json"]
+      "tags": ["source", "games"]
     }
   ]
 }
