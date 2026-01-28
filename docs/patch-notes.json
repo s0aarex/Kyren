@@ -1,76 +1,34 @@
 {
   "pt": [
     {
-      "version": "v1.1",
+      "version": "v1.0",
       "type": "MINOR",
-      "date": "2026-01-24",
-      "title": "Jogos",
-      "summary": "Novos jogos adicionados",
+      "date": "2026-01-28",
+      "title": "Estrutura",
+      "summary": "Rebuild do site (estrutura + i18n + patch notes).",
       "changes": [
-        "68 novos jogos adicionados a fonte"
+        "i18n via localStorage",
+        "Patch notes dinâmicos",
+        "Contador lendo source.json",
+        "Fundo animado estável"
       ],
-      "tags": ["json", "jogos"]
-    },
-    {
-      "version": "v1.09",
-      "date": "2026-01-23",
-      "title": "Jogos e Reparo",
-      "summary": "Novos jogos adicionados e links quebrados corrigidos",
-      "changes": [
-        "29 jogos adicionados a fonte",
-        "7 links quebrados corrigidos"
-      ],
-      "tags": ["json", "jogos", "reparo"]
-    },
-    {
-      "version": "v1.08",
-      "date": "2026-01-22",
-      "title": "Sync & polish",
-      "summary": "Padronização geral e melhorias no formato do JSON.",
-      "changes": [
-        "Novo padrão de campos obrigatórios",
-        "Corrigido parsing com caracteres especiais",
-        "Limpeza de duplicados/quebrados",
-        "Ajustes gerais de estabilidade"
-      ],
-      "tags": ["json", "quality"]
+      "tags": ["site", "ui", "json"]
     }
   ],
   "en": [
     {
-      "version": "v1.1",
+      "version": "v1.0",
       "type": "MINOR",
-      "date": "2026-01-24",
-      "title": "Games",
-      "summary": "New games added",
+      "date": "2026-01-28",
+      "title": "Structure",
+      "summary": "Site rebuild (structure + i18n + patch notes).",
       "changes": [
-        "68 new games added in source"
+        "i18n via localStorage",
+        "Dynamic patch notes",
+        "Counter reading source.json",
+        "Stable animated background"
       ],
-      "tags": ["json", "games"]
-    },
-    {
-      "version": "v1.09",
-      "date": "2026-01-23",
-      "title": "Games and Fixes",
-      "summary": "New games added and broken links fixed",
-      "changes": [
-        "29 games added in source",
-        "7 broken links fixed"
-      ],
-      "tags": ["json", "games", "fixes"]
-    },
-    {
-      "version": "v1.08",
-      "date": "2026-01-22",
-      "title": "Sync & polish",
-      "summary": "General standardization and improvements to the JSON format.",
-      "changes": [
-        "New required fields standard",
-        "Fixed parsing with special characters",
-        "Cleaned duplicates/broken entries",
-        "General stability tweaks"
-      ],
-      "tags": ["json", "quality"]
+      "tags": ["site", "ui", "json"]
     }
   ]
 }
