@@ -311,15 +311,13 @@ async function loadGameCount(){
   if(!el) return;
 
   try{
-    const base = window.location.pathname.replace(/\/[^\/]*$/, "/");
-    const url = `${base}source.json?v=${CONFIG.cacheVersion}`;
-    const res = await fetch(url, { cache: "no-store" });
+    const res = await fetch(`${CONFIG.sourceJsonUrl}?v=${CONFIG.cacheVersion}`, { cache: "no-store" });
     if(!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
 
     const n = Array.isArray(data.downloads) ? data.downloads.length : 0;
-    el.textContent = String(n);
-  }catch{
+    el.textContent = String(n || "—");
+  }catch(e){
     el.textContent = "—";
   }
 }
