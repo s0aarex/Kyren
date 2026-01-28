@@ -49,10 +49,10 @@ const I18N = {
     patch_subtitle: "📚 Histórico do site organizado por versão.",
     back_home: "← 🏠 Home",
 
-    how_title_html: "📘 Como <em>usar</em>",
+    how_title_html: "Como <em>usar</em>",
     how_subtitle: "⚡ Guia rápido.",
-    how_steps_html: "1) 🔎 Faça X<br/>2) ✅ Faça Y<br/>3) 🚀 Faça Z",
-    how_open_library: "🚀 Abrir",
+    how_steps_html: "1) Clique no Link <b>Instalar no Hydra</b><br/>2) CLique em <b>Abir no Hydra</b><br/>3) Dentro do Hydra, clique em <b>Importar</b>",
+    how_open_library: "🚀 Instalar no Hydra",
     how_note: "ℹ️ Nota:",
 
     fb_title_html: "💬 <em>Feedback</em>",
