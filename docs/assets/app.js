@@ -111,10 +111,10 @@ const I18N = {
     patch_subtitle: "📚 Site changelog organized by version.",
     back_home: "← 🏠 Home",
 
-    how_title_html: "📘 How to <em>use</em>",
+    how_title_html: "How to <em>use</em>",
     how_subtitle: "⚡ Quick guide.",
-    how_steps_html: "1) 🔎 Do X<br/>2) ✅ Do Y<br/>3) 🚀 Do Z",
-    how_open_library: "🚀 Open",
+    how_steps_html: "1) Click in <b>Install on Hydra</b><br/>2) Click in <b>Open Hydra</b><br/>3) On Hydra, Click in <b>Import</b>",
+    how_open_library: "🚀 Install on Hydra",
     how_note: "ℹ️ Note:",
 
     fb_title_html: "💬 <em>Feedback</em>",
