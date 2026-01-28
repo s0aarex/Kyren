@@ -2,57 +2,113 @@
 <html lang="pt-br">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kyren — Source Hub</title>
-  <link rel="stylesheet" href="assets/style.css?v=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <title>Kyren</title>
+
+  <link rel="icon" href="assets/favicon.svg?v=20260128-1" />
+  <link rel="stylesheet" href="assets/style.css?v=20260128-1" />
 </head>
+
 <body>
+  <!-- REQUIRED background layers -->
   <div class="bg"></div>
   <div class="bg-lines"></div>
   <div class="blob blob1"></div>
   <div class="blob blob2"></div>
   <div class="blob blob3"></div>
 
-  <main class="wrap">
-    <header class="top">
-      <div>
-        <div class="brand">Kyren</div>
-        <div class="muted">Site público (resetado) — agora tá estável 😌</div>
-      </div>
+  <header class="topbar">
+    <div class="pill">
+      <a class="brand" href="./">
+        <span class="dot"></span>
+        <div class="brandText">
+          <strong>KYREN</strong>
+          <small data-i18n="brand_sub">hub</small>
+        </div>
+      </a>
+
       <div class="actions">
-        <a class="btn" href="#" id="btnRepo">Ver repo</a>
+        <a class="chip" href="feedback.html" data-i18n="nav_feedback">Feedback</a>
+        <a class="chip" href="#" data-repo-link data-i18n="nav_repo">Repo</a>
+
+        <div class="lang" aria-label="language">
+          <button type="button" data-lang="pt" onclick="setLang('pt')">PT</button>
+          <span>•</span>
+          <button type="button" data-lang="en" onclick="setLang('en')">EN</button>
+        </div>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <section class="card hero">
-      <h1>Kyren official</h1>
-      <p class="muted">Hub da source: guia, patch notes e feedback.</p>
+  <main class="wrap">
+    <section class="hero" data-anim>
+      <h1>
+        <span data-i18n="hero_title">Kyren</span>
+        <em data-i18n="hero_title_em">official</em>
+      </h1>
+      <p data-i18n="hero_desc">
+        Hub oficial: guia rápido, patch notes e feedback.
+      </p>
 
-      <div class="row">
-        <a class="btn primary" href="#" id="btnHow">Como usar</a>
-        <a class="btn" href="#" id="btnPatches">Patch notes</a>
-        <a class="btn" href="#" id="btnFeedback">Feedback</a>
+      <div class="cta">
+        <a class="btn" href="how-to-use.html" data-i18n="cta_how">Como usar</a>
+        <a class="btn" href="patch-notes.html" data-i18n="cta_patch">Patch notes</a>
+        <a class="btn" href="feedback.html" data-i18n="cta_feedback">Feedback</a>
+      </div>
+
+      <div class="miniMeta" data-anim style="margin-top:14px;">
+        <span class="miniPill">
+          <span class="miniKey" data-i18n="kpi_games">Jogos</span>
+          <span class="miniVal"><span data-game-count>—</span></span>
+        </span>
+        <span class="miniPill">
+          <span class="miniKey" data-i18n="kpi_latest">Último patch</span>
+          <span class="miniVal" id="latestPatchShort">—</span>
+        </span>
       </div>
     </section>
 
-    <section class="grid">
-      <div class="card">
-        <h2>Quick setup</h2>
-        <p class="muted">Passo a passo curtinho pra configurar.</p>
-      </div>
-      <div class="card">
-        <h2>Updates</h2>
-        <p class="muted">Histórico de mudanças e correções.</p>
-      </div>
-      <div class="card">
-        <h2>Tickets</h2>
-        <p class="muted">Feedback / bugs rastreáveis.</p>
+    <div class="sectionTitle" data-i18n="sec_whats">O que tem aqui</div>
+
+    <section class="grid3" data-anim>
+      <article class="card">
+        <h3 data-i18n="card_quick_title">Quick setup</h3>
+        <p data-i18n="card_quick_desc">Passo a passo curto e direto.</p>
+        <a href="how-to-use.html" data-i18n="card_quick_link">Abrir guia →</a>
+      </article>
+
+      <article class="card">
+        <h3 data-i18n="card_updates_title">Updates</h3>
+        <p data-i18n="card_updates_desc">Mudanças organizadas por versão.</p>
+        <a href="patch-notes.html" data-i18n="card_updates_link">Ver patch notes →</a>
+      </article>
+
+      <article class="card">
+        <h3 data-i18n="card_tickets_title">Tickets</h3>
+        <p data-i18n="card_tickets_desc">Sugestões e bugs rastreáveis.</p>
+        <a href="feedback.html" data-i18n="card_tickets_link">Abrir feedback →</a>
+      </article>
+    </section>
+
+    <div class="sectionTitle" data-i18n="sec_latest">Último patch</div>
+
+    <section class="card" data-anim>
+      <div class="latestRow">
+        <div>
+          <div id="latestPatch"></div>
+        </div>
+        <a class="rightLink" href="patch-notes.html">
+          <span data-i18n="link_view_patch">Ver patch notes</span> →
+        </a>
       </div>
     </section>
 
-    <footer class="foot muted">© Kyren — Source Hub</footer>
+    <footer class="footer">
+      <span class="muted">© Kyren</span>
+    </footer>
   </main>
 
-  <script src="assets/app.js?v=1"></script>
+  <script src="assets/app.js?v=20260128-1"></script>
 </body>
 </html>
