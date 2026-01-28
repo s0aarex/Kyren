@@ -1,9 +1,9 @@
 const CONFIG = {
   // customize if you want
-  repoUrl: "https://github.com/USERNAME/REPO",
-  sourceJsonUrl: "./source.json",
-  installDeepLink: "#", // optional
-  cacheVersion: "20260128-1"
+  repoUrl: "https://github.com/s0aarex/Kyren",
+  sourceJsonUrl: "./kyren.json",
+  installDeepLink: "hydralauncher://install-source?urls=https://kyren.pages.dev/kyren.json", // optional
+  cacheVersion: "20260128-2"
 };
 
 // ===== i18n =====
