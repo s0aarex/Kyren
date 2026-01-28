@@ -1,0 +1,29 @@
+[
+  {
+    "id": "task_001",
+    "title": "Revisar links do pack X",
+    "status": "pending",
+    "priority": "high",
+    "tags": ["links", "source"],
+    "createdAt": "2026-01-25T02:20:00.000Z",
+    "description": "Checar se SteamRIP/SteamVerde estão vivos + atualizar tamanho/data."
+  },
+  {
+    "id": "task_002",
+    "title": "Corrigir descrição do botão de patch notes",
+    "status": "ok",
+    "priority": "low",
+    "tags": ["site", "ui"],
+    "createdAt": "2026-01-25T02:22:00.000Z",
+    "description": "O bloco tava gigante, ajustar padding/margem e overflow."
+  },
+  {
+    "id": "task_003",
+    "title": "Link quebrado detectado (manual)",
+    "status": "broken",
+    "priority": "high",
+    "tags": ["links"],
+    "createdAt": "2026-01-25T02:30:00.000Z",
+    "description": "Um dos hosts caiu. Marquei aqui pra não esquecer antes do próximo patch."
+  }
+]

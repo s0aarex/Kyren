@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kyren • Painel Interno</title>
+
+  <!-- ISOLADO: NÃO importar nada do site público -->
+  <link rel="stylesheet" href="assets/internal.css?v=20260125-1" />
+</head>
+
+<body class="internal-page">
+  <!-- Fundo igual ao site (camadas obrigatórias) -->
+  <div class="bg"></div>
+  <div class="bg-lines"></div>
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="blob blob3"></div>
+
+  <main class="wrap">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">K</div>
+        <div class="brand-text">
+          <div class="title">Kyren — Painel Interno</div>
+          <div class="sub" id="lastUpdate">Carregando…</div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <a class="btn ghost" id="btnOpenSite" target="_blank" rel="noreferrer">Abrir site</a>
+        <a class="btn ghost" id="btnOpenRepo" target="_blank" rel="noreferrer">Abrir repo</a>
+        <button class="btn" id="btnReload" type="button">Recarregar</button>
+      </div>
+    </header>
+
+    <section class="kpis" id="kpis">
+      <div class="card kpi">
+        <div class="kpi-label">Jogos (estimado)</div>
+        <div class="kpi-value" id="kpiGames">—</div>
+        <div class="kpi-hint">Contado pelo kyren.json</div>
+      </div>
+
+      <div class="card kpi">
+        <div class="kpi-label">Links marcados como quebrados</div>
+        <div class="kpi-value" id="kpiBroken">—</div>
+        <div class="kpi-hint">Baseado nas tuas tarefas/notas</div>
+      </div>
+
+      <div class="card kpi">
+        <div class="kpi-label">Pendências</div>
+        <div class="kpi-value" id="kpiPending">—</div>
+        <div class="kpi-hint">Tasks pendentes + notas pendentes</div>
+      </div>
+    </section>
+
+    <section class="panel card">
+      <div class="panel-top">
+        <div class="tabs" role="tablist">
+          <button class="tab active" data-tab="tasks" type="button">Tarefas</button>
+          <button class="tab" data-tab="notes" type="button">Notas</button>
+          <button class="tab" data-tab="decisions" type="button">Decisões</button>
+        </div>
+
+        <div class="filters">
+          <input id="search" class="input" type="search" placeholder="Buscar por título, tag, texto…" />
+          <select id="statusFilter" class="select">
+            <option value="all">Status: tudo</option>
+            <option value="pending">pendente</option>
+            <option value="active">ativo</option>
+            <option value="ok">ok</option>
+            <option value="broken">quebrado</option>
+            <option value="done">feito</option>
+            <option value="archived">arquivado</option>
+          </select>
+          <input id="tagFilter" class="input" type="text" placeholder="Tag (ex: links, site, source)" />
+        </div>
+      </div>
+
+      <div class="panel-body">
+        <div class="tabview active" id="view-tasks">
+          <div class="list" id="tasksList"></div>
+        </div>
+
+        <div class="tabview" id="view-notes">
+          <div class="list" id="notesList"></div>
+        </div>
+
+        <div class="tabview" id="view-decisions">
+          <div class="list" id="decisionsList"></div>
+        </div>
+      </div>
+
+      <footer class="panel-footer">
+        <div class="muted" id="counts">—</div>
+        <div class="muted">💡 Dica: isso é “privado por URL”. Não é login real (GitHub Pages é estático).</div>
+      </footer>
+    </section>
+  </main>
+
+  <script src="assets/utils.js?v=20260125-1"></script>
+  <script src="assets/internal.js?v=20260125-1"></script>
+</body>
+</html>
