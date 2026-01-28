@@ -1,105 +1,104 @@
 const CONFIG = {
-  repoUrl: "https://github.com/s0aarex/Kyren",
-  libraryUrl: "https://library.hydra.wiki/sources/86",
-  sourceJsonUrl: "https://s0aarex.github.io/Kyren/kyren.json",
-  installDeepLink: "hydralauncher://install-source?urls=https://kyren.pages.dev/kyren.json"
+  // customize if you want
+  repoUrl: "https://github.com/USERNAME/REPO",
+  sourceJsonUrl: "./source.json",
+  installDeepLink: "#", // optional
+  cacheVersion: "20260128-1"
 };
 
 // ===== i18n =====
 const I18N = {
   pt: {
-    nav_github:"GitHub",
-    nav_feedback:"Feedback",
-    hero_title:"Kyren ",
-    hero_title_em:"official",
-    hero_desc:"Site oficial da source Kyren — guia rápido, patch notes e uma área pra pedidos/sugestões/bugs (tudo rastreável no GitHub).",
-    cta_how:"Como usar",
-    cta_patch:"Patch notes",
-    cta_feedback:"Feedback",
-    sec_whats:"O que tem aqui",
-    card_quick_title:"Quick setup",
-    card_quick_desc:"Passo a passo curto e direto pra importar a source no Hydra.",
-    card_quick_link:"Abrir guia →",
-    card_updates_title:"Updates",
-    card_updates_desc:"Mudanças organizadas: o que entrou, o que mudou e o que foi corrigido.",
-    card_updates_link:"Ver patch notes →",
-    card_tickets_title:"Tickets",
-    card_tickets_desc:"Pedidos, sugestões e bugs viram tickets — dá pra acompanhar e comentar.",
-    card_tickets_link:"Abrir feedback →",
-    sec_latest:"Último patch",
-    link_view_patch:"Ver patch notes",
-    shortcuts:"Atalhos",
-    shortcut_forms:"Abrir formulários",
-    shortcut_repo:"Ver repo",
-    latest_desc_default:"Atualização mais recente.",
-    err_patch:"Erro carregando patch notes 😵",
-
-    patch_title_html:"Patch <em>notes</em>",
-    patch_subtitle:"Histórico de mudanças organizadas por versão.",
-    back_home:"← Home",
-
-    how_title_html:"Como <em>usar</em>",
-    how_subtitle:"Guia rápido.",
-    how_steps_html:"1) Clique no botao abaixo <b>Instalar no Hydra</b><br/>2) Clique em <b>Abrir Hydra</b><br/>3) Clique em <b>Adicionar Fonte</b>",
-    how_open_library:"Instalar no Hydra",
-
-    fb_title_html:"<em>Feedback</em>",
-    fb_subtitle:"Tudo via GitHub Issues pra ficar rastreável. Escolhe um tipo e abre o ticket 👇",
-    fb_bug:"Bug",
-    fb_bug_desc:"Algo quebrou? Link caiu? Explica e manda prints.",
-    fb_request:"Pedido de jogo",
-    fb_request_desc:"Me diz o nome certinho e infos do que você quer.",
-    fb_suggest:"Sugestão",
-    fb_suggest_desc:"Ideias pro site/source, melhorias e etc.",
-    fb_open:"Abrir →",
-    fb_all:"🧾 Ver todos os tickets"
+    brand_sub: "hub",
+    nav_feedback: "Feedback",
+    nav_repo: "Repo",
+    hero_title: "Kyren ",
+    hero_title_em: "official",
+    hero_desc: "Site oficial: guia rápido, patch notes e feedback.",
+    cta_how: "Como usar",
+    cta_patch: "Patch notes",
+    cta_feedback: "Feedback",
+    sec_whats: "O que tem aqui",
+    card_quick_title: "Quick setup",
+    card_quick_desc: "Passo a passo curto e direto.",
+    card_quick_link: "Abrir guia →",
+    card_updates_title: "Updates",
+    card_updates_desc: "Mudanças organizadas por versão.",
+    card_updates_link: "Ver patch notes →",
+    card_tickets_title: "Tickets",
+    card_tickets_desc: "Sugestões e bugs rastreáveis.",
+    card_tickets_link: "Abrir feedback →",
+    sec_latest: "Último patch",
+    link_view_patch: "Ver patch notes",
+    latest_desc_default: "Atualização mais recente.",
+    err_patch: "Erro carregando patch notes 😵",
+    patch_title_html: "Patch <em>notes</em>",
+    patch_subtitle: "Histórico de mudanças organizadas por versão.",
+    back_home: "← Home",
+    how_title_html: "Como <em>usar</em>",
+    how_subtitle: "Guia rápido.",
+    how_steps_html: "1) Faça X<br/>2) Faça Y<br/>3) Faça Z",
+    how_open_library: "Abrir",
+    how_note: "Nota:",
+    fb_title_html: "<em>Feedback</em>",
+    fb_subtitle: "Tudo rastreável em issues.",
+    fb_bug: "Bug",
+    fb_bug_desc: "Algo quebrou? Explica e manda prints.",
+    fb_request: "Pedido",
+    fb_request_desc: "Pede algo com detalhes.",
+    fb_suggest: "Sugestão",
+    fb_suggest_desc: "Ideias e melhorias.",
+    fb_open: "Abrir →",
+    fb_all: "🧾 Ver todos os tickets",
+    fb_note: "Configure o repositório em app.js (CONFIG.repoUrl).",
+    kpi_games: "Jogos",
+    kpi_latest: "Último patch"
   },
   en: {
-    nav_github:"GitHub",
-    nav_feedback:"Feedback",
-    hero_title:"Kyren ",
-    hero_title_em:"official",
-    hero_desc:"Official Kyren source hub — quick guide, patch notes and a place for requests/suggestions/bugs (everything tracked on GitHub).",
-    cta_how:"How to use",
-    cta_patch:"Patch notes",
-    cta_feedback:"Feedback",
-    sec_whats:"What’s here",
-    card_quick_title:"Quick setup",
-    card_quick_desc:"Short step-by-step to add the source.",
-    card_quick_link:"Open guide →",
-    card_updates_title:"Updates",
-    card_updates_desc:"Organized changes: what’s new, what changed, what got fixed.",
-    card_updates_link:"View patch notes →",
-    card_tickets_title:"Tickets",
-    card_tickets_desc:"Requests, suggestions and bugs become tickets — you can follow and comment.",
-    card_tickets_link:"Open feedback →",
-    sec_latest:"Latest patch",
-    link_view_patch:"View patch notes",
-    shortcuts:"Shortcuts",
-    shortcut_forms:"Open forms",
-    shortcut_repo:"View repo",
-    latest_desc_default:"Most recent update.",
-    err_patch:"Error loading patch notes 😵",
-
-    patch_title_html:"Patch <em>notes</em>",
-    patch_subtitle:"Change log organized by version.",
-    back_home:"← Home",
-
-    how_title_html:"How to <em>use</em>",
-    how_subtitle:"Quick guide.",
-    how_steps_html:"1) Click in the button <b>Install on Hydra</b><br/>2) Click in <b>Open Hydra</b><br/>3) Click in <b>Add Source</b>",
-    how_open_library:"Install on Hydra",
-
-    fb_title_html:"<em>Feedback</em>",
-    fb_subtitle:"Everything via GitHub Issues so it’s trackable. Pick a type and open a ticket 👇",
-    fb_bug:"Bug",
-    fb_bug_desc:"Something broke? Link down? Explain it and add screenshots.",
-    fb_request:"Game request",
-    fb_request_desc:"Tell the exact game name and details.",
-    fb_suggest:"Suggestion",
-    fb_suggest_desc:"Ideas for the site/source, improvements, etc.",
-    fb_open:"Open →",
-    fb_all:"🧾 View all tickets"
+    brand_sub: "hub",
+    nav_feedback: "Feedback",
+    nav_repo: "Repo",
+    hero_title: "Kyren ",
+    hero_title_em: "official",
+    hero_desc: "Official hub: quick guide, patch notes and feedback.",
+    cta_how: "How to use",
+    cta_patch: "Patch notes",
+    cta_feedback: "Feedback",
+    sec_whats: "What’s here",
+    card_quick_title: "Quick setup",
+    card_quick_desc: "Short step-by-step.",
+    card_quick_link: "Open guide →",
+    card_updates_title: "Updates",
+    card_updates_desc: "Changes organized by version.",
+    card_updates_link: "View patch notes →",
+    card_tickets_title: "Tickets",
+    card_tickets_desc: "Suggestions and bugs tracked.",
+    card_tickets_link: "Open feedback →",
+    sec_latest: "Latest patch",
+    link_view_patch: "View patch notes",
+    latest_desc_default: "Most recent update.",
+    err_patch: "Error loading patch notes 😵",
+    patch_title_html: "Patch <em>notes</em>",
+    patch_subtitle: "Change log organized by version.",
+    back_home: "← Home",
+    how_title_html: "How to <em>use</em>",
+    how_subtitle: "Quick guide.",
+    how_steps_html: "1) Do X<br/>2) Do Y<br/>3) Do Z",
+    how_open_library: "Open",
+    how_note: "Note:",
+    fb_title_html: "<em>Feedback</em>",
+    fb_subtitle: "Everything tracked via issues.",
+    fb_bug: "Bug",
+    fb_bug_desc: "Something broke? Explain and add screenshots.",
+    fb_request: "Request",
+    fb_request_desc: "Request with details.",
+    fb_suggest: "Suggestion",
+    fb_suggest_desc: "Ideas and improvements.",
+    fb_open: "Open →",
+    fb_all: "🧾 View all tickets",
+    fb_note: "Configure repo in app.js (CONFIG.repoUrl).",
+    kpi_games: "Games",
+    kpi_latest: "Latest patch"
   }
 };
 
@@ -111,13 +110,12 @@ function setLang(next){
   applyI18n();
   loadLatestPatch();
   loadPatchPageList();
+  loadLatestPatchShort();
 }
 
 function applyI18n(){
   document.documentElement.lang = (lang === "pt") ? "pt-br" : "en";
   const dict = I18N[lang];
-  const installBtn = document.getElementById("installBtn");
-if (installBtn) installBtn.href = CONFIG.installDeepLink;
 
   document.querySelectorAll("[data-i18n]").forEach(el=>{
     const k = el.getAttribute("data-i18n");
@@ -134,16 +132,37 @@ if (installBtn) installBtn.href = CONFIG.installDeepLink;
   });
 
   document.querySelectorAll("[data-repo-link]").forEach(a => a.href = CONFIG.repoUrl);
-  document.querySelectorAll("[data-library-link]").forEach(a => a.href = CONFIG.libraryUrl);
+
+  // optional install btn
+  const installBtn = document.getElementById("installBtn");
+  if (installBtn) installBtn.href = CONFIG.installDeepLink;
+
+  // feedback links
+  const issuesAll = document.querySelector("[data-issues-all]");
+  if(issuesAll) issuesAll.href = `${CONFIG.repoUrl}/issues`;
+
+  document.querySelectorAll("[data-issue]").forEach(a=>{
+    const t = a.getAttribute("data-issue");
+    const title = encodeURIComponent(`[${t}] `);
+    a.href = `${CONFIG.repoUrl}/issues/new?title=${title}`;
+  });
 }
 
-// ✅ caminho garantido no GitHub Pages (repo /Kyren/)
+// patch notes fetch (stable on GH Pages)
 async function getPatchData(){
-  const base = window.location.pathname.replace(/\/[^\/]*$/, "/"); // /Kyren/
-  const url = `${base}patch-notes.json?v=${Date.now()}`;
+  const base = window.location.pathname.replace(/\/[^\/]*$/, "/");
+  const url = `${base}patch-notes.json?v=${CONFIG.cacheVersion}`;
   const res = await fetch(url, { cache: "no-store" });
   if(!res.ok) throw new Error(`HTTP ${res.status}`);
   return await res.json();
+}
+
+function renderPatchType(p){
+  if(!p?.type) return "";
+  const t = String(p.type).toUpperCase();
+  const map = { HOTFIX:"🧯 HOTFIX", MINOR:"✨ MINOR", MAJOR:"🚀 MAJOR" };
+  const label = map[t] || t;
+  return `<span class="badge">${label}</span>`;
 }
 
 async function loadLatestPatch(){
@@ -167,9 +186,9 @@ async function loadLatestPatch(){
       <div class="patchMeta">
         <div class="line1">
           <span class="badge">${p.version}${title}</span>
-${renderPatchTypeBadge(p)}
+          ${renderPatchType(p)}
         </div>
-        <div class="date">${p.date}</div>
+        <div class="date">${p.date || ""}</div>
       </div>
 
       <div class="patchDesc">${p.summary || I18N[lang].latest_desc_default}</div>
@@ -181,11 +200,25 @@ ${renderPatchTypeBadge(p)}
       <div class="patchFoot">
         <span>+${Math.max(0,(p.changes||[]).length - bullets.length)}</span>
         <span>•</span>
-        <span>${(p.tags||[]).slice(0,2).join(" • ")}</span>
+        <span>${(p.tags||[]).slice(0,4).join(" • ")}</span>
       </div>
     `;
   }catch(e){
     root.innerHTML = `<div class="patchDesc">${I18N[lang].err_patch}</div>`;
+  }
+}
+
+async function loadLatestPatchShort(){
+  const el = document.getElementById("latestPatchShort");
+  if(!el) return;
+
+  try{
+    const data = await getPatchData();
+    const list = data[lang] || [];
+    const p = list[0];
+    el.textContent = p ? (p.version || "—") : "—";
+  }catch{
+    el.textContent = "—";
   }
 }
 
@@ -202,9 +235,9 @@ async function loadPatchPageList(){
         <div class="patchMeta">
           <div class="line1">
             <span class="badge">${p.version}${p.title ? ` • ${p.title}` : ""}</span>
-${renderPatchTypeBadge(p)}
+            ${renderPatchType(p)}
           </div>
-          <div class="date">${p.date}</div>
+          <div class="date">${p.date || ""}</div>
         </div>
 
         ${p.summary ? `<div class="patchDesc">${p.summary}</div>` : ""}
@@ -215,7 +248,7 @@ ${renderPatchTypeBadge(p)}
 
         ${(p.tags && p.tags.length) ? `
           <div class="patchFoot">
-            <span>${p.tags.slice(0,4).join(" • ")}</span>
+            <span>${p.tags.slice(0,6).join(" • ")}</span>
           </div>
         ` : ""}
       </div>
@@ -241,47 +274,32 @@ function setupReveal(){
   els.forEach(el => io.observe(el));
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  applyI18n();
-  loadLatestPatch();
-  loadPatchPageList();
-  setupReveal();
-});
-
-window.setLang = setLang;
-
-const CACHE_VERSION = "20260124-1";
-
-async function loadGameCount() {
+// Game count (expects { downloads: [] })
+async function loadGameCount(){
   const el = document.querySelector("[data-game-count]");
-  if (!el) return;
+  if(!el) return;
 
-  try {
-    const res = await fetch(`kyren.json?v=${CACHE_VERSION}`);
+  try{
+    const base = window.location.pathname.replace(/\/[^\/]*$/, "/");
+    const url = `${base}source.json?v=${CONFIG.cacheVersion}`;
+    const res = await fetch(url, { cache: "no-store" });
+    if(!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
 
-    el.textContent = data.downloads.length;
-  } catch {
+    const n = Array.isArray(data.downloads) ? data.downloads.length : 0;
+    el.textContent = String(n);
+  }catch{
     el.textContent = "—";
   }
 }
 
-loadGameCount();
+document.addEventListener("DOMContentLoaded", () => {
+  applyI18n();
+  loadLatestPatch();
+  loadPatchPageList();
+  loadLatestPatchShort();
+  loadGameCount();
+  setupReveal();
+});
 
-function renderPatchTypeBadge(patch) {
-  const type = (patch.type || "UPDATE").toUpperCase();
-  return `<span class="badge badge-type badge-${type.toLowerCase()}">${type}</span>`;
-}
-
-const TYPE_EMOJI = {
-  hotfix: "🔥",
-  minor: "🧩",
-  major: "🚀",
-  update: "📝"
-};
-
-function renderPatchTypeBadge(patch) {
-  const type = (patch.type || "UPDATE").toLowerCase();
-  const emoji = TYPE_EMOJI[type] || TYPE_EMOJI.update;
-  return `<span class="badge badge-type badge-${type}">${emoji} ${type.toUpperCase()}</span>`;
-}
+window.setLang = setLang;
