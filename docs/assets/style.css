@@ -1,322 +1,84 @@
-/* =========================================
-   KYREN — PUBLIC SITE CSS (REBUILD)
-   Dark • Glow • Cards • Safe layers
-   v: 2026-01-28
-========================================= */
-
-/* ---------- Reset básico ---------- */
-*,
-*::before,
-*::after { box-sizing: border-box; }
-
-html, body { height: 100%; }
-body {
-  margin: 0;
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: #070708;
-  color: rgba(255,255,255,.92);
-  -webkit-font-smoothing: antialiased;
-  text-rendering: geometricPrecision;
-  overflow-x: hidden;
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  background:#070708;
+  color:rgba(255,255,255,.92);
+  overflow-x:hidden;
 }
 
-/* ---------- Tokens ---------- */
 :root{
-  --bg: #070708;
-
-  --text: rgba(255,255,255,.92);
-  --muted: rgba(255,255,255,.64);
-  --muted2: rgba(255,255,255,.48);
-
-  --panel: rgba(255,255,255,.04);
-  --panel2: rgba(255,255,255,.06);
-
-  --stroke: rgba(255,255,255,.08);
-  --stroke2: rgba(255,255,255,.12);
-
-  --r: 18px;
-  --r2: 22px;
-
-  --shadow: 0 18px 70px rgba(0,0,0,.65);
-  --shadow2: 0 24px 90px rgba(0,0,0,.72);
-
-  --ease: cubic-bezier(.2,.9,.2,1);
+  --panel:rgba(255,255,255,.05);
+  --stroke:rgba(255,255,255,.10);
+  --muted:rgba(255,255,255,.62);
+  --r:18px;
 }
 
-/* ---------- Fundo (safe) ---------- */
-/* Se teu HTML tem as camadas do fundo, isso estiliza. Se não tiver, ignora. */
-.bg, .bg-lines, .blob { pointer-events: none !important; }
+.bg,.bg-lines,.blob{pointer-events:none}
 
 .bg{
-  position: fixed;
-  inset: 0;
-  z-index: -5;
+  position:fixed; inset:0; z-index:-5;
   background:
-    radial-gradient(1000px 600px at 20% 0%, rgba(255,255,255,.06), transparent 60%),
-    radial-gradient(850px 520px at 85% 10%, rgba(255,255,255,.05), transparent 58%),
-    radial-gradient(700px 480px at 30% 90%, rgba(255,255,255,.03), transparent 60%),
-    var(--bg);
+    radial-gradient(900px 520px at 20% 0%, rgba(255,255,255,.06), transparent 60%),
+    radial-gradient(700px 420px at 80% 10%, rgba(255,255,255,.05), transparent 55%),
+    #070708;
 }
 
 .bg-lines{
-  position: fixed;
-  inset: -20%;
-  z-index: -4;
-  opacity: .25;
-  background:
-    repeating-linear-gradient(
-      115deg,
-      rgba(255,255,255,.05) 0px,
-      rgba(255,255,255,.05) 1px,
-      transparent 1px,
-      transparent 14px
-    );
-  filter: blur(.2px);
-  transform: rotate(-2deg);
-  animation: linesMove 10s linear infinite;
+  position:fixed; inset:-20%; z-index:-4; opacity:.22;
+  background:repeating-linear-gradient(115deg, rgba(255,255,255,.05) 0 1px, transparent 1px 14px);
+  animation:move 10s linear infinite;
 }
-
-@keyframes linesMove{
-  0% { transform: translate3d(0,0,0) rotate(-2deg); }
-  100% { transform: translate3d(-60px, 0, 0) rotate(-2deg); }
-}
+@keyframes move{to{transform:translateX(-60px)}}
 
 .blob{
-  position: fixed;
-  width: 520px;
-  height: 520px;
-  border-radius: 999px;
-  z-index: -3;
-  filter: blur(60px);
-  opacity: .18;
-  background: rgba(255,255,255,.25);
+  position:fixed; z-index:-3;
+  width:520px; height:520px; border-radius:999px;
+  background:rgba(255,255,255,.25);
+  filter:blur(60px); opacity:.16;
+}
+.blob1{top:-140px;left:-160px}
+.blob2{top:20%;right:-200px;width:560px;height:560px}
+.blob3{bottom:-240px;left:25%;width:620px;height:620px}
+
+.wrap{max-width:980px;margin:0 auto;padding:24px}
+.card{
+  border:1px solid var(--stroke);
+  background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+  border-radius:var(--r);
+  box-shadow:0 18px 70px rgba(0,0,0,.65);
+  backdrop-filter:blur(10px);
+  padding:16px;
 }
 
-.blob1{ top: -120px; left: -140px; animation: blob1 10s var(--ease) infinite alternate; }
-.blob2{ top: 20%; right: -180px; width: 560px; height: 560px; animation: blob2 12s var(--ease) infinite alternate; }
-.blob3{ bottom: -220px; left: 25%; width: 620px; height: 620px; animation: blob3 14s var(--ease) infinite alternate; }
+.top{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  margin-bottom:14px;
+}
+.brand{font-weight:900;letter-spacing:.2px}
+.muted{color:var(--muted)}
+.actions{display:flex;gap:10px;flex-wrap:wrap}
 
-@keyframes blob1{ from{ transform: translate(0,0) } to{ transform: translate(30px, 30px) } }
-@keyframes blob2{ from{ transform: translate(0,0) } to{ transform: translate(-40px, 20px) } }
-@keyframes blob3{ from{ transform: translate(0,0) } to{ transform: translate(20px, -30px) } }
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  border-radius:999px;
+  border:1px solid var(--stroke);
+  background:rgba(255,255,255,.05);
+  color:rgba(255,255,255,.92);
+  padding:9px 14px;
+  text-decoration:none;
+  transition:transform .15s, background .15s;
+}
+.btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.08)}
+.btn.primary{background:rgba(255,255,255,.12)}
+.hero h1{margin:0 0 6px 0;font-size:28px}
+.hero p{margin:0 0 12px 0}
 
-/* ---------- Layout base ---------- */
-.container, main, .wrap, .page {
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 24px;
-}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px}
+@media (max-width:900px){.grid{grid-template-columns:1fr}}
 
-@media (max-width: 720px){
-  .container, main, .wrap, .page { padding: 18px; }
-}
-
-/* ---------- Tipografia ---------- */
-h1, h2, h3{
-  margin: 0 0 10px 0;
-  letter-spacing: .2px;
-}
-h1{ font-size: 28px; }
-h2{ font-size: 18px; color: rgba(255,255,255,.88); }
-p{ margin: 0 0 12px 0; color: var(--muted); line-height: 1.55; }
-
-.small, .muted { color: var(--muted); }
-.muted2 { color: var(--muted2); }
-
-a{
-  color: rgba(255,255,255,.86);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(255,255,255,.18);
-  transition: opacity .15s var(--ease), border-color .15s var(--ease);
-}
-a:hover{
-  opacity: .9;
-  border-color: rgba(255,255,255,.30);
-}
-
-/* ---------- Componentes: Card / Panel ---------- */
-.card, .panel, .box, section{
-  border-radius: var(--r2);
-  border: 1px solid var(--stroke);
-  background: linear-gradient(180deg, var(--panel2), var(--panel));
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(10px);
-}
-
-.card, .panel, .box{
-  padding: 16px;
-}
-
-/* Evita “sections” quebrando layout em páginas simples */
-section{
-  padding: 16px;
-  margin: 12px 0;
-}
-
-/* ---------- Topbar / Header ---------- */
-header, .topbar, .nav{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap: 14px;
-  padding: 14px 16px;
-  border-radius: var(--r2);
-  border: 1px solid var(--stroke);
-  background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(10px);
-}
-
-/* Links pequenos no topo (tipo GitHub/Feedback/lang) */
-header .links, .topbar .links, .nav .links{
-  display:flex;
-  align-items:center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-/* ---------- Botões ---------- */
-button, .btn, .pill{
-  appearance: none;
-  border: 1px solid var(--stroke);
-  background: rgba(255,255,255,.05);
-  color: var(--text);
-  border-radius: 999px;
-  padding: 8px 14px;
-  cursor: pointer;
-  font-weight: 650;
-  font-size: 13px;
-  line-height: 1;
-  transition: transform .15s var(--ease), background .15s var(--ease), border-color .15s var(--ease);
-}
-
-button:hover, .btn:hover, .pill:hover{
-  transform: translateY(-1px);
-  background: rgba(255,255,255,.08);
-  border-color: var(--stroke2);
-}
-
-.btn.primary{
-  background: rgba(255,255,255,.12);
-  border-color: rgba(255,255,255,.18);
-}
-
-.btn.ghost{
-  background: rgba(255,255,255,.03);
-}
-
-button:disabled, .btn:disabled{
-  opacity: .5;
-  cursor: not-allowed;
-  transform: none;
-}
-
-/* ---------- Inputs ---------- */
-input, select, textarea{
-  border-radius: 14px;
-  border: 1px solid var(--stroke);
-  background: rgba(0,0,0,.22);
-  color: var(--text);
-  padding: 10px 12px;
-  outline: none;
-}
-input:focus, select:focus, textarea:focus{
-  border-color: var(--stroke2);
-  background: rgba(0,0,0,.30);
-}
-
-/* ---------- Chips / Badges ---------- */
-.badge, .chip, code.inline{
-  display:inline-flex;
-  align-items:center;
-  gap: 8px;
-  padding: 6px 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(255,255,255,.04);
-  color: var(--muted);
-  font-size: 12px;
-}
-
-/* ---------- Code blocks ---------- */
-code, pre{
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-}
-pre{
-  border-radius: 16px;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(0,0,0,.28);
-  padding: 14px;
-  overflow:auto;
-  box-shadow: 0 16px 40px rgba(0,0,0,.55);
-}
-pre code{
-  color: rgba(255,255,255,.88);
-}
-
-/* ---------- Grids / layoutzinho ---------- */
-.grid, .row{
-  display:grid;
-  gap: 12px;
-}
-.grid.cols-3{ grid-template-columns: repeat(3, minmax(0,1fr)); }
-.grid.cols-2{ grid-template-columns: repeat(2, minmax(0,1fr)); }
-@media (max-width: 900px){
-  .grid.cols-3, .grid.cols-2{ grid-template-columns: 1fr; }
-}
-
-/* ---------- “Hero” (título + botões) ---------- */
-.hero{
-  padding: 18px;
-}
-.hero .actions{
-  display:flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 10px;
-}
-
-/* ---------- Lista de blocos (tipo Quick setup / Updates / Tickets) ---------- */
-.list{
-  display:flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.item{
-  padding: 16px;
-  border-radius: var(--r2);
-  border: 1px solid rgba(255,255,255,.09);
-  background: rgba(255,255,255,.03);
-  box-shadow: 0 0 0 1px rgba(255,255,255,.02), 0 18px 55px rgba(0,0,0,.60);
-  transition: transform .15s var(--ease), border-color .15s var(--ease), background .15s var(--ease);
-}
-.item:hover{
-  transform: translateY(-1px);
-  border-color: rgba(255,255,255,.14);
-  background: rgba(255,255,255,.04);
-}
-
-.item h3{
-  margin: 0 0 6px 0;
-  font-size: 14px;
-}
-.item p{ margin: 0; }
-
-/* ---------- Footer ---------- */
-footer{
-  margin-top: 18px;
-  padding: 14px 16px;
-  border-radius: var(--r2);
-  border: 1px solid var(--stroke);
-  background: rgba(255,255,255,.03);
-  color: var(--muted2);
-}
-
-/* ---------- Safe click layer (anti-bug do internal) ---------- */
-.bg, .bg-lines, .blob, .bg * { pointer-events: none !important; }
-
-/* ---------- Acessibilidade ---------- */
-@media (prefers-reduced-motion: reduce){
-  .bg-lines, .blob1, .blob2, .blob3 { animation: none !important; }
-  button, .btn, .item { transition: none !important; }
-}
+h2{margin:0 0 6px 0;font-size:16px}
+p{margin:0;color:var(--muted);line-height:1.5}
+.foot{margin-top:14px}
