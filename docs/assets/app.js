@@ -9,96 +9,127 @@ const CONFIG = {
 // ===== i18n =====
 const I18N = {
   pt: {
-    brand_sub: "hub",
-    nav_feedback: "Feedback",
-    nav_repo: "Repo",
+    brand_sub: "✨ hub",
+
+    nav_feedback: "💬 Feedback",
+    nav_repo: "📦 Repo",
+
     hero_title: "Kyren ",
-    hero_title_em: "official",
-    hero_desc: "Site oficial: guia rápido, patch notes e feedback.",
-    cta_how: "Como usar",
-    cta_patch: "Patch notes",
-    cta_feedback: "Feedback",
-    sec_whats: "O que tem aqui",
-    card_quick_title: "Quick setup",
-    card_quick_desc: "Passo a passo curto e direto.",
-    card_quick_link: "Abrir guia →",
-    card_updates_title: "Updates",
-    card_updates_desc: "Mudanças organizadas por versão.",
-    card_updates_link: "Ver patch notes →",
-    card_tickets_title: "Tickets",
-    card_tickets_desc: "Sugestões e bugs rastreáveis.",
-    card_tickets_link: "Abrir feedback →",
-    sec_latest: "Último patch",
-    link_view_patch: "Ver patch notes",
-    latest_desc_default: "Atualização mais recente.",
-    err_patch: "Erro carregando patch notes 😵",
-    patch_title_html: "Patch <em>notes</em>",
-    patch_subtitle: "Histórico de mudanças organizadas por versão.",
-    back_home: "← Home",
-    how_title_html: "Como <em>usar</em>",
-    how_subtitle: "Guia rápido.",
-    how_steps_html: "1) Faça X<br/>2) Faça Y<br/>3) Faça Z",
-    how_open_library: "Abrir",
-    how_note: "Nota:",
-    fb_title_html: "<em>Feedback</em>",
-    fb_subtitle: "Tudo rastreável em issues.",
-    fb_bug: "Bug",
+    hero_title_em: "official ✨",
+    hero_desc: "🧠 Hub oficial: guia rápido, patch notes e feedback (tudo organizado).",
+
+    cta_how: "📘 Como usar",
+    cta_patch: "🧾 Patch notes",
+    cta_feedback: "💬 Feedback",
+
+    kpi_games: "🎮 Itens",
+    kpi_latest: "🆕 Último patch",
+
+    sec_whats: "📌 O que tem aqui",
+
+    card_quick_title: "⚡ Quick setup",
+    card_quick_desc: "Passo a passo curto e direto pra começar.",
+    card_quick_link: "📘 Abrir guia →",
+
+    card_updates_title: "🧩 Updates",
+    card_updates_desc: "Mudanças organizadas: o que entrou e o que mudou.",
+    card_updates_link: "🧾 Ver patch notes →",
+
+    card_tickets_title: "🐛 Tickets",
+    card_tickets_desc: "Sugestões e bugs rastreáveis no GitHub.",
+    card_tickets_link: "💬 Abrir feedback →",
+
+    sec_latest: "🆕 Último patch",
+    link_view_patch: "🧾 Ver patch notes",
+
+    latest_desc_default: "📦 Atualização mais recente.",
+    err_patch: "💀 Erro carregando patch notes.",
+
+    patch_title_html: "🧾 Patch <em>notes</em>",
+    patch_subtitle: "📚 Histórico do site organizado por versão.",
+    back_home: "← 🏠 Home",
+
+    how_title_html: "📘 Como <em>usar</em>",
+    how_subtitle: "⚡ Guia rápido.",
+    how_steps_html: "1) 🔎 Faça X<br/>2) ✅ Faça Y<br/>3) 🚀 Faça Z",
+    how_open_library: "🚀 Abrir",
+    how_note: "ℹ️ Nota:",
+
+    fb_title_html: "💬 <em>Feedback</em>",
+    fb_subtitle: "🧾 Tudo rastreável em issues (sem bagunça).",
+
+    fb_bug: "🐛 Bug",
     fb_bug_desc: "Algo quebrou? Explica e manda prints.",
-    fb_request: "Pedido",
-    fb_request_desc: "Pede algo com detalhes.",
-    fb_suggest: "Sugestão",
-    fb_suggest_desc: "Ideias e melhorias.",
-    fb_open: "Abrir →",
+    fb_request: "🎮 Pedido",
+    fb_request_desc: "Pede algo com detalhes e nome certinho.",
+    fb_suggest: "✨ Sugestão",
+    fb_suggest_desc: "Ideias e melhorias pro projeto.",
+
+    fb_open: "🚀 Abrir →",
     fb_all: "🧾 Ver todos os tickets",
-    fb_note: "Configure o repositório em app.js (CONFIG.repoUrl).",
-    kpi_games: "Jogos",
-    kpi_latest: "Último patch"
+    fb_note: "⚙️ Configura o repo no app.js (CONFIG.repoUrl)."
   },
+
   en: {
-    brand_sub: "hub",
-    nav_feedback: "Feedback",
-    nav_repo: "Repo",
+    brand_sub: "✨ hub",
+
+    nav_feedback: "💬 Feedback",
+    nav_repo: "📦 Repo",
+
     hero_title: "Kyren ",
-    hero_title_em: "official",
-    hero_desc: "Official hub: quick guide, patch notes and feedback.",
-    cta_how: "How to use",
-    cta_patch: "Patch notes",
-    cta_feedback: "Feedback",
-    sec_whats: "What’s here",
-    card_quick_title: "Quick setup",
-    card_quick_desc: "Short step-by-step.",
-    card_quick_link: "Open guide →",
-    card_updates_title: "Updates",
-    card_updates_desc: "Changes organized by version.",
-    card_updates_link: "View patch notes →",
-    card_tickets_title: "Tickets",
-    card_tickets_desc: "Suggestions and bugs tracked.",
-    card_tickets_link: "Open feedback →",
-    sec_latest: "Latest patch",
-    link_view_patch: "View patch notes",
-    latest_desc_default: "Most recent update.",
-    err_patch: "Error loading patch notes 😵",
-    patch_title_html: "Patch <em>notes</em>",
-    patch_subtitle: "Change log organized by version.",
-    back_home: "← Home",
-    how_title_html: "How to <em>use</em>",
-    how_subtitle: "Quick guide.",
-    how_steps_html: "1) Do X<br/>2) Do Y<br/>3) Do Z",
-    how_open_library: "Open",
-    how_note: "Note:",
-    fb_title_html: "<em>Feedback</em>",
-    fb_subtitle: "Everything tracked via issues.",
-    fb_bug: "Bug",
-    fb_bug_desc: "Something broke? Explain and add screenshots.",
-    fb_request: "Request",
-    fb_request_desc: "Request with details.",
-    fb_suggest: "Suggestion",
-    fb_suggest_desc: "Ideas and improvements.",
-    fb_open: "Open →",
+    hero_title_em: "official ✨",
+    hero_desc: "🧠 Official hub: quick guide, patch notes and feedback (all organized).",
+
+    cta_how: "📘 How to use",
+    cta_patch: "🧾 Patch notes",
+    cta_feedback: "💬 Feedback",
+
+    kpi_games: "🎮 Items",
+    kpi_latest: "🆕 Latest patch",
+
+    sec_whats: "📌 What’s here",
+
+    card_quick_title: "⚡ Quick setup",
+    card_quick_desc: "Short step-by-step to get started.",
+    card_quick_link: "📘 Open guide →",
+
+    card_updates_title: "🧩 Updates",
+    card_updates_desc: "Organized changes: what’s new and what changed.",
+    card_updates_link: "🧾 View patch notes →",
+
+    card_tickets_title: "🐛 Tickets",
+    card_tickets_desc: "Suggestions and bugs tracked on GitHub.",
+    card_tickets_link: "💬 Open feedback →",
+
+    sec_latest: "🆕 Latest patch",
+    link_view_patch: "🧾 View patch notes",
+
+    latest_desc_default: "📦 Most recent update.",
+    err_patch: "💀 Error loading patch notes.",
+
+    patch_title_html: "🧾 Patch <em>notes</em>",
+    patch_subtitle: "📚 Site changelog organized by version.",
+    back_home: "← 🏠 Home",
+
+    how_title_html: "📘 How to <em>use</em>",
+    how_subtitle: "⚡ Quick guide.",
+    how_steps_html: "1) 🔎 Do X<br/>2) ✅ Do Y<br/>3) 🚀 Do Z",
+    how_open_library: "🚀 Open",
+    how_note: "ℹ️ Note:",
+
+    fb_title_html: "💬 <em>Feedback</em>",
+    fb_subtitle: "🧾 Everything tracked via issues (no chaos).",
+
+    fb_bug: "🐛 Bug",
+    fb_bug_desc: "Something broke? Explain it and add screenshots.",
+    fb_request: "🎮 Request",
+    fb_request_desc: "Request with details and exact name.",
+    fb_suggest: "✨ Suggestion",
+    fb_suggest_desc: "Ideas and improvements for the project.",
+
+    fb_open: "🚀 Open →",
     fb_all: "🧾 View all tickets",
-    fb_note: "Configure repo in app.js (CONFIG.repoUrl).",
-    kpi_games: "Games",
-    kpi_latest: "Latest patch"
+    fb_note: "⚙️ Configure repo in app.js (CONFIG.repoUrl)."
   }
 };
 
