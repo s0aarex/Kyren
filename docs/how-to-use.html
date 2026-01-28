@@ -2,68 +2,65 @@
 <html lang="pt-br">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>How to use — Kyren</title>
-  <link rel="icon" href="assets/favicon.svg?v=1" type="image/svg+xml">
-  <script defer src="assets/app.js?v=20260124-14"></script>
-<link rel="stylesheet" href="assets/style.css?v=20260128-1">
-</head>
-<body>
-  <div class="bg" aria-hidden="true"></div>
-  <div class="bg-lines" aria-hidden="true"></div>
-  <div class="blob blob1" aria-hidden="true"></div>
-  <div class="blob blob2" aria-hidden="true"></div>
-  <div class="blob blob3" aria-hidden="true"></div>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <title>Kyren • How to use</title>
 
-  <div class="topbar">
+  <link rel="icon" href="assets/favicon.svg?v=20260128-1" />
+  <link rel="stylesheet" href="assets/style.css?v=20260128-1" />
+</head>
+
+<body>
+  <div class="bg"></div>
+  <div class="bg-lines"></div>
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="blob blob3"></div>
+
+  <header class="topbar">
     <div class="pill">
-      <a class="brand" href="index.html">
+      <a class="brand" href="./">
         <span class="dot"></span>
-        <div style="display:flex; flex-direction:column; gap:2px;">
-          <strong>KYREN — SOURCE HUB</strong>
-          <small>how to use</small>
+        <div class="brandText">
+          <strong>KYREN</strong>
+          <small data-i18n="brand_sub">hub</small>
         </div>
       </a>
 
       <div class="actions">
-        <a class="chip" href="patch-notes.html">🧾 <span data-i18n="cta_patch">Patch notes</span></a>
-        <a class="chip" href="feedback.html">💬 <span data-i18n="nav_feedback">Feedback</span></a>
-
+        <a class="chip" href="./" data-i18n="back_home">← Home</a>
         <div class="lang">
-          🌐
-          <button data-lang="pt" class="active" onclick="setLang('pt')">PT-BR</button>
-          <span>—</span>
-          <button data-lang="en" onclick="setLang('en')">EN</button>
+          <button type="button" data-lang="pt" onclick="setLang('pt')">PT</button>
+          <span>•</span>
+          <button type="button" data-lang="en" onclick="setLang('en')">EN</button>
         </div>
       </div>
     </div>
-  </div>
+  </header>
 
   <main class="wrap">
-    <section class="hero" style="padding-top:46px;" data-anim>
+    <section class="hero" data-anim>
       <h1 data-i18n-html="how_title_html">Como <em>usar</em></h1>
-      <p data-i18n="how_subtitle"></p>
-
-      <div class="card" style="margin-top:18px;">
-        <h3>🚀 <span data-i18n="cta_how">Como usar</span></h3>
-        <p style="margin-bottom:0;" data-i18n-html="how_steps_html"></p>
-      </div>
-
-      <p class="game-count">
-  <span data-game-count>—</span> jogos disponíveis
-</p>
-
-      <div class="cta" style="margin-top:14px;">
-        <a class="btn" href="index.html" data-i18n="back_home">← Home</a>
-        <a class="btn" id="installBtn" href="#">
-  ⚡ <span data-i18n="how_install">Instalar no Hydra</span>
-</a>
-      </div>
+      <p data-i18n="how_subtitle">Guia rápido.</p>
     </section>
 
-    <footer class="footer">ⓒ Kyren — Source Hub</footer>
+    <section class="card" data-anim>
+      <p class="patchDesc" data-i18n-html="how_steps_html">
+        1) Faça X<br/>2) Faça Y<br/>3) Faça Z
+      </p>
+
+      <div class="cta" style="margin-top:12px;">
+        <a class="btn" id="installBtn" href="#" data-i18n="how_open_library">Abrir</a>
+        <a class="btn" href="patch-notes.html" data-i18n="cta_patch">Patch notes</a>
+      </div>
+
+      <p class="muted" style="margin-top:12px;">
+        <span data-i18n="how_note">Nota:</span>
+        <code class="codeInline">source.json</code>
+      </p>
+    </section>
   </main>
 
-  <script src="assets/app.js"></script>
+  <script src="assets/app.js?v=20260128-1"></script>
 </body>
 </html>
