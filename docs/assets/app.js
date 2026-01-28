@@ -15,7 +15,7 @@ const I18N = {
     nav_repo: "📦 Repo",
 
     hero_title: "Kyren ",
-    hero_title_em: "official ✨",
+    hero_title_em: "official",
     hero_desc: "🧠 Hub oficial: guia rápido, patch notes e feedback (tudo organizado).",
 
     cta_how: "📘 Como usar",
@@ -77,7 +77,7 @@ const I18N = {
     nav_repo: "📦 Repo",
 
     hero_title: "Kyren ",
-    hero_title_em: "official ✨",
+    hero_title_em: "official",
     hero_desc: "🧠 Official hub: quick guide, patch notes and feedback (all organized).",
 
     cta_how: "📘 How to use",
