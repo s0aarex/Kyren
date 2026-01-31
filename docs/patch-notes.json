@@ -1,6 +1,17 @@
 {
   "pt": [
     {
+      "version": "v1.2",
+      "type": "MINOR",
+      "date": "2026-01-31",
+      "title": "Jogos",
+      "summary": "Novos jogos adicionados",
+      "changes": [
+        "12 novos jogos adicionados à source"
+      ],
+      "tags": ["source", "jogos"]
+    }
+    {
       "version": "v1.1",
       "type": "MINOR",
       "date": "2026-01-24",
@@ -13,6 +24,17 @@
     }
   ],
   "en": [
+    {
+      "version": "v1.2",
+      "type": "MINOR",
+      "date": "2026-01-31",
+      "title": "Games",
+      "summary": "New games added",
+      "changes": [
+        "12 new games added to the source"
+      ],
+      "tags": ["source", "games"]
+    }
     {
       "version": "v1.1",
       "type": "MINOR",
