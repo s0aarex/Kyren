@@ -10,7 +10,7 @@
         "12 novos jogos adicionados à source"
       ],
       "tags": ["source", "jogos"]
-    }
+    },
     {
       "version": "v1.1",
       "type": "MINOR",
@@ -34,7 +34,7 @@
         "12 new games added to the source"
       ],
       "tags": ["source", "games"]
-    }
+    },
     {
       "version": "v1.1",
       "type": "MINOR",
